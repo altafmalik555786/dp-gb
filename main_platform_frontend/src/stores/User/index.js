@@ -5,13 +5,16 @@ import { resetStore } from 'stores/root-store'
 
 const User = types.model({
   id: types.maybeNull(types.number),
-  name: types.maybeNull(types.string),
-  email: types.maybeNull(types.string),
-  phone: types.maybeNull(types.string),
-  role: types.maybeNull(types.string),
-  status: types.maybeNull(types.string),
-  emailVerified: types.maybeNull(types.boolean),
-  phoneVerified: types.maybeNull(types.boolean),
+  title: types.maybeNull(types.string),
+  business_type: types.maybeNull(types.string),
+  icon: types.maybeNull(types.string),
+  image: types.maybeNull(types.string),
+  address: types.maybeNull(types.string),
+  status: types.maybeNull(types.boolean),
+  rating: types.maybeNull(types.string),
+  pricing: types.maybeNull(types.string),
+  web: types.maybeNull(types.string),
+  created: types.maybeNull(types.string),
 })
 
 export const userStore = types
@@ -39,7 +42,7 @@ export const userStore = types
         self.loading = true
         const res = yield userApi.getListings()
         console.log("res",  toJS(res))
-        // self.listingData = res
+        self.listingData = res
         response = res
 
       } catch (error) {
