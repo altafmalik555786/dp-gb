@@ -1,0 +1,1 @@
+export const baseUrl = 'https://crud-task-fk.herokuapp.com/api/v1/'
