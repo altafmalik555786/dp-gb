@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ListingHeader from './ListingHeader'
 import logoBlack from "../Assets/images/logo-black.png"
 import "../Assets/css/style.css"
+
+
 function AddListing() {
+    const [title, setTitle] = useState("")
+    const [businessType, setBusinessType] = useState("")
+
     return (
         <div>
             <ListingHeader />
@@ -100,7 +105,7 @@ function AddListing() {
                                                 </label>
                                                 <div class="form-group">
                                                     <span class="la la-briefcase form-icon"></span>
-                                                    <input class="form-control" type="text" name="text" placeholder="Example: Super Duper Burgers" />
+                                                    <input class="form-control" onChange={(e) => setTitle(e.target.value) } type="text" name="text" placeholder="Example: Super Duper Burgers" />
                                                 </div>
                                             </div>
                                         </div>
@@ -111,21 +116,21 @@ function AddListing() {
                                                 <div class="form-group user-chosen-select-container">
                                                     <select class="user-chosen-select">
                                                         <option value="0">Select a Category</option>
-                                                        <option value="1">Shops</option>
-                                                        <option value="2">Hotels</option>
-                                                        <option value="3">Restaurants</option>
-                                                        <option value="4">Fitness</option>
-                                                        <option value="5">Travel</option>
-                                                        <option value="6">Salons</option>
-                                                        <option value="7">Event</option>
-                                                        <option value="8">Business</option>
+                                                        <option onClick={ () => setBusinessType("Shops")}  value="1">Shops</option>
+                                                        <option onClick={ () => setBusinessType("Hotels")} value="2">Hotels</option>
+                                                        <option onClick={ () => setBusinessType("Restaurants")} value="3">Restaurants</option>
+                                                        <option onClick={ () => setBusinessType("Fitness")} value="4">Fitness</option>
+                                                        <option onClick={ () => setBusinessType("Travel")} value="5">Travel</option>
+                                                        <option onClick={ () => setBusinessType("Salons")} value="6">Salons</option>
+                                                        <option onClick={ () => setBusinessType("Event")} value="7">Event</option>
+                                                        <option onClick={ () => setBusinessType("Business")} value="8">Business</option>
                                                     </select>
                                                 </div>
                                                 {/* <!-- end form-group --> */}
                                             </div>
                                         </div>
                                         {/* <!-- end col-lg-12 --> */}
-                                        <div class="col-lg-12">
+                                        {/* <div class="col-lg-12">
                                             <div class="input-box">
                                                 <label class="label-text d-flex align-items-center">Keywords or Tags
                                                     <i class="la la-question tip ml-1" data-toggle="tooltip" data-placement="top" title="These keywords or tags will help your listing to find in search.Maximum of 3 keywords related with your business"></i>
@@ -140,7 +145,7 @@ function AddListing() {
                                                     </select>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* <!-- end col-lg-12 --> */}
                                         <div class="col-lg-12">
                                             <div class="input-box">
@@ -2626,7 +2631,7 @@ function AddListing() {
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                                    <li><a href="add-listing.html">Add Listing</a></li>
+                                    <li><a href="add-listing">Add Listing</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
                                 </ul>

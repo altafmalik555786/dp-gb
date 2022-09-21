@@ -12,6 +12,7 @@ import img20 from "../Assets/images/img20.jpg"
 import img21 from "../Assets/images/img21.jpg"
 import img38 from "../Assets/images/img38.jpg"
 import logoBlack from "../Assets/images/logo-black.png"
+import { Link } from 'react-router-dom'
 function About() {
     return (
         <div>
@@ -1442,7 +1443,7 @@ function About() {
                                         >Log In</a
                                         >
                                     </li>
-                                    <li><a href="add-listing.html">Add Listing</a></li>
+                                    <li><Link to="add-listing">Add Listing</Link></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
                                 </ul>

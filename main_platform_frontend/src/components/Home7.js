@@ -63,7 +63,7 @@ function Home7() {
                                     <div className="logo">
                                         <a href="index.html"><img src={Logo} alt="logo" /></a>
                                         <div className="d-flex align-items-center">
-                                            <a href="add-listing.html" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
+                                            <a href="add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                                 <i className="la la-plus"></i>
                                             </a>
                                             <div className="menu-toggle">
@@ -117,7 +117,7 @@ function Home7() {
                                                                     <li><a href="career.html">career</a></li>
                                                                     <li><a href="career-details.html">career details</a></li>
                                                                     <li><a href="top-place.html">top places </a></li>
-                                                                    <li><a href="add-listing.html">add listing </a></li>
+                                                                    <li><a href="add-listing">add listing </a></li>
                                                                 </ul>
                                                             </li>
                                                             <li className="col-lg-4 mega-menu-item">
@@ -178,7 +178,7 @@ function Home7() {
                                     </div>
                                     {/* <!-- end quick-search-form --> */}
                                     <div className="nav-right-content ml-3">
-                                        <a href="add-listing.html" className="theme-btn gradient-btn shadow-none hover-scale-2 add-listing-btn-hide">
+                                        <a href="add-listing" className="theme-btn gradient-btn shadow-none hover-scale-2 add-listing-btn-hide">
                                             <i className="la la-plus mr-2"></i>Add Listing
                                         </a>
                                     </div>
@@ -1485,7 +1485,7 @@ function Home7() {
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                                    <li><a href="add-listing.html">Add Listing</a></li>
+                                    <li><a href="add-listing">Add Listing</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
                                 </ul>

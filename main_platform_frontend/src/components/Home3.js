@@ -2059,7 +2059,7 @@ function Home3() {
                   <li><i className="la la-close text-danger mr-2"></i>Featured In Search Results</li>
                 </ul>
                 <div className="price-btn-box text-center">
-                  <a href="add-listing.html" className="theme-btn bg-1 text-white">Get Started <i className="la la-arrow-right ml-2"></i></a>
+                  <a href="add-listing" className="theme-btn bg-1 text-white">Get Started <i className="la la-arrow-right ml-2"></i></a>
                 </div>
               </div>
               {/* <!-- end price-item --> */}
@@ -2090,7 +2090,7 @@ function Home3() {
                   <li><i className="la la-close text-danger mr-2"></i>Featured In Search Results</li>
                 </ul>
                 <div className="price-btn-box text-center">
-                  <a href="add-listing.html" className="theme-btn bg-2 text-white">Get Started <i className="la la-arrow-right ml-2"></i></a>
+                  <a href="add-listing" className="theme-btn bg-2 text-white">Get Started <i className="la la-arrow-right ml-2"></i></a>
                 </div>
               </div>
               {/* <!-- end price-item --> */}
@@ -2120,7 +2120,7 @@ function Home3() {
                   <li><i className="la la-close text-success mr-2"></i>Featured In Search Results</li>
                 </ul>
                 <div className="price-btn-box text-center">
-                  <a href="add-listing.html" className="theme-btn bg-3 text-white">Get Started <i className="la la-arrow-right ml-2"></i></a>
+                  <a href="add-listing" className="theme-btn bg-3 text-white">Get Started <i className="la la-arrow-right ml-2"></i></a>
                 </div>
               </div>
               {/* <!-- end price-item --> */}
@@ -2359,7 +2359,7 @@ function Home3() {
                   <li><a href="about.html">About Us</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                  <li><a href="add-listing.html">Add Listing</a></li>
+                  <li><a href="add-listing">Add Listing</a></li>
                   <li><a href="contact.html">Contact Us</a></li>
                   <li><a href="pricing.html">Pricing</a></li>
                 </ul>

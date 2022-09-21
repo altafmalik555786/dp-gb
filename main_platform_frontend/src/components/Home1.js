@@ -73,7 +73,7 @@ const Home1 = observer(() => {
   }, [])
   
 
-  // console.log("getListings", getListings)
+  console.log("getListings", getListings)
 
   return (
     <div>
