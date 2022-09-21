@@ -265,7 +265,7 @@ function DashboardMyListing() {
                                             <i className="la la-bookmark mr-2 text-gray font-size-18"></i>
                                             Bookmarks
                                         </a>
-                                        <a className="dropdown-item text-color font-size-15" href="add-listing.html">
+                                        <a className="dropdown-item text-color font-size-15" href="add-listing">
                                             <i className="la la-plus-circle mr-2 text-gray font-size-18"></i>
                                             Add Listing
                                         </a>

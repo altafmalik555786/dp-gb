@@ -16,7 +16,7 @@ const User = types.model({
 
 export const userStore = types
   .model({
-    listingData: types.maybeNull(User),
+    listingData: types.maybeNull(types.array(User)),
     loading: types.optional(types.boolean, false),
   })
   .views((self) => ({
@@ -43,8 +43,7 @@ export const userStore = types
         response = res
 
       } catch (error) {
-        const { status } = error.response
-        const { data } = error.response
+        const { status, data } = error.response
         console.log("error", error)
         throw error
       } finally {

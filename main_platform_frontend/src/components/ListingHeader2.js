@@ -42,7 +42,7 @@ function ListingHeader2() {
                                     <div className="logo">
                                         <a href="index.html"><img src={Logo} alt="logo" /></a>
                                         <div className="d-flex align-items-center">
-                                            <a href="add-listing.html" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
+                                            <a href="add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                                 <i className="la la-plus"></i>
                                             </a>
                                             <div className="menu-toggle">
@@ -96,7 +96,7 @@ function ListingHeader2() {
                                                                     <li><a href="career.html">career</a></li>
                                                                     <li><a href="career-details.html">career details</a></li>
                                                                     <li><a href="top-place.html">top places </a></li>
-                                                                    <li><a href="add-listing.html">add listing </a></li>
+                                                                    <li><a href="add-listing">add listing </a></li>
                                                                 </ul>
                                                             </li>
                                                             <li className="col-lg-4 mega-menu-item">
@@ -157,7 +157,7 @@ function ListingHeader2() {
                                     </div>
                                     {/* <!-- end quick-search-form --> */}
                                     <div className="nav-right-content ml-auto">
-                                        <a href="add-listing.html" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
+                                        <a href="add-listing" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
                                             <i className="la la-plus mr-2"></i>Add Listing
                                         </a>
                                     </div>

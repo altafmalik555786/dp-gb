@@ -2023,7 +2023,7 @@ function Home2() {
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                        <li><a href="add-listing.html">Add Listing</a></li>
+                        <li><a href="add-listing">Add Listing</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                     </ul>
