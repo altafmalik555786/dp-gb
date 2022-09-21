@@ -13,6 +13,15 @@ class UserApi extends BaseApi {
     }
   }
 
+  setListings = async (data) => {
+    try {
+      const response = await axios.post(`${baseUrl}home/listing/`, data)
+      return response.data
+    } catch (error) {
+      throw error
+    }
+  }
+
 }
 
 export default UserApi

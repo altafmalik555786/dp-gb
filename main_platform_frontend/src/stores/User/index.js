@@ -1,7 +1,6 @@
 import { toJS } from 'mobx'
 import { flow, types } from 'mobx-state-tree'
 import { userApi } from '../../api'
-import { resetStore } from 'stores/root-store'
 
 const User = types.model({
   id: types.maybeNull(types.number),
@@ -55,9 +54,26 @@ export const userStore = types
       }
     })
 
+    const setListings = flow(function* (data) {
+      let response = null
+      self.loading = true
+      try {
+        self.loading = true
+        const res = yield userApi.setListings(data)
+        response = res
+      } catch (error) {
+        const { status, data } = error.response
+        console.log("error", error)
+        throw error
+      } finally {
+        self.loading = false
+        return response
+      }
+    })
+
     return {
       loadListings,
-    
+      setListings,
     }
   })
 

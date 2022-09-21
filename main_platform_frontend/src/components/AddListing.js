@@ -2,11 +2,40 @@ import React, { useState } from 'react'
 import ListingHeader from './ListingHeader'
 import logoBlack from "../Assets/images/logo-black.png"
 import "../Assets/css/style.css"
-
+import { useStore } from 'stores/root-store'
+import { constRoute } from 'utility/constRoute'
+import { useNavigate } from 'react-router-dom'
 
 function AddListing() {
+    const navigate = useNavigate()
     const [title, setTitle] = useState("")
     const [businessType, setBusinessType] = useState("")
+    const [address, setAddress] = useState("")
+    const [webAddress, setWebAddress] = useState("")
+    const [status, setStatus] = useState(true)
+    const [rating, setRating] = useState("")
+    const [pricing, setPricing] = useState("")
+    const [icon, setIcon] = useState(null)
+    const [image, setImage] = useState(null)
+
+    const { userStore: { loadListings, setListings } } = useStore(null)
+
+    const onSubmit = () => {
+        const formData = new FormData();
+        formData.append("title", title)
+        formData.append("business_type", businessType)
+        formData.append("address", address)
+        formData.append("status", true)
+        formData.append("rating", rating)
+        formData.append("pricing", pricing)
+        formData.append("web", webAddress)
+        formData.append("icon", icon)
+        formData.append("image", image)
+
+        setListings(formData).then(res => {
+            navigate(constRoute?.home)
+        })
+    }
 
     return (
         <div>
@@ -67,7 +96,7 @@ function AddListing() {
                                 {/* <!-- end block-card-header --> */}
                                 <div class="block-card-body">
                                     <form method="post" class="form-box row">
-                                        <div class="col-lg-12">
+                                        {/* <div class="col-lg-12">
                                             <div class="input-box">
                                                 <label class="label-text">Your Email <span class="text-gray font-size-12">(optional)</span></label>
                                                 <div class="form-group">
@@ -75,9 +104,9 @@ function AddListing() {
                                                     <input class="form-control" type="email" name="email" placeholder="you@yourdomain.com" />
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* <!-- end col-lg-12 --> */}
-                                        <div class="col-lg-6">
+                                        {/* <div class="col-lg-6">
                                             <div class="input-box">
                                                 <label class="label-text">Password <span class="text-gray font-size-12">(optional)</span></label>
                                                 <div class="form-group">
@@ -86,9 +115,9 @@ function AddListing() {
                                                     <span class="font-size-12 font-weight-medium">Passwords must be at least 8 characters long.</span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* <!-- end col-lg-6 --> */}
-                                        <div class="col-lg-6">
+                                        {/* <div class="col-lg-6">
                                             <div class="input-box">
                                                 <label class="label-text">Verify Password <span class="text-gray font-size-12">(optional)</span></label>
                                                 <div class="form-group">
@@ -96,7 +125,7 @@ function AddListing() {
                                                     <input class="form-control" type="text" name="text" placeholder="Retype password" />
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* <!-- end col-lg-6 --> */}
                                         <div class="col-lg-12">
                                             <div class="input-box">
@@ -105,7 +134,7 @@ function AddListing() {
                                                 </label>
                                                 <div class="form-group">
                                                     <span class="la la-briefcase form-icon"></span>
-                                                    <input class="form-control" onChange={(e) => setTitle(e.target.value) } type="text" name="text" placeholder="Example: Super Duper Burgers" />
+                                                    <input class="form-control" onChange={(e) => setTitle(e.target.value)} type="text" name="text" placeholder="Example: Super Duper Burgers" />
                                                 </div>
                                             </div>
                                         </div>
@@ -114,16 +143,16 @@ function AddListing() {
                                             <div class="input-box">
                                                 <label class="label-text">Category</label>
                                                 <div class="form-group user-chosen-select-container">
-                                                    <select class="user-chosen-select">
+                                                    <select onChange={(e) => setBusinessType(e.target.value)} class="user-chosen-select">
                                                         <option value="0">Select a Category</option>
-                                                        <option onClick={ () => setBusinessType("Shops")}  value="1">Shops</option>
-                                                        <option onClick={ () => setBusinessType("Hotels")} value="2">Hotels</option>
-                                                        <option onClick={ () => setBusinessType("Restaurants")} value="3">Restaurants</option>
-                                                        <option onClick={ () => setBusinessType("Fitness")} value="4">Fitness</option>
-                                                        <option onClick={ () => setBusinessType("Travel")} value="5">Travel</option>
-                                                        <option onClick={ () => setBusinessType("Salons")} value="6">Salons</option>
-                                                        <option onClick={ () => setBusinessType("Event")} value="7">Event</option>
-                                                        <option onClick={ () => setBusinessType("Business")} value="8">Business</option>
+                                                        <option value="Shops"  >Shops</option>
+                                                        <option value="Hotels" >Hotels</option>
+                                                        <option value="Restaurants" >Restaurants</option>
+                                                        <option value="Fitness" >Fitness</option>
+                                                        <option value="Travel" >Travel</option>
+                                                        <option value="Salons" >Salons</option>
+                                                        <option value="Event" >Event</option>
+                                                        <option value="Business" >Business</option>
                                                     </select>
                                                 </div>
                                                 {/* <!-- end form-group --> */}
@@ -147,33 +176,54 @@ function AddListing() {
                                             </div>
                                         </div> */}
                                         {/* <!-- end col-lg-12 --> */}
-                                        <div class="col-lg-12">
+                                        {/* <div class="col-lg-12">
                                             <div class="input-box">
                                                 <label class="label-text">Description</label>
                                                 <div class="form-group">
                                                     <textarea class="message-control form-control user-text-editor" name="message"></textarea>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* <!-- end col-lg-12 --> */}
                                         <div class="col-lg-12">
                                             <div class="input-box">
-                                                <label class="label-text d-flex align-items-center">Web Address</label>
+                                                <label class="label-text d-flex align-items-center">Address</label>
                                                 <div class="form-group">
                                                     <span class="la la-globe form-icon"></span>
-                                                    <input class="form-control" type="text" name="text" placeholder="http://www.companyaddress.com" />
+                                                    <input class="form-control" onChange={(e) => setAddress(e.target.value)} type="text" name="text" placeholder="Home Town Address" />
                                                 </div>
                                             </div>
                                         </div>
                                         {/* <!-- end col-lg-12 --> */}
                                         <div class="col-lg-12">
                                             <div class="input-box">
-                                                <label class="label-text d-flex align-items-center ">Menu Web Address</label>
+                                                <label class="label-text d-flex align-items-center "> Web Address</label>
                                                 <div class="form-group mb-0">
                                                     <span class="la la-globe form-icon"></span>
-                                                    <input class="form-control" type="text" name="text" placeholder="http://www.companyaddress.com/menu.html" />
+                                                    <input class="form-control" type="text" name="text" placeholder="http://www.companyaddress.com/menu" />
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="input-box">
+                                                <label class="label-text d-flex align-items-center "> Icon Image</label>
+                                                <div class="form-group mb-0">
+                                                    <span class="la la-globe form-icon"></span>
+                                                    <input class="form-control" type="file" name="text" onChange={(e) => setIcon(e.target.files[0])} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="input-box">
+                                                <label class="label-text d-flex align-items-center ">Back Image</label>
+                                                <div class="form-group mb-0">
+                                                    <span class="la la-globe form-icon"></span>
+                                                    <input class="form-control" type="file" name="text" onChange={(e) => setImage(e.target.files[0])} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-box mt-4">
+                                            <button onClick={() => onSubmit()} type='button' class="theme-btn gradient-btn border-0">Submit Business</button>
                                         </div>
                                         {/* <!-- end col-lg-12 --> */}
                                     </form>
