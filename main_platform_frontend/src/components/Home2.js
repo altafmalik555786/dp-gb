@@ -344,7 +344,7 @@ function Home2() {
                         <div className="hero-category-item hero-category--item">
                             <a href="#" className="d-block hero-cat-link hover-y">
                                 <span className="icon-element bg-1 mx-auto"><i className="la la-building-o"></i></span>
-                                apartments
+                                apartadadadadments
                             </a>
                         </div>
                         <div className="hero-category-item hero-category--item">

@@ -1,3 +1,4 @@
+from django.db import transaction
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
@@ -17,6 +18,19 @@ class ListingViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         return self.queryset
 
+    # @transaction.atomic
+    def list(self, request, *args, **kwargs):
+        print('in list.........................')
+        return super(ListingViewSet, self).list(request)
+        # queryset = self.filter_queryset(self.get_queryset())
+        #
+        # page = self.paginate_queryset(queryset)
+        # if page is not None:
+        #     serializer = self.get_serializer(page, many=True)
+        #     return self.get_paginated_response(serializer.data)
+        #
+        # serializer = self.get_serializer(queryset, many=True)
+        # return Response({'length': len(serializer.data), 'data': serializer.data})
 
 class SpView(viewsets.ViewSet):
     http_method_names = ['post']
