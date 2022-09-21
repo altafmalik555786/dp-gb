@@ -11,7 +11,9 @@ import Logo from '../Assets/images/logo-white.png'
 import '../Assets/css/line-awesome.min.css'
 import { Link } from "react-router-dom"
 import { constRoute } from '../utility/constRoute'
+import { useStore } from 'stores/root-store'
 function Header() {
+    const { userStore: { loadListings, getListings, filteredCategory, loadCategory } } = useStore(null);
     return (
         <header className="header-area">
             <div className="header-top-bar bg-dark-opacity py-2 padding-right-30px padding-left-30px">
@@ -95,12 +97,12 @@ function Header() {
                                             <li>
                                                 <a href="#">Categories <span className="la la-angle-down"></span></a>
                                                 <ul className="dropdown-menu-item">
-                                                    <li><Link to="/listing-list">apartments</Link></li>
-                                                    <li><Link to="/listing-list">Restaurants</Link></li>
-                                                    <li><Link to="/listing-list">Travel</Link></li>
-                                                    <li><Link to="/listing-list">Events</Link></li>
-                                                    <li><Link to="/listing-list">fitness</Link></li>
-                                                    <li><Link to="/listing-list">Hotels</Link></li>
+                                                    <li><Link onClick={()=> {loadCategory('apartments')}} to="/listing-list">apartments</Link></li>
+                                                    <li><Link onClick={()=> {loadCategory('Restaurants')}} to="/listing-list">Restaurants</Link></li>
+                                                    <li><Link onClick={()=> {loadCategory('Travel')}} to="/listing-list">Travel</Link></li>
+                                                    <li><Link onClick={()=> {loadCategory('Events')}} to="/listing-list">Events</Link></li>
+                                                    <li><Link onClick={()=> {loadCategory('fitness')}} to="/listing-list">fitness</Link></li>
+                                                    <li><Link onClick={()=> {loadCategory('Hotels')}} to="/listing-list">Hotels</Link></li>
 
                                                 </ul>
                                             </li>

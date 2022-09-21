@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import catImg from "../Assets/images/cat-img.jpg"
 import catImg2 from "../Assets/images/cat-img-2.jpg"
 import catImg3 from "../Assets/images/cat-img-3.jpg"
@@ -67,10 +67,13 @@ import { observer } from 'mobx-react'
 
 const Home1 = observer(() => {
   const { userStore: { loadListings, getListings } } = useStore(null)
-
+  const [listing, setListing] = useState([]);
   useEffect(() => {
     loadListings()
-  }, [])
+  }, []);
+  useEffect(()=>{
+    setListing(getListings?.splice(0, 3));
+  },[getListings])
   
 
   console.log("getListings", getListings)
@@ -899,7 +902,7 @@ const Home1 = observer(() => {
           </div>
           {/* <!-- end row --> */}
           <div className="row padding-top-60px">
-            {getListings?.map(item=>(
+            {listing?.map(item=>(
               <div className="col-lg-4 responsive-column">
               <div className="card-item">
                 <div className="card-image">
@@ -969,10 +972,10 @@ const Home1 = observer(() => {
           </div>
           {/* <!-- end row --> */}
           <div className="more-link-wrap text-right">
-            <a href="#" className="btn-text font-weight-medium"
+            <Link to="/listing-grid" className="btn-text font-weight-medium"
             >View more hot and new businesses
               <i className="la la-arrow-right icon"></i
-              ></a>
+              ></Link>
           </div>
         </div>
         {/* <!-- end container --> */}
@@ -2765,7 +2768,7 @@ const Home1 = observer(() => {
                 >
                   <div className="custom-checkbox">
                     <input type="checkbox" id="keepMeSignedChb" />
-                    <label for="keepMeSignedChb" className="font-size-14"
+                    <label className="font-size-14"
                     >Keep me signed in</label
                     >
                   </div>

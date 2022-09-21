@@ -13,22 +13,26 @@ import anywhere from "../Assets/images/anywhere.png"
 import logoBlack from "../Assets/images/logo-black.png"
 import sketch from "../Assets/images/sketch.png"
 import fillSign from "../Assets/images/fill-sign.png"
+import { Link } from 'react-router-dom'
+import { useStore } from 'stores/root-store'
 function ListingGrid() {
+    const { userStore: { loadListings, getListings, filteredCategory } } = useStore(null)
+
     return (
         <div>
             <ListingHeader />
             {/* <!-- ================================
     START BREADCRUMB AREA
 ================================= --> */}
-            <section class="breadcrumb-area bread-bg bread-overlay overflow-hidden">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between">
-                                <div class="section-heading">
-                                    <h2 class="sec__title text-white font-size-40 mb-0">Listing Grid</h2>
+            <section className="breadcrumb-area bread-bg bread-overlay overflow-hidden">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between">
+                                <div className="section-heading">
+                                    <h2 className="sec__title text-white font-size-40 mb-0">Listing Grid</h2>
                                 </div>
-                                <ul class="list-items bread-list">
+                                <ul className="list-items bread-list">
                                     <li><a href="index.html">Home</a></li>
                                     <li>Listings</li>
                                     <li>Listing Grid</li>
@@ -41,9 +45,9 @@ function ListingGrid() {
                     {/* <!-- end row --> */}
                 </div>
                 {/* <!-- end container --> */}
-                <div class="bread-svg">
+                <div className="bread-svg">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="50px" viewBox="0 0 1200 150" preserveAspectRatio="none">
-                        <g><path fill-opacity="0.2" d="M0,150 C600,100 1000,50 1200,-1.13686838e-13 C1200,6.8027294 1200,56.8027294 1200,150 L0,150 Z"></path></g><g class="pix-waiting animated" data-anim-type="fade-in-up" data-anim-delay="300"><path fill="rgba(255,255,255,0.8)" d="M0,150 C600,120 1000,80 1200,30 C1200,36.8027294 1200,76.8027294 1200,150 L0,150 Z"></path></g><path fill="#fff" d="M0,150 C600,136.666667 1000,106.666667 1200,60 C1200,74 1200,104 1200,150 L0,150 Z"></path><defs></defs>
+                        <g><path fill-opacity="0.2" d="M0,150 C600,100 1000,50 1200,-1.13686838e-13 C1200,6.8027294 1200,56.8027294 1200,150 L0,150 Z"></path></g><g className="pix-waiting animated" data-anim-type="fade-in-up" data-anim-delay="300"><path fill="rgba(255,255,255,0.8)" d="M0,150 C600,120 1000,80 1200,30 C1200,36.8027294 1200,76.8027294 1200,150 L0,150 Z"></path></g><path fill="#fff" d="M0,150 C600,136.666667 1000,106.666667 1200,60 C1200,74 1200,104 1200,150 L0,150 Z"></path><defs></defs>
                     </svg>
                 </div>
                 {/* <!-- end bread-svg --> */}
@@ -56,18 +60,18 @@ function ListingGrid() {
 <!-- ================================
     START CARD AREA
 ================================= --> */}
-            <section class="card-area section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="filter-bar d-flex flex-wrap justify-content-between align-items-center margin-bottom-30px">
-                                <p class="result-text font-weight-medium">Showing 1 to 6 of 30 entries</p>
-                                <div class="filter-bar-action d-flex flex-wrap align-items-center">
-                                    <a href="#" class="search-filter" data-toggle="modal" data-target="#searchFilterModal">
-                                        <i class="la la-sliders mr-1"></i>Detailed Search
+            <section className="card-area section-padding">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="filter-bar d-flex flex-wrap justify-content-between align-items-center margin-bottom-30px">
+                                <p className="result-text font-weight-medium">Showing 1 to 6 of 30 entries</p>
+                                <div className="filter-bar-action d-flex flex-wrap align-items-center">
+                                    <a href="#" className="search-filter" data-toggle="modal" data-target="#searchFilterModal">
+                                        <i className="la la-sliders mr-1"></i>Detailed Search
                                     </a>
-                                    <div class="user-chosen-select-container ml-3">
-                                        <select class="user-chosen-select">
+                                    <div className="user-chosen-select-container ml-3">
+                                        <select className="user-chosen-select">
                                             <option value="sort-by-default">Sort by default</option>
                                             <option value="high-rated">High Rated</option>
                                             <option value="most-reviewed">Most Reviewed</option>
@@ -79,9 +83,9 @@ function ListingGrid() {
                                             <option value="all-listings">Random</option>
                                         </select>
                                     </div>
-                                    <ul class="filter-nav ml-1">
-                                        <li><a href="listing-grid.html" data-toggle="tooltip" data-placement="top" title="Grid View" class="active"><span class="la la-th-large"></span></a></li>
-                                        <li><a href="listing-list.html" data-toggle="tooltip" data-placement="top" title="List View"><span class="la la-list"></span></a></li>
+                                    <ul className="filter-nav ml-1">
+                                        <li><a href="listing-grid.html" data-toggle="tooltip" data-placement="top" title="Grid View" className="active"><span className="la la-th-large"></span></a></li>
+                                        <li><a href="listing-list.html" data-toggle="tooltip" data-placement="top" title="List View"><span className="la la-list"></span></a></li>
                                     </ul>
                                 </div>
                                 {/* <!-- end filter-bar-action --> */}
@@ -91,327 +95,110 @@ function ListingGrid() {
                         {/* <!-- end col-lg-12 --> */}
                     </div>
                     {/* <!-- end row --> */}
-                    <div class="row">
-                        <div class="col-lg-4 responsive-column">
-                            <div class="card-item">
-                                <div class="card-image">
-                                    <a href="listing-details.html" class="d-block">
-                                        <img src={img4} data-src={img4} class="card__img lazy" alt="" />
-                                        <span class="badge">now open</span>
-                                    </a>
-                                    <span class="bookmark-btn" data-toggle="tooltip" data-placement="top" title="Save">
-                                        <i class="la la-bookmark"></i>
-                                    </span>
+                    <div className="row">
+
+                        {filteredCategory?.map(item => (
+                            <div className="col-lg-4 responsive-column">
+                                <div className="card-item">
+                                    <div className="card-image">
+                                        <Link to="/listing-details" className="d-block">
+                                            <img
+                                                src={item?.image ? item?.image : img8}
+                                                data-src={item?.image ? item?.image : img8}
+                                                className="card__img lazy"
+                                                alt=""
+                                            />
+                                        </Link>
+                                    </div>
+                                    <div className="card-content">
+                                        <a
+                                            href="#"
+                                            className="user-thumb d-inline-block"
+                                            data-toggle="tooltip"
+                                            data-placement="top"
+                                            title="TechyDevs"
+                                        >
+                                            <img src={item?.icon ? item?.icon : sketch} alt="author-img" />
+                                        </a>
+                                        <h4 className="card-title pt-3">
+                                            <Link to="/listing-details">{item?.title ? item?.title : 'N/A'}</Link>
+                                            <i
+                                                className="la la-check-circle ml-1"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Claimed"
+                                            ></i>
+                                        </h4>
+                                        <p className="card-sub">
+                                            <a href="#"
+                                            ><i className="la la-map-marker mr-1 text-color-2"></i>{item?.address ? item?.address : 'N/A'}</a>
+                                        </p>
+                                        <ul className="listing-meta d-flex align-items-center">
+                                            <li className="d-flex align-items-center">
+                                                <span className="rate flex-shrink-0">{item?.rating ? item?.rating : 3.3}</span>
+                                                <span className="rate-text">5 reviews</span>
+                                            </li>
+                                            <li>
+                                                <span
+                                                    className="price-range"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Pricey"
+                                                >
+                                                    <strong className="font-weight-medium">${item?.pricing ? item?.pricing : 14.75}</strong>
+                                                </span>
+                                            </li>
+                                            <li className="d-flex align-items-center">
+                                                <i className="la la-cutlery mr-1 listing-icon"></i
+                                                ><a href="#" className="listing-cat-link">{item?.business_type ? item?.business_type : 'N/A'}</a>
+                                            </li>
+                                        </ul>
+                                        <ul className="info-list padding-top-20px">
+                                            <li>
+                                                <span className="la la-calendar-check-o icon"></span>
+                                                {item?.created ? item?.created : 'N/A'}
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <a href="#" class="user-thumb d-inline-block" data-toggle="tooltip" data-placement="top" title="TechyDevs">
-                                        <img src={listingLogo} alt="author-img" />
-                                    </a>
-                                    <h4 class="card-title pt-3">
-                                        <a href="listing-details.html">Favorite Place Food Bank</a>
-                                        <i class="la la-check-circle ml-1" data-toggle="tooltip" data-placement="top" title="Claimed"></i>
-                                    </h4>
-                                    <p class="card-sub"><a href="#"><i class="la la-map-marker mr-1 text-color-2"></i>Bishop Avenue, New York</a></p>
-                                    <ul class="listing-meta d-flex align-items-center">
-                                        <li class="d-flex align-items-center">
-                                            <span class="rate flex-shrink-0">4.7</span>
-                                            <span class="rate-text">5 Ratings</span>
-                                        </li>
-                                        <li>
-                                            <span class="price-range" data-toggle="tooltip" data-placement="top" title="Pricey">
-                                                <strong class="font-weight-medium">$</strong>
-                                                <strong class="font-weight-medium">$</strong>
-                                                <strong class="font-weight-medium">$</strong>
-                                            </span>
-                                        </li>
-                                        <li class="d-flex align-items-center">
-                                            <i class="la la-cutlery mr-1 listing-icon"></i><a href="#" class="listing-cat-link">Restaurant</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="info-list padding-top-20px">
-                                        <li><span class="la la-link icon"></span>
-                                            <a href="#"> www.techydevs.com</a>
-                                        </li>
-                                        <li><span class="la la-calendar-check-o icon"></span>
-                                            Opened 1 month ago
-                                        </li>
-                                    </ul>
-                                </div>
+                                {/* <!-- end card-item --> */}
                             </div>
-                            {/* <!-- end card-item --> */}
-                        </div>
-                        {/* <!-- end col-lg-4 --> */}
-                        <div class="col-lg-4 responsive-column">
-                            <div class="card-item">
-                                <div class="card-image">
-                                    <a href="listing-details.html" class="d-block">
-                                        <img src={img5} data-src={img5} class="card__img lazy" alt="" />
-                                        <span class="badge bg-10">closed</span>
-                                    </a>
-                                    <span class="bookmark-btn" data-toggle="tooltip" data-placement="top" title="Save">
-                                        <i class="la la-bookmark"></i>
-                                    </span>
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="user-thumb d-inline-block" data-toggle="tooltip" data-placement="top" title="TechyDevs">
-                                        <img src={listingLogo2} alt="author-img" />
-                                    </a>
-                                    <h4 class="card-title pt-3">
-                                        <a href="listing-details.html">Beach Blue Boardwalk</a>
-                                    </h4>
-                                    <p class="card-sub"><a href="#"><i class="la la-map-marker mr-1 text-color-2"></i>Bishop Avenue, New York</a></p>
-                                    <ul class="listing-meta d-flex align-items-center">
-                                        <li class="d-flex align-items-center">
-                                            <span class="rate flex-shrink-0">4.7</span>
-                                            <span class="rate-text">5 Ratings</span>
-                                        </li>
-                                        <li>
-                                            <span class="price-range" data-toggle="tooltip" data-placement="top" title="Moderate">
-                                                <strong class="font-weight-medium">$</strong>
-                                                <strong class="font-weight-medium">$</strong>
-                                            </span>
-                                        </li>
-                                        <li class="d-flex align-items-center">
-                                            <i class="la la-plane mr-1 listing-icon"></i><a href="#" class="listing-cat-link">Travel</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="info-list padding-top-20px">
-                                        <li><span class="la la-link icon"></span>
-                                            <a href="#"> www.techydevs.com</a>
-                                        </li>
-                                        <li><span class="la la-calendar-check-o icon"></span>
-                                            Opened 1 month ago
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {/* <!-- end card-item --> */}
-                        </div>
-                        {/* <!-- end col-lg-4 --> */}
-                        <div class="col-lg-4 responsive-column">
-                            <div class="card-item">
-                                <div class="card-image">
-                                    <a href="listing-details.html" class="d-block">
-                                        <img src={img6} data-src={img6} class="card__img lazy" alt="" />
-                                        <span class="badge">Now Open</span>
-                                    </a>
-                                    <span class="bookmark-btn" data-toggle="tooltip" data-placement="top" title="Save">
-                                        <i class="la la-bookmark"></i>
-                                    </span>
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="user-thumb d-inline-block" data-toggle="tooltip" data-placement="top" title="TechyDevs">
-                                        <img src={listingLogo3} alt="author-img" />
-                                    </a>
-                                    <h4 class="card-title pt-3">
-                                        <a href="listing-details.html">Hotel Govendor</a>
-                                    </h4>
-                                    <p class="card-sub"><a href="#"><i class="la la-map-marker mr-1 text-color-2"></i>Bishop Avenue, New York</a></p>
-                                    <ul class="listing-meta d-flex align-items-center">
-                                        <li class="d-flex align-items-center">
-                                            <span class="rate flex-shrink-0">4.7</span>
-                                            <span class="rate-text">5 Ratings</span>
-                                        </li>
-                                        <li>
-                                            <span class="price-range" data-toggle="tooltip" data-placement="top" title="Inexpensive">
-                                                <strong class="font-weight-medium">$</strong>
-                                            </span>
-                                        </li>
-                                        <li class="d-flex align-items-center">
-                                            <i class="la la-hotel mr-1 listing-icon"></i><a href="#" class="listing-cat-link">Hotels</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="info-list padding-top-20px">
-                                        <li><span class="la la-link icon"></span>
-                                            <a href="#"> www.techydevs.com</a>
-                                        </li>
-                                        <li><span class="la la-calendar-check-o icon"></span>
-                                            Opened 1 month ago
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {/* <!-- end card-item --> */}
-                        </div>
-                        {/* <!-- end col-lg-4 --> */}
-                        <div class="col-lg-4 responsive-column">
-                            <div class="card-item">
-                                <div class="card-image">
-                                    <a href="listing-details.html" class="d-block">
-                                        <img src={img7} data-src={img7} class="card__img lazy" alt="" />
-                                        <span class="badge">now open</span>
-                                    </a>
-                                    <span class="bookmark-btn" data-toggle="tooltip" data-placement="top" title="Save">
-                                        <i class="la la-bookmark"></i>
-                                    </span>
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="user-thumb d-inline-block" data-toggle="tooltip" data-placement="top" title="TechyDevs">
-                                        <img src={anywhere} alt="author-img" />
-                                    </a>
-                                    <h4 class="card-title pt-3">
-                                        <a href="listing-details.html">Sticky band party</a>
-                                        <i class="la la-check-circle ml-1" data-toggle="tooltip" data-placement="top" title="Claimed"></i>
-                                    </h4>
-                                    <p class="card-sub"><a href="#"><i class="la la-map-marker mr-1 text-color-2"></i>Bishop Avenue, New York</a></p>
-                                    <ul class="listing-meta d-flex align-items-center">
-                                        <li class="d-flex align-items-center">
-                                            <span class="rate flex-shrink-0">4.7</span>
-                                            <span class="rate-text">5 Ratings</span>
-                                        </li>
-                                        <li>
-                                            <span class="price-range" data-toggle="tooltip" data-placement="top" title="Pricey">
-                                                <strong class="font-weight-medium">$</strong>
-                                                <strong class="font-weight-medium">$</strong>
-                                                <strong class="font-weight-medium">$</strong>
-                                            </span>
-                                        </li>
-                                        <li class="d-flex align-items-center">
-                                            <i class="la la-music mr-1 listing-icon"></i><a href="#" class="listing-cat-link">Event</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="info-list padding-top-20px">
-                                        <li><span class="la la-link icon"></span>
-                                            <a href="#"> www.techydevs.com</a>
-                                        </li>
-                                        <li><span class="la la-calendar-check-o icon"></span>
-                                            Opened 1 month ago
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {/* <!-- end card-item --> */}
-                        </div>
-                        {/* <!-- end col-lg-4 --> */}
-                        <div class="col-lg-4 responsive-column">
-                            <div class="card-item">
-                                <div class="card-image">
-                                    <a href="listing-details.html" class="d-block">
-                                        <img src={img8} data-src={img8} class="card__img lazy" alt="" />
-                                        <span class="badge bg-10">closed</span>
-                                    </a>
-                                    <span class="bookmark-btn" data-toggle="tooltip" data-placement="top" title="Save">
-                                        <i class="la la-bookmark"></i>
-                                    </span>
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="user-thumb d-inline-block" data-toggle="tooltip" data-placement="top" title="TechyDevs">
-                                        <img src={sketch} alt="author-img" />
-                                    </a>
-                                    <h4 class="card-title pt-3">
-                                        <a href="listing-details.html">Sena clothing shopping mall</a>
-                                    </h4>
-                                    <p class="card-sub"><a href="#"><i class="la la-map-marker mr-1 text-color-2"></i>Bishop Avenue, New York</a></p>
-                                    <ul class="listing-meta d-flex align-items-center">
-                                        <li class="d-flex align-items-center">
-                                            <span class="rate flex-shrink-0">4.7</span>
-                                            <span class="rate-text">5 Ratings</span>
-                                        </li>
-                                        <li>
-                                            <span class="price-range" data-toggle="tooltip" data-placement="top" title="Ultra High">
-                                                <strong class="font-weight-medium">$</strong>
-                                                <strong class="font-weight-medium">$</strong>
-                                                <strong class="font-weight-medium">$</strong>
-                                                <strong class="font-weight-medium">$</strong>
-                                            </span>
-                                        </li>
-                                        <li class="d-flex align-items-center">
-                                            <i class="la la-shopping-cart mr-1 listing-icon"></i><a href="#" class="listing-cat-link">Shop</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="info-list padding-top-20px">
-                                        <li><span class="la la-link icon"></span>
-                                            <a href="#"> www.techydevs.com</a>
-                                        </li>
-                                        <li><span class="la la-calendar-check-o icon"></span>
-                                            Opened 1 month ago
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {/* <!-- end card-item --> */}
-                        </div>
-                        {/* <!-- end col-lg-4 --> */}
-                        <div class="col-lg-4 responsive-column">
-                            <div class="card-item">
-                                <div class="card-image">
-                                    <a href="listing-details.html" class="d-block">
-                                        <img src={img9} data-src={img9} class="card__img lazy" alt="" />
-                                        <span class="badge">Now open</span>
-                                    </a>
-                                    <span class="bookmark-btn" data-toggle="tooltip" data-placement="top" title="Save">
-                                        <i class="la la-bookmark"></i>
-                                    </span>
-                                </div>
-                                <div class="card-content">
-                                    <a href="#" class="user-thumb d-inline-block" data-toggle="tooltip" data-placement="top" title="TechyDevs">
-                                        <img src={fillSign} alt="author-img" />
-                                    </a>
-                                    <h4 class="card-title pt-3">
-                                        <a href="listing-details.html">Hotel Govendor</a>
-                                    </h4>
-                                    <p class="card-sub"><a href="#"><i class="la la-map-marker mr-1 text-color-2"></i>Bishop Avenue, New York</a></p>
-                                    <ul class="listing-meta d-flex align-items-center">
-                                        <li class="d-flex align-items-center">
-                                            <span class="rate flex-shrink-0">4.7</span>
-                                            <span class="rate-text">5 Ratings</span>
-                                        </li>
-                                        <li>
-                                            <span class="price-range" data-toggle="tooltip" data-placement="top" title="Inexpensive">
-                                                <strong class="font-weight-medium">$</strong>
-                                            </span>
-                                        </li>
-                                        <li class="d-flex align-items-center">
-                                            <i class="la la-hotel mr-1 listing-icon"></i><a href="#" class="listing-cat-link">Hotels</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="info-list padding-top-20px">
-                                        <li><span class="la la-link icon"></span>
-                                            <a href="#"> www.techydevs.com</a>
-                                        </li>
-                                        <li><span class="la la-calendar-check-o icon"></span>
-                                            Opened 1 month ago
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            {/* <!-- end card-item --> */}
-                        </div>
-                        {/* <!-- end col-lg-4 --> */}
+                        ))}
+
                     </div>
                     {/* <!-- end row --> */}
-                    <div class="row">
-                        <div class="col-lg-12 pt-3 text-center">
-                            <div class="pagination-wrapper d-inline-block">
-                                <div class="section-pagination">
+                    <div className="row">
+                        <div className="col-lg-12 pt-3 text-center">
+                            <div className="pagination-wrapper d-inline-block">
+                                <div className="section-pagination">
                                     <nav aria-label="Page navigation">
-                                        <ul class="pagination flex-wrap justify-content-center">
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Previous">
-                                                    <span aria-hidden="true"><i class="la la-angle-left"></i></span>
-                                                    <span class="sr-only">Previous</span>
+                                        <ul className="pagination flex-wrap justify-content-center">
+                                            <li className="page-item">
+                                                <a className="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true"><i className="la la-angle-left"></i></span>
+                                                    <span className="sr-only">Previous</span>
                                                 </a>
                                             </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link page-link-active" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true"><i class="la la-angle-right"></i></span>
-                                                    <span class="sr-only">Next</span>
+                                            <li className="page-item"><a className="page-link page-link-active" href="#">1</a></li>
+                                            <li className="page-item"><a className="page-link" href="#">2</a></li>
+                                            <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                            <li className="page-item"><a className="page-link" href="#">4</a></li>
+                                            <li className="page-item">
+                                                <a className="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true"><i className="la la-angle-right"></i></span>
+                                                    <span className="sr-only">Next</span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </nav>
                                 </div>
                                 {/* <!-- end section-pagination --> */}
-                                <ul class="pagination-simple d-flex align-items-center justify-content-center pt-3">
-                                    <li class="mr-4">
-                                        <a href="#" class="pagination-simple-nav first-nav"><i class="la la-long-arrow-left mr-1"></i>First</a>
+                                <ul className="pagination-simple d-flex align-items-center justify-content-center pt-3">
+                                    <li className="mr-4">
+                                        <a href="#" className="pagination-simple-nav first-nav"><i className="la la-long-arrow-left mr-1"></i>First</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="pagination-simple-nav last-nav active">Last<i class="la la-long-arrow-right ml-1"></i></a>
+                                        <a href="#" className="pagination-simple-nav last-nav active">Last<i className="la la-long-arrow-right ml-1"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -430,25 +217,25 @@ function ListingGrid() {
 <!-- ================================
        START FOOTER AREA
 ================================= --> */}
-            <section class="footer-area bg-gradient-gray padding-top-30px padding-bottom-30px position-relative">
-                <span class="circle-bg circle-bg-3 position-absolute"></span>
-                <span class="circle-bg circle-bg-4 position-absolute"></span>
-                <span class="circle-bg circle-bg-5 position-absolute"></span>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="cta-content d-flex align-items-center justify-content-between p-0">
-                                <div class="section-heading">
-                                    <h2 class="sec__title mb-0 font-size-24 line-height-30">Don't miss your monthly offer</h2>
-                                    <p class="sec__desc font-size-16">Subscribe to get latest updates and information.</p>
+            <section className="footer-area bg-gradient-gray padding-top-30px padding-bottom-30px position-relative">
+                <span className="circle-bg circle-bg-3 position-absolute"></span>
+                <span className="circle-bg circle-bg-4 position-absolute"></span>
+                <span className="circle-bg circle-bg-5 position-absolute"></span>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="cta-content d-flex align-items-center justify-content-between p-0">
+                                <div className="section-heading">
+                                    <h2 className="sec__title mb-0 font-size-24 line-height-30">Don't miss your monthly offer</h2>
+                                    <p className="sec__desc font-size-16">Subscribe to get latest updates and information.</p>
                                 </div>
                                 {/* <!-- end section-heading --> */}
-                                <form method="post" class="form-box">
-                                    <div class="form-group mb-0">
-                                        <span class="la la-envelope-o form-icon"></span>
-                                        <input class="form-control form-control-styled form-control-long" type="email" placeholder="Enter your email" />
-                                        <p class="font-size-12 font-weight-medium pt-1"><i class="la la-lock mr-1"></i>Your are 100% protected</p>
-                                        <button class="theme-btn gradient-btn subscribe-btn input-btn-append border-0" type="submit">Subscribe <i class="la la-arrow-right ml-1"></i></button>
+                                <form method="post" className="form-box">
+                                    <div className="form-group mb-0">
+                                        <span className="la la-envelope-o form-icon"></span>
+                                        <input className="form-control form-control-styled form-control-long" type="email" placeholder="Enter your email" />
+                                        <p className="font-size-12 font-weight-medium pt-1"><i className="la la-lock mr-1"></i>Your are 100% protected</p>
+                                        <button className="theme-btn gradient-btn subscribe-btn input-btn-append border-0" type="submit">Subscribe <i className="la la-arrow-right ml-1"></i></button>
                                     </div>
                                 </form>
                             </div>
@@ -457,29 +244,29 @@ function ListingGrid() {
                         {/* <!-- end col-lg-12 --> */}
                     </div>
                     {/* <!-- end row --> */}
-                    <div class="section-block-2 margin-top-30px margin-bottom-40px"></div>
-                    <div class="row">
-                        <div class="col-lg-3 responsive-column">
-                            <div class="footer-item">
-                                <div class="footer-logo">
-                                    <a href="index.html" class="foot-logo"><img src={logoBlack} alt="logo" /></a>
+                    <div className="section-block-2 margin-top-30px margin-bottom-40px"></div>
+                    <div className="row">
+                        <div className="col-lg-3 responsive-column">
+                            <div className="footer-item">
+                                <div className="footer-logo">
+                                    <a href="index.html" className="foot-logo"><img src={logoBlack} alt="logo" /></a>
                                 </div>
                                 {/* <!-- end footer-logo --> */}
-                                <p class="footer__desc">
+                                <p className="footer__desc">
                                     Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros culpa officia deserunt mollit.
                                 </p>
-                                <p class="footer__desc">
-                                    <a href="#" class="btn-text">View on the map <i class="la la-arrow-right icon"></i></a>
+                                <p className="footer__desc">
+                                    <a href="#" className="btn-text">View on the map <i className="la la-arrow-right icon"></i></a>
                                 </p>
                             </div>
                             {/* <!-- end footer-item --> */}
                         </div>
                         {/* <!-- end col-lg-3 --> */}
-                        <div class="col-lg-3 responsive-column">
-                            <div class="footer-item">
-                                <h4 class="footer__title">Quick Links</h4>
-                                <div class="stroke-shape mb-3"></div>
-                                <ul class="list-items">
+                        <div className="col-lg-3 responsive-column">
+                            <div className="footer-item">
+                                <h4 className="footer__title">Quick Links</h4>
+                                <div className="stroke-shape mb-3"></div>
+                                <ul className="list-items">
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
@@ -491,11 +278,11 @@ function ListingGrid() {
                             {/* <!-- end footer-item --> */}
                         </div>
                         {/* <!-- end col-lg-3 --> */}
-                        <div class="col-lg-3 responsive-column">
-                            <div class="footer-item">
-                                <h4 class="footer__title">Categories</h4>
-                                <div class="stroke-shape mb-3"></div>
-                                <ul class="list-items">
+                        <div className="col-lg-3 responsive-column">
+                            <div className="footer-item">
+                                <h4 className="footer__title">Categories</h4>
+                                <div className="stroke-shape mb-3"></div>
+                                <ul className="list-items">
                                     <li><a href="#">Shops</a></li>
                                     <li><a href="#">Hotels</a></li>
                                     <li><a href="#">Restaurants</a></li>
@@ -507,14 +294,14 @@ function ListingGrid() {
                             {/* <!-- end footer-item --> */}
                         </div>
                         {/* <!-- end col-lg-3 --> */}
-                        <div class="col-lg-3 responsive-column">
-                            <div class="footer-item">
-                                <h4 class="footer__title">Contact with Us</h4>
-                                <div class="stroke-shape mb-3"></div>
-                                <ul class="list-items contact-links">
-                                    <li><span class="d-block text-color mb-1"><i class="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
-                                    <li><span class="d-block text-color mb-1"><i class="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                                    <li><span class="d-block text-color mb-1"><i class="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                        <div className="col-lg-3 responsive-column">
+                            <div className="footer-item">
+                                <h4 className="footer__title">Contact with Us</h4>
+                                <div className="stroke-shape mb-3"></div>
+                                <ul className="list-items contact-links">
+                                    <li><span className="d-block text-color mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
+                                    <li><span className="d-block text-color mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
+                                    <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
                                 </ul>
                             </div>
                             {/* <!-- end footer-item --> */}
@@ -522,34 +309,34 @@ function ListingGrid() {
                         {/* <!-- end col-lg-3 --> */}
                     </div>
                     {/* <!-- end row --> */}
-                    <div class="row pt-4 align-items-center footer-action-wrap">
-                        <div class="col-lg-4">
-                            <ul class="social-profile social-profile-colored">
-                                <li><a href="#" class="facebook-bg"><i class="lab la-facebook-f"></i></a></li>
-                                <li><a href="#" class="twitter-bg"><i class="lab la-twitter"></i></a></li>
-                                <li><a href="#" class="instagram-bg"><i class="lab la-instagram"></i></a></li>
-                                <li><a href="#" class="dribbble-bg"><i class="la la-dribbble"></i></a></li>
-                                <li><a href="#" class="behance-bg"><i class="lab la-behance"></i></a></li>
+                    <div className="row pt-4 align-items-center footer-action-wrap">
+                        <div className="col-lg-4">
+                            <ul className="social-profile social-profile-colored">
+                                <li><a href="#" className="facebook-bg"><i className="lab la-facebook-f"></i></a></li>
+                                <li><a href="#" className="twitter-bg"><i className="lab la-twitter"></i></a></li>
+                                <li><a href="#" className="instagram-bg"><i className="lab la-instagram"></i></a></li>
+                                <li><a href="#" className="dribbble-bg"><i className="la la-dribbble"></i></a></li>
+                                <li><a href="#" className="behance-bg"><i className="lab la-behance"></i></a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-8">
-                            <ul class="list-items term-list text-right">
+                        <div className="col-lg-8">
+                            <ul className="list-items term-list text-right">
                                 <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
                                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="section-block-2 margin-top-30px margin-bottom-30px"></div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="copy-right d-flex align-items-center justify-content-between">
-                                <p class="copy__desc">
+                    <div className="section-block-2 margin-top-30px margin-bottom-30px"></div>
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="copy-right d-flex align-items-center justify-content-between">
+                                <p className="copy__desc">
                                     &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
-                                    <span class="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
+                                    <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                                 </p>
-                                <div class="footer-chosen-container user-chosen-select-container d-flex align-items-center justify-content-end">
-                                    <div class="mr-2">
-                                        <select class="user-chosen-select">
+                                <div className="footer-chosen-container user-chosen-select-container d-flex align-items-center justify-content-end">
+                                    <div className="mr-2">
+                                        <select className="user-chosen-select">
                                             <option value="1" selected>English</option>
                                             <option value="2">Espanol</option>
                                             <option value="3">Deutsch</option>
@@ -563,7 +350,7 @@ function ListingGrid() {
                                         </select>
                                     </div>
                                     <div>
-                                        <select class="user-chosen-select">
+                                        <select className="user-chosen-select">
                                             <option value="1">Argentina</option>
                                             <option value="2">Australia</option>
                                             <option value="3">Canada</option>
@@ -598,75 +385,75 @@ function ListingGrid() {
 
             {/* <!-- start back-to-top --> */}
             <div id="back-to-top">
-                <i class="la la-arrow-up" title="Go top"></i>
+                <i className="la la-arrow-up" title="Go top"></i>
             </div>
             {/* <!-- end back-to-top --> */}
 
             {/* <!-- Modal --> */}
-            <div class="modal fade modal-container login-form" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header align-items-center mh-bg">
-                            <h5 class="modal-title" id="loginModalTitle">Hey, Welcome back!</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" class="la la-times-circle"></span>
+            <div className="modal fade modal-container login-form" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header align-items-center mh-bg">
+                            <h5 className="modal-title" id="loginModalTitle">Hey, Welcome back!</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" className="la la-times-circle"></span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <form method="post" class="form-box">
-                                <div class="input-box">
-                                    <label class="label-text">Username or email</label>
-                                    <div class="form-group">
-                                        <span class="la la-user form-icon"></span>
-                                        <input class="form-control form-control-styled" type="text" name="text" placeholder="Username or email address" />
+                        <div className="modal-body">
+                            <form method="post" className="form-box">
+                                <div className="input-box">
+                                    <label className="label-text">Username or email</label>
+                                    <div className="form-group">
+                                        <span className="la la-user form-icon"></span>
+                                        <input className="form-control form-control-styled" type="text" name="text" placeholder="Username or email address" />
                                     </div>
                                 </div>
-                                <div class="input-box">
-                                    <label class="label-text">Password</label>
-                                    <div class="form-group">
-                                        <span class="la la-lock form-icon"></span>
-                                        <input class="form-control form-control-styled" type="text" name="text" placeholder="Enter password" />
+                                <div className="input-box">
+                                    <label className="label-text">Password</label>
+                                    <div className="form-group">
+                                        <span className="la la-lock form-icon"></span>
+                                        <input className="form-control form-control-styled" type="text" name="text" placeholder="Enter password" />
                                     </div>
                                 </div>
-                                <div class="input-box d-flex align-items-center justify-content-between pb-4 user-action-meta">
-                                    <div class="custom-checkbox">
+                                <div className="input-box d-flex align-items-center justify-content-between pb-4 user-action-meta">
+                                    <div className="custom-checkbox">
                                         <input type="checkbox" id="keepMeSignedChb" />
-                                        <label for="keepMeSignedChb" class="font-size-14">Keep me signed in</label>
+                                        <label for="keepMeSignedChb" className="font-size-14">Keep me signed in</label>
                                     </div>
-                                    <a href="javascript:void(0)" class="margin-bottom-10px lost-pass-btn font-size-14">Lost Password?</a>
+                                    <a href="javascript:void(0)" className="margin-bottom-10px lost-pass-btn font-size-14">Lost Password?</a>
                                 </div>
-                                <div class="btn-box">
-                                    <button type="submit" class="theme-btn gradient-btn w-100">
-                                        <i class="la la-sign-in mr-1"></i> Login to Account
+                                <div className="btn-box">
+                                    <button type="submit" className="theme-btn gradient-btn w-100">
+                                        <i className="la la-sign-in mr-1"></i> Login to Account
                                     </button>
-                                    <p class="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        New to Listhub? <a class="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                                    <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
+                                        New to Listhub? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                                     </p>
                                 </div>
-                                <div class="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
+                                <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
                                     OR
                                 </div>
-                                <div class="text-center">
-                                    <p class="font-size-15 font-weight-medium">Login with your social network</p>
-                                    <ul class="social-profile social-profile-colored py-3">
+                                <div className="text-center">
+                                    <p className="font-size-15 font-weight-medium">Login with your social network</p>
+                                    <ul className="social-profile social-profile-colored py-3">
                                         <li>
-                                            <a href="#" class="google-bg mx-1" data-toggle="tooltip" data-placement="top" title="Google">
-                                                <i class="lab la-google"></i>
+                                            <a href="#" className="google-bg mx-1" data-toggle="tooltip" data-placement="top" title="Google">
+                                                <i className="lab la-google"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" class="facebook-bg mx-1" data-toggle="tooltip" data-placement="top" title="Facebook">
-                                                <i class="lab la-facebook-f"></i>
+                                            <a href="#" className="facebook-bg mx-1" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                                <i className="lab la-facebook-f"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" class="twitter-bg mx-1" data-toggle="tooltip" data-placement="top" title="Twitter">
-                                                <i class="lab la-twitter"></i>
+                                            <a href="#" className="twitter-bg mx-1" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                                <i className="lab la-twitter"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" class="instagram-bg mx-1" data-toggle="tooltip" data-placement="top" title="Instagram">
-                                                <i class="lab la-instagram"></i>
+                                            <a href="#" className="instagram-bg mx-1" data-toggle="tooltip" data-placement="top" title="Instagram">
+                                                <i className="lab la-instagram"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -680,81 +467,81 @@ function ListingGrid() {
 
 
             {/* <!-- Modal --> */}
-            <div class="modal fade modal-container signup-form" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header align-items-center mh-bg-2">
-                            <h5 class="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" class="la la-times-circle"></span>
+            <div className="modal fade modal-container signup-form" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalTitle" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header align-items-center mh-bg-2">
+                            <h5 className="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" className="la la-times-circle"></span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <form method="post" class="form-box">
-                                <div class="input-box">
-                                    <label class="label-text">Username</label>
-                                    <div class="form-group">
-                                        <span class="la la-user form-icon"></span>
-                                        <input class="form-control form-control-styled" type="text" name="text" placeholder="Username" />
+                        <div className="modal-body">
+                            <form method="post" className="form-box">
+                                <div className="input-box">
+                                    <label className="label-text">Username</label>
+                                    <div className="form-group">
+                                        <span className="la la-user form-icon"></span>
+                                        <input className="form-control form-control-styled" type="text" name="text" placeholder="Username" />
                                     </div>
                                 </div>
-                                <div class="input-box">
-                                    <label class="label-text">Email</label>
-                                    <div class="form-group">
-                                        <span class="la la-envelope form-icon"></span>
-                                        <input class="form-control form-control-styled" type="email" name="text" placeholder="Email address" />
+                                <div className="input-box">
+                                    <label className="label-text">Email</label>
+                                    <div className="form-group">
+                                        <span className="la la-envelope form-icon"></span>
+                                        <input className="form-control form-control-styled" type="email" name="text" placeholder="Email address" />
                                     </div>
                                 </div>
-                                <div class="input-box">
-                                    <label class="label-text">Password</label>
-                                    <div class="form-group">
-                                        <span class="la la-lock form-icon"></span>
-                                        <input class="form-control form-control-styled" type="text" name="text" placeholder="Enter password" />
+                                <div className="input-box">
+                                    <label className="label-text">Password</label>
+                                    <div className="form-group">
+                                        <span className="la la-lock form-icon"></span>
+                                        <input className="form-control form-control-styled" type="text" name="text" placeholder="Enter password" />
                                     </div>
-                                    <p class="font-size-14 mt-n2">Your password must be at least 6 characters long and must contain letters, numbers and special characters. Cannot contain whitespace.</p>
+                                    <p className="font-size-14 mt-n2">Your password must be at least 6 characters long and must contain letters, numbers and special characters. Cannot contain whitespace.</p>
                                 </div>
-                                <div class="input-box py-4 user-action-meta">
-                                    <div class="custom-checkbox">
+                                <div className="input-box py-4 user-action-meta">
+                                    <div className="custom-checkbox">
                                         <input type="checkbox" id="agreeChb" />
-                                        <label for="agreeChb" class="font-size-14">By signing up, you agree to our <a href="privacy-policy.html" class="text-color-2">Privacy Policy.</a></label>
+                                        <label for="agreeChb" className="font-size-14">By signing up, you agree to our <a href="privacy-policy.html" className="text-color-2">Privacy Policy.</a></label>
                                     </div>
                                 </div>
-                                <div class="btn-box">
-                                    <button type="submit" class="theme-btn gradient-btn w-100">
-                                        <i class="la la-user-plus mr-1"></i> Register Account
+                                <div className="btn-box">
+                                    <button type="submit" className="theme-btn gradient-btn w-100">
+                                        <i className="la la-user-plus mr-1"></i> Register Account
                                     </button>
-                                    <p class="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        Already on Listhub? <a class="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                                    <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
+                                        Already on Listhub? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                                     </p>
                                 </div>
-                                <div class="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
+                                <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
                                     OR
                                 </div>
-                                <div class="text-center">
-                                    <p class="font-size-15 font-weight-medium">Connect with social network</p>
-                                    <ul class="social-profile social-profile-colored py-3">
+                                <div className="text-center">
+                                    <p className="font-size-15 font-weight-medium">Connect with social network</p>
+                                    <ul className="social-profile social-profile-colored py-3">
                                         <li>
-                                            <a href="#" class="google-bg mx-1" data-toggle="tooltip" data-placement="top" title="Google">
-                                                <i class="lab la-google"></i>
+                                            <a href="#" className="google-bg mx-1" data-toggle="tooltip" data-placement="top" title="Google">
+                                                <i className="lab la-google"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" class="facebook-bg mx-1" data-toggle="tooltip" data-placement="top" title="Facebook">
-                                                <i class="lab la-facebook-f"></i>
+                                            <a href="#" className="facebook-bg mx-1" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                                <i className="lab la-facebook-f"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" class="twitter-bg mx-1" data-toggle="tooltip" data-placement="top" title="Twitter">
-                                                <i class="lab la-twitter"></i>
+                                            <a href="#" className="twitter-bg mx-1" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                                <i className="lab la-twitter"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" class="instagram-bg mx-1" data-toggle="tooltip" data-placement="top" title="Instagram">
-                                                <i class="lab la-instagram"></i>
+                                            <a href="#" className="instagram-bg mx-1" data-toggle="tooltip" data-placement="top" title="Instagram">
+                                                <i className="lab la-instagram"></i>
                                             </a>
                                         </li>
                                     </ul>
-                                    <p class="font-size-15 pb-3">Don't worry, we never any post to your social profile.</p>
+                                    <p className="font-size-15 pb-3">Don't worry, we never any post to your social profile.</p>
                                 </div>
                             </form>
                         </div>
@@ -763,35 +550,35 @@ function ListingGrid() {
             </div>
 
             {/* <!-- Modal --> */}
-            <div class="modal fade modal-container recover-form" id="recoverModal" tabindex="-1" role="dialog" aria-labelledby="recoverModalTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header align-items-center mh-bg">
-                            <h5 class="modal-title" id="recoverModalTitle">Reset password</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" class="la la-times-circle"></span>
+            <div className="modal fade modal-container recover-form" id="recoverModal" tabindex="-1" role="dialog" aria-labelledby="recoverModalTitle" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header align-items-center mh-bg">
+                            <h5 className="modal-title" id="recoverModalTitle">Reset password</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" className="la la-times-circle"></span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <p class="font-size-15 font-weight-medium pb-3">
+                        <div className="modal-body">
+                            <p className="font-size-15 font-weight-medium pb-3">
                                 Enter your username or email to reset your password.
                                 You will receive an email with instructions on how to reset your password. If you are experiencing problems
-                                resetting your password <a href="contact.html" class="text-color-2">contact us</a> or <a href="#" class="text-color-2">send us an email</a>
+                                resetting your password <a href="contact.html" className="text-color-2">contact us</a> or <a href="#" className="text-color-2">send us an email</a>
                             </p>
-                            <form method="post" class="form-box">
-                                <div class="input-box">
-                                    <label class="label-text">Username or email</label>
-                                    <div class="form-group">
-                                        <span class="la la-user form-icon"></span>
-                                        <input class="form-control form-control-styled" type="text" name="text" placeholder="Username or email address" />
+                            <form method="post" className="form-box">
+                                <div className="input-box">
+                                    <label className="label-text">Username or email</label>
+                                    <div className="form-group">
+                                        <span className="la la-user form-icon"></span>
+                                        <input className="form-control form-control-styled" type="text" name="text" placeholder="Username or email address" />
                                     </div>
                                 </div>
-                                <div class="btn-box">
-                                    <button type="submit" class="theme-btn gradient-btn w-100">
-                                        Get New Password <i class="la la-arrow-right ml-1"></i>
+                                <div className="btn-box">
+                                    <button type="submit" className="theme-btn gradient-btn w-100">
+                                        Get New Password <i className="la la-arrow-right ml-1"></i>
                                     </button>
-                                    <p class="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        Not a member? <a class="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                                    <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
+                                        Not a member? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                                     </p>
                                 </div>
                             </form>
@@ -801,28 +588,28 @@ function ListingGrid() {
             </div>
 
             {/* <!-- Modal --> */}
-            <div class="modal fade modal-container" id="searchFilterModal" tabindex="-1" role="dialog" aria-labelledby="searchFilterModalTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header align-items-center mh-bg">
-                            <h5 class="modal-title" id="searchFilterModalTitle">Detailed search</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" class="la la-times-circle"></span>
+            <div className="modal fade modal-container" id="searchFilterModal" tabindex="-1" role="dialog" aria-labelledby="searchFilterModalTitle" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header align-items-center mh-bg">
+                            <h5 className="modal-title" id="searchFilterModalTitle">Detailed search</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" className="la la-times-circle"></span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <form method="post" class="form-box row">
-                                <div class="col-lg-6 input-box">
-                                    <label class="label-text">Keywords</label>
-                                    <div class="form-group">
-                                        <span class="la la-search form-icon"></span>
-                                        <input class="form-control" type="search" name="text" placeholder="What are you looking for?" />
+                        <div className="modal-body">
+                            <form method="post" className="form-box row">
+                                <div className="col-lg-6 input-box">
+                                    <label className="label-text">Keywords</label>
+                                    <div className="form-group">
+                                        <span className="la la-search form-icon"></span>
+                                        <input className="form-control" type="search" name="text" placeholder="What are you looking for?" />
                                     </div>
                                 </div>
-                                <div class="col-lg-6 input-box">
-                                    <label class="label-text">Where to look?</label>
-                                    <div class="form-group user-chosen-select-container">
-                                        <select class="user-chosen-select">
+                                <div className="col-lg-6 input-box">
+                                    <label className="label-text">Where to look?</label>
+                                    <div className="form-group user-chosen-select-container">
+                                        <select className="user-chosen-select">
                                             <option value="0">Select a Location</option>
                                             <option value="AF">Afghanistan</option>
                                             <option value="AX">Åland Islands</option>
@@ -1064,10 +851,10 @@ function ListingGrid() {
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 input-box">
-                                    <label class="label-text">What Category?</label>
-                                    <div class="form-group user-chosen-select-container">
-                                        <select class="user-chosen-select">
+                                <div className="col-lg-6 input-box">
+                                    <label className="label-text">What Category?</label>
+                                    <div className="form-group user-chosen-select-container">
+                                        <select className="user-chosen-select">
                                             <option value="0">Select a Category</option>
                                             <option value="1">Shops</option>
                                             <option value="2">Hotels</option>
@@ -1080,10 +867,10 @@ function ListingGrid() {
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 input-box">
-                                    <label class="label-text">Filter by Price</label>
-                                    <div class="form-group user-chosen-select-container">
-                                        <select class="user-chosen-select">
+                                <div className="col-lg-6 input-box">
+                                    <label className="label-text">Filter by Price</label>
+                                    <div className="form-group user-chosen-select-container">
+                                        <select className="user-chosen-select">
                                             <option value="0">Price Range</option>
                                             <option value="1">$ Inexpensive</option>
                                             <option value="2">$$ Moderate</option>
@@ -1092,102 +879,102 @@ function ListingGrid() {
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-12 more-options-box">
-                                    <div class="collapse collapse-content pb-3" id="moreOptionCollapse">
-                                        <div class="d-flex align-items-center pb-4">
-                                            <a href="#" class="btn-gray open-filter-btn"><i class="la la-clock mr-1"></i>Now Open</a>
-                                            <div class="date-form form-group mb-0 ml-3">
-                                                <span class="la la-calendar form-icon form-icon-2"></span>
-                                                <input class="date-dropper-input form-control form-control-sm" type="text" placeholder="Search by date" />
+                                <div className="col-lg-12 more-options-box">
+                                    <div className="collapse collapse-content pb-3" id="moreOptionCollapse">
+                                        <div className="d-flex align-items-center pb-4">
+                                            <a href="#" className="btn-gray open-filter-btn"><i className="la la-clock mr-1"></i>Now Open</a>
+                                            <div className="date-form form-group mb-0 ml-3">
+                                                <span className="la la-calendar form-icon form-icon-2"></span>
+                                                <input className="date-dropper-input form-control form-control-sm" type="text" placeholder="Search by date" />
                                             </div>
-                                            <div class="price-range-wrap ml-3">
-                                                <div class="input-box d-flex align-items-center">
-                                                    <div class="form-group mb-0">
-                                                        <span class="form-icon dollar-icon text-color">$</span>
-                                                        <input class="form-control form-control-sm padding-left-25px" type="text" name="text" placeholder="5" />
+                                            <div className="price-range-wrap ml-3">
+                                                <div className="input-box d-flex align-items-center">
+                                                    <div className="form-group mb-0">
+                                                        <span className="form-icon dollar-icon text-color">$</span>
+                                                        <input className="form-control form-control-sm padding-left-25px" type="text" name="text" placeholder="5" />
                                                     </div>
-                                                    <span class="px-2">-</span>
-                                                    <div class="form-group mb-0">
-                                                        <span class="form-icon dollar-icon text-color">$</span>
-                                                        <input class="form-control form-control-sm padding-left-25px" type="text" name="text" placeholder="29" />
+                                                    <span className="px-2">-</span>
+                                                    <div className="form-group mb-0">
+                                                        <span className="form-icon dollar-icon text-color">$</span>
+                                                        <input className="form-control form-control-sm padding-left-25px" type="text" name="text" placeholder="29" />
                                                     </div>
-                                                    <button class="btn-gray ml-3">Apply</button>
+                                                    <button className="btn-gray ml-3">Apply</button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3 class="font-size-16 font-weight-semi-bold">Filter by Features</h3>
-                                        <div class="feature-content-box row pt-3">
-                                            <div class="col-lg-3 custom-checkbox">
+                                        <h3 className="font-size-16 font-weight-semi-bold">Filter by Features</h3>
+                                        <div className="feature-content-box row pt-3">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="fullBarChb" />
-                                                <label class="font-size-14" for="fullBarChb"> Full Bar</label>
+                                                <label className="font-size-14" for="fullBarChb"> Full Bar</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="reservationsChb" />
-                                                <label class="font-size-14" for="reservationsChb">Reservations</label>
+                                                <label className="font-size-14" for="reservationsChb">Reservations</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="seatingChb" />
-                                                <label class="font-size-14" for="seatingChb">Seating</label>
+                                                <label className="font-size-14" for="seatingChb">Seating</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="servesAlcoholChb" />
-                                                <label class="font-size-14" for="servesAlcoholChb">Serves Alcohol</label>
+                                                <label className="font-size-14" for="servesAlcoholChb">Serves Alcohol</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="valetParkingChb" />
-                                                <label class="font-size-14" for="valetParkingChb">Valet Parking</label>
+                                                <label className="font-size-14" for="valetParkingChb">Valet Parking</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="waitstaffChb" />
-                                                <label class="font-size-14" for="waitstaffChb">Waitstaff</label>
+                                                <label className="font-size-14" for="waitstaffChb">Waitstaff</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="elevatorInBuildingChb" />
-                                                <label class="font-size-14" for="elevatorInBuildingChb">Elevator in Building</label>
+                                                <label className="font-size-14" for="elevatorInBuildingChb">Elevator in Building</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="smokingAllowedChb" />
-                                                <label class="font-size-14" for="smokingAllowedChb">Smoking Allowed</label>
+                                                <label className="font-size-14" for="smokingAllowedChb">Smoking Allowed</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="freeParkingChb" />
-                                                <label class="font-size-14" for="freeParkingChb">Free Parking</label>
+                                                <label className="font-size-14" for="freeParkingChb">Free Parking</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="freeWiFiChb" />
-                                                <label class="font-size-14" for="freeWiFiChb">Free WiFi</label>
+                                                <label className="font-size-14" for="freeWiFiChb">Free WiFi</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox">
+                                            <div className="col-lg-3 custom-checkbox">
                                                 <input type="checkbox" id="instantBookChb" />
-                                                <label class="font-size-14" for="instantBookChb">Instant Book</label>
+                                                <label className="font-size-14" for="instantBookChb">Instant Book</label>
                                             </div>
-                                            <div class="col-lg-3 custom-checkbox" />
+                                            <div className="col-lg-3 custom-checkbox" />
                                             <input type="checkbox" id="friendlyWorkspaceChb" />
-                                            <label class="font-size-14" for="friendlyWorkspaceChb">Friendly Workspace</label>
+                                            <label className="font-size-14" for="friendlyWorkspaceChb">Friendly Workspace</label>
                                         </div>
                                     </div>
                                 </div>
-                                <a class="collapse-btn" data-toggle="collapse" href="#moreOptionCollapse" role="button" aria-expanded="false" aria-controls="moreOptionCollapse">
-                                    <span class="collapse-btn-hide">More Options <i class="la la-plus ml-1"></i></span>
-                                    <span class="collapse-btn-show">More Less <i class="la la-minus ml-1"></i></span>
+                                <a className="collapse-btn" data-toggle="collapse" href="#moreOptionCollapse" role="button" aria-expanded="false" aria-controls="moreOptionCollapse">
+                                    <span className="collapse-btn-hide">More Options <i className="la la-plus ml-1"></i></span>
+                                    <span className="collapse-btn-show">More Less <i className="la la-minus ml-1"></i></span>
                                 </a>
-                                </form>
+                            </form>
                         </div>
-                        <div class="col-lg-12 btn-box padding-top-30px">
-                            <button type="submit" class="theme-btn gradient-btn">
-                                Apply Filter <i class="la la-arrow-right ml-1"></i>
+                        <div className="col-lg-12 btn-box padding-top-30px">
+                            <button type="submit" className="theme-btn gradient-btn">
+                                Apply Filter <i className="la la-arrow-right ml-1"></i>
                             </button>
-                            <button type="submit" class="btn-gray btn-gray-lg ml-2">
-                                <i class="la la-redo-alt mr-1"></i> Reset Filters
+                            <button type="submit" className="btn-gray btn-gray-lg ml-2">
+                                <i className="la la-redo-alt mr-1"></i> Reset Filters
                             </button>
                         </div>
-                   
+
+                    </div>
                 </div>
             </div>
-        </div>
-      </div >
+        </div >
 
-  )
+    )
 }
 
 export default ListingGrid
