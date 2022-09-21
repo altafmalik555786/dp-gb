@@ -899,13 +899,14 @@ const Home1 = observer(() => {
           </div>
           {/* <!-- end row --> */}
           <div className="row padding-top-60px">
-            <div className="col-lg-4 responsive-column">
+            {getListings?.map(item=>(
+              <div className="col-lg-4 responsive-column">
               <div className="card-item">
                 <div className="card-image">
                   <Link to="/listing-details" className="d-block">
                     <img
-                      src={img1}
-                      data-src={img1}
+                      src={item?.image ? item?.image : img1}
+                      data-src={item?.image ? item?.image : img1}
                       className="card__img lazy"
                       alt=""
                     />
@@ -919,10 +920,10 @@ const Home1 = observer(() => {
                     data-placement="top"
                     title="TechyDevs"
                   >
-                    <img src={photoShop} alt="author-img" />
+                    <img src={item?.icon ? item?.icon : photoShop} alt="author-img" />
                   </a>
                   <h4 className="card-title pt-3">
-                    <Link to="/listing-details">Roma's Ristorante Italiano</Link>
+                    <Link to="/listing-details">{item?.title ? item?.title : 'N/A'}</Link>
                     <i
                       className="la la-check-circle ml-1"
                       data-toggle="tooltip"
@@ -932,13 +933,11 @@ const Home1 = observer(() => {
                   </h4>
                   <p className="card-sub">
                     <a href="#"
-                    ><i className="la la-map-marker mr-1 text-color-2"></i>Bishop
-                      Avenue, New York</a
-                    >
+                    ><i className="la la-map-marker mr-1 text-color-2"></i>{item?.address ? item?.address : 'N/A'}</a>
                   </p>
                   <ul className="listing-meta d-flex align-items-center">
                     <li className="d-flex align-items-center">
-                      <span className="rate flex-shrink-0">4.7</span>
+                      <span className="rate flex-shrink-0">{item?.rating ? item?.rating : 3.3}</span>
                       <span className="rate-text">5 reviews</span>
                     </li>
                     <li>
@@ -948,160 +947,25 @@ const Home1 = observer(() => {
                         data-placement="top"
                         title="Pricey"
                       >
-                        <strong className="font-weight-medium">$</strong>
-                        <strong className="font-weight-medium">$</strong>
-                        <strong className="font-weight-medium">$</strong>
+                        <strong className="font-weight-medium">${item?.pricing ? item?.pricing : 14.75}</strong>
                       </span>
                     </li>
                     <li className="d-flex align-items-center">
                       <i className="la la-cutlery mr-1 listing-icon"></i
-                      ><a href="#" className="listing-cat-link">Restaurant</a>
+                      ><a href="#" className="listing-cat-link">{item?.business_type ? item?.business_type : 'N/A'}</a>
                     </li>
                   </ul>
                   <ul className="info-list padding-top-20px">
                     <li>
                       <span className="la la-calendar-check-o icon"></span>
-                      Opened a few days ago
+                      {item?.created ? item?.created : 'N/A'}
                     </li>
                   </ul>
                 </div>
               </div>
               {/* <!-- end card-item --> */}
             </div>
-            {/* <!-- end col-lg-4 --> */}
-            <div className="col-lg-4 responsive-column">
-              <div className="card-item">
-                <div className="card-image">
-                  <Link to="/listing-details" className="d-block">
-                    <img
-                      src={img2}
-                      data-src={img2}
-                      className="card__img lazy"
-                      alt=""
-                    />
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <a
-                    href="#"
-                    className="user-thumb d-inline-block"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="TechyDevs"
-                  >
-                    <img src={sketch} alt="author-img" />
-                  </a>
-                  <h4 className="card-title pt-3">
-                    <Link to="/listing-details">Dumpling Baby China Bistro</Link>
-                  </h4>
-                  <p className="card-sub">
-                    <a href="#"
-                    ><i className="la la-map-marker mr-1 text-color-2"></i>Bishop
-                      Avenue, New York</a
-                    >
-                  </p>
-                  <ul className="listing-meta d-flex align-items-center">
-                    <li className="d-flex align-items-center">
-                      <span className="rate flex-shrink-0">4.7</span>
-                      <span className="rate-text">5 reviews</span>
-                    </li>
-                    <li>
-                      <span
-                        className="price-range"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Moderate"
-                      >
-                        <strong className="font-weight-medium">$</strong>
-                        <strong className="font-weight-medium">$</strong>
-                      </span>
-                    </li>
-                    <li className="d-flex align-items-center">
-                      <i className="la la-cutlery mr-1 listing-icon"></i
-                      ><a href="#" className="listing-cat-link">Restaurant</a>
-                    </li>
-                  </ul>
-                  <ul className="info-list padding-top-20px">
-                    <li>
-                      <span className="la la-calendar-check-o icon"></span>
-                      Opened 5 weeks ago
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              {/* <!-- end card-item --> */}
-            </div>
-            {/* <!-- end col-lg-4 --> */}
-            <div className="col-lg-4 responsive-column">
-              <div className="card-item">
-                <div className="card-image">
-                  <Link to="/listing-details" className="d-block">
-                    <img
-                      src={img3}
-                      data-src={img3}
-                      className="card__img lazy"
-                      alt=""
-                    />
-                  </Link>
-                </div>
-                <div className="card-content">
-                  <a
-                    href="#"
-                    className="user-thumb d-inline-block"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="TechyDevs"
-                  >
-                    <img src={listingLogo} alt="author-img" />
-                  </a>
-                  <h4 className="card-title pt-3">
-                    <Link to="/listing-details">Yerba Buena Fresh Mex</Link>
-                    <i
-                      className="la la-check-circle ml-1"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Claimed"
-                    ></i>
-                  </h4>
-                  <p className="card-sub">
-                    <a href="#"
-                    ><i className="la la-map-marker mr-1 text-color-2"></i>Bishop
-                      Avenue, New York</a
-                    >
-                  </p>
-                  <ul className="listing-meta d-flex align-items-center">
-                    <li className="d-flex align-items-center">
-                      <span className="rate flex-shrink-0">4.7</span>
-                      <span className="rate-text">5 reviews</span>
-                    </li>
-                    <li>
-                      <span
-                        className="price-range"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Pricey"
-                      >
-                        <strong className="font-weight-medium">$</strong>
-                        <strong className="font-weight-medium">$</strong>
-                        <strong className="font-weight-medium">$</strong>
-                      </span>
-                    </li>
-                    <li className="d-flex align-items-center">
-                      <i className="la la-cutlery mr-1 listing-icon"></i
-                      ><a href="#" className="listing-cat-link">Restaurant</a>
-                    </li>
-                  </ul>
-                  <ul className="info-list padding-top-20px">
-                    <li>
-                      <span className="la la-calendar-check-o icon"></span>
-                      Opened 3 weeks ago
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              {/* <!-- end card-item --> */}
-            </div>
-            {/* <!-- end col-lg-4 --> */}
+            ))}
           </div>
           {/* <!-- end row --> */}
           <div className="more-link-wrap text-right">
