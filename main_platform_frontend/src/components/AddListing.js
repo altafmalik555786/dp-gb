@@ -5,6 +5,10 @@ import "../Assets/css/style.css"
 import { useStore } from 'stores/root-store'
 import { constRoute } from 'utility/constRoute'
 import { useNavigate } from 'react-router-dom'
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
+
 
 function AddListing() {
     const navigate = useNavigate()
@@ -52,7 +56,7 @@ function AddListing() {
                                     <h2 class="sec__title text-white font-size-40 mb-0">Submit Your Listing</h2>
                                 </div>
                                 <ul class="list-items bread-list ">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><Link to="/">Home</Link></li>
                                     <li>Add New Listing</li>
                                 </ul>
                             </div>
@@ -70,14 +74,7 @@ function AddListing() {
                 </div>
                 {/* <!-- end bread-svg --> */}
             </section>
-            {/* <!-- end breadcrumb-area --> */}
-            {/* <!-- ================================
-    END BREADCRUMB AREA
-================================= -->
-
-<!-- ================================
-    START ADD-LISTING AREA
-================================= --> */}
+           
             <section class="add-listing-area section-padding">
                 <div class="container">
                     <div class="row">
@@ -2602,7 +2599,7 @@ function AddListing() {
                             <div class="submit-wrap pt-4">
                                 <div class="custom-checkbox">
                                     <input type="checkbox" id="agreeChb2" />
-                                    <label for="agreeChb2" class="text-gray">By continuing, you agree to Listhub's <a href="terms-and-conditions.html" class="text-color-2">Terms of Service</a> and
+                                    <label for="agreeChb2" class="text-gray">By continuing, you agree to DPGB's <a href="terms-and-conditions.html" class="text-color-2">Terms of Service</a> and
                                         acknowledge our <a href="privacy-policy.html" class="text-color-2">Privacy Policy</a>.
                                     </label>
                                 </div>
@@ -2660,7 +2657,7 @@ function AddListing() {
                         <div class="col-lg-3 responsive-column">
                             <div class="footer-item">
                                 <div class="footer-logo">
-                                    <a href="index.html" class="foot-logo"><img src={logoBlack} alt="logo" /></a>
+                                    <Link to="/" class="foot-logo"><img src={Logo} className={style.logoSize} alt="logo" /></Link>
                                 </div>
                                 {/* <!-- end footer-logo --> */}
                                 <p class="footer__desc">
@@ -2681,7 +2678,7 @@ function AddListing() {
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                                    <li><a href="add-listing">Add Listing</a></li>
+                                    <li><Link to="/add-listing">Add Listing</Link></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
                                 </ul>
@@ -2712,7 +2709,7 @@ function AddListing() {
                                 <ul class="list-items contact-links">
                                     <li><span class="d-block text-color mb-1"><i class="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                                     <li><span class="d-block text-color mb-1"><i class="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                                    <li><span class="d-block text-color mb-1"><i class="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                                    <li><span class="d-block text-color mb-1"><i class="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>
                             {/* <!-- end footer-item --> */}
@@ -2742,7 +2739,7 @@ function AddListing() {
                         <div class="col-lg-12">
                             <div class="copy-right d-flex align-items-center justify-content-between">
                                 <p class="copy__desc">
-                                    &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                                    &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                                     <span class="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                                 </p>
                                 <div class="footer-chosen-container user-chosen-select-container d-flex align-items-center justify-content-end">
@@ -2838,7 +2835,7 @@ function AddListing() {
                                         <i class="la la-sign-in mr-1"></i> Login to Account
                                     </button>
                                     <p class="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        New to Listhub? <a class="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                                        New to DPGB? <a class="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                                     </p>
                                 </div>
                                 <div class="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -2880,7 +2877,7 @@ function AddListing() {
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header align-items-center mh-bg-2">
-                            <h5 class="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+                            <h5 class="modal-title" id="signUpModalTitle">Welcome! create your DPGB account</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" class="la la-times-circle"></span>
                             </button>
@@ -2920,7 +2917,7 @@ function AddListing() {
                                         <i class="la la-user-plus mr-1"></i> Register Account
                                     </button>
                                     <p class="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        Already on Listhub? <a class="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                                        Already on DPGB? <a class="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                                     </p>
                                 </div>
                                 <div class="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">

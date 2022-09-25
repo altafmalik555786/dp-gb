@@ -22,7 +22,7 @@ function Career() {
                                     <h2 className="sec__title text-white font-size-60 line-height-75">Work with purpose. <br />
                                         Grow from the experience.
                                     </h2>
-                                    <p className="sec__desc text-white font-size-22">Listhub is powered by people with big ideas and unique perspectives.</p>
+                                    <p className="sec__desc text-white font-size-22">DPGB is powered by people with big ideas and unique perspectives.</p>
                                 </div>
                             </div>
                             {/* <!-- end breadcrumb-content --> */}

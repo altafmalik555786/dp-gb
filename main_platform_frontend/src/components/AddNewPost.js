@@ -1,13 +1,13 @@
 import React from 'react'
 import ListingHeader from './ListingHeader'
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
 
 function AddNewPost() {
     return (
         <div>
             <ListingHeader />
-            {/* <!-- ================================
-    START BREADCRUMB AREA
-================================= --> */}
             <section className="breadcrumb-area bread-bg bread-overlay overflow-hidden">
                 <div className="container">
                     <div className="row">
@@ -17,7 +17,7 @@ function AddNewPost() {
                                     <h2 className="sec__title text-white font-size-40 mb-0">Submit Your Post</h2>
                                 </div>
                                 <ul className="list-items bread-list ">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><Link to="/">Home</Link></li>
                                     <li>Add New Post</li>
                                 </ul>
                             </div>
@@ -194,7 +194,7 @@ function AddNewPost() {
                         <div className="col-lg-3 responsive-column">
                             <div className="footer-item">
                                 <div className="footer-logo">
-                                    <a href="index.html" className="foot-logo"><img src="images/logo-black.png" alt="logo" /></a>
+                                    <Link to="/" className="foot-logo"><img src={Logo} className={style.logoSize} alt="logo" /></Link>
                                 </div>
                                 {/* <!-- end footer-logo --> */}
                                 <p className="footer__desc">
@@ -215,7 +215,7 @@ function AddNewPost() {
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                                    <li><a href="add-listing">Add Listing</a></li>
+                                    <li><Link to="/add-listing">Add Listing</Link></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
                                 </ul>
@@ -246,7 +246,7 @@ function AddNewPost() {
                                 <ul className="list-items contact-links">
                                     <li><span className="d-block text-color mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                                     <li><span className="d-block text-color mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                                    <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                                    <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>
                             {/* <!-- end footer-item --> */}
@@ -276,7 +276,7 @@ function AddNewPost() {
                         <div className="col-lg-12">
                             <div className="copy-right d-flex align-items-center justify-content-between">
                                 <p className="copy__desc">
-                                    &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                                    &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                                     <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                                 </p>
                                 <div className="footer-chosen-container user-chosen-select-container d-flex align-items-center justify-content-end">
@@ -372,7 +372,7 @@ function AddNewPost() {
                                         <i className="la la-sign-in mr-1"></i> Login to Account
                                     </button>
                                     <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        New to Listhub? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                                        New to DPGB? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                                     </p>
                                 </div>
                                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -414,7 +414,7 @@ function AddNewPost() {
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header align-items-center mh-bg-2">
-                            <h5 className="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+                            <h5 className="modal-title" id="signUpModalTitle">Welcome! create your DPGB account</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" className="la la-times-circle"></span>
                             </button>
@@ -454,7 +454,7 @@ function AddNewPost() {
                                         <i className="la la-user-plus mr-1"></i> Register Account
                                     </button>
                                     <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        Already on Listhub? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                                        Already on DPGB? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                                     </p>
                                 </div>
                                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">

@@ -1,6 +1,6 @@
 /*---------------------------------------------
-Template name:  Listhub
-Item Description: Listhub - Directory & Listing HTML Template
+Template name:  DPGB
+Item Description: DPGB - Directory & Listing HTML Template
 Version:        1.0
 Author:         TechyDevs
 Author Email:   contact@tecydevs.com

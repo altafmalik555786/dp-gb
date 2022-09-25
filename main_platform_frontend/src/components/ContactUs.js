@@ -132,7 +132,7 @@ function ContactUs() {
                                 {/* <!-- end info-icon--> */}
                                 <div className="info-content">
                                     <h4 className="info__title mb-2">Send Us Email</h4>
-                                    <p className="info__desc"><a href="mailto:dirto@gamil.com" className="btn-text">listhub@gmail.com</a></p>
+                                    <p className="info__desc"><a href="mailto:dirto@gamil.com" className="btn-text">DPGB@gmail.com</a></p>
                                 </div>
                                 {/* <!-- end info-content --> */}
                             </div>
@@ -260,7 +260,7 @@ function ContactUs() {
                                     <ul className="list-items list--items list-items-style-2 py-4">
                                         <li><span className="text-color"><i className="la la-map mr-2 text-color-2 font-size-18"></i>Address:</span> 123 Little Baker St, NY</li>
                                         <li><span className="text-color"><i className="la la-phone mr-2 text-color-2 font-size-18"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                                        <li><span className="text-color"><i className="la la-envelope mr-2 text-color-2 font-size-18"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                                        <li><span className="text-color"><i className="la la-envelope mr-2 text-color-2 font-size-18"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                     </ul>
                                     <div className="section-block-2"></div>
                                     <h3 className="widget-title font-size-16 pt-4">Working Hours</h3>

@@ -5,13 +5,13 @@ import '../Assets/css/animated-headline.css'
 import '../Assets/css/jquery.fancybox.css'
 import '../Assets/css/style.css'
 import '../Assets/css/chosen.min.css'
-import Logo from '../Assets/images/logo-white.png'
-
-// import '../../css/jquery-ui.css'
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
 import '../Assets/css/line-awesome.min.css'
 import { Link } from "react-router-dom"
 import { constRoute } from '../utility/constRoute'
 import { useStore } from 'stores/root-store'
+
 function Header() {
     const { userStore: { loadListings, getListings, filteredCategory, loadCategory } } = useStore(null);
     return (
@@ -45,7 +45,7 @@ function Header() {
                             </p>
                         </div>
                         <div className="col-lg-6 d-flex align-items-center justify-content-end header-top-info">
-                            <span className="mr-2 text-white font-weight-semi-bold font-size-14">Follow Listhub on:</span>
+                            <span className="mr-2 text-white font-weight-semi-bold font-size-14">Follow DPGB on:</span>
                             <ul className="social-profile social-profile-colored">
                                 <li><a href="#" className="facebook-bg"><i className="lab la-facebook-f"></i></a></li>
                                 <li><a href="#" className="twitter-bg"><i className="lab la-twitter"></i></a></li>
@@ -62,11 +62,11 @@ function Header() {
                         <div className="col-lg-12">
                             <div className="menu-full-width">
                                 <div className="logo">
-                                    <Link to={constRoute?.home}><img src={Logo} alt="logo" /></Link>
+                                    <Link to={constRoute?.home}><img src={Logo} className={style.logoSize}  alt="logo" /></Link>
                                     <div className="d-flex align-items-center">
-                                        <a href="add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
+                                        <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                             <i className="la la-plus"></i>
-                                        </a>
+                                        </Link>
                                         <div className="menu-toggle">
                                             <span className="menu__bar"></span>
                                             <span className="menu__bar"></span>
@@ -174,9 +174,9 @@ function Header() {
                                     </nav>
                                 </div>
                                 <div className="nav-right-content">
-                                    <a href="add-listing" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
+                                    <Link to="/add-listing" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
                                         <i className="la la-plus mr-2"></i>Add Listing
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

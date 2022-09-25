@@ -1,8 +1,7 @@
 import React from 'react'
-import Logo from '../Assets/images/logo-white.png'
-import logoBlack from "../Assets/images/logo-black.png"
-
-import { Link } from "react-router-dom"
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
 import { constRoute } from '../utility/constRoute'
 function Header4() {
     return (
@@ -24,7 +23,7 @@ function Header4() {
                             </div>
                             {/* <!-- end col-lg-6 --> */}
                             <div className="col-lg-6 d-flex align-items-center justify-content-end header-top-info">
-                                <span className="mr-2 text-white font-weight-semi-bold font-size-14">Follow Listhub on:</span>
+                                <span className="mr-2 text-white font-weight-semi-bold font-size-14">Follow DPGB on:</span>
                                 <ul className="social-profile social-profile-colored">
                                     <li><a href="#" className="facebook-bg"><i className="lab la-facebook-f"></i></a></li>
                                     <li><a href="#" className="twitter-bg"><i className="lab la-twitter"></i></a></li>
@@ -43,12 +42,11 @@ function Header4() {
                             <div className="col-lg-12">
                                 <div className="menu-full-width">
                                     <div className="logo">
-                                        <Link to={constRoute?.home}  className="sticky-logo-hide"><img src={logoBlack} alt="logo" /></Link>
-                                        <Link to={constRoute?.home}  className="sticky-logo-show"><img src={Logo} alt="logo" /></Link>
+                                    <Link to={constRoute?.home}><img src={Logo} className={style.logoSize}  alt="logo" /></Link>
                                         <div className="d-flex align-items-center">
-                                            <a href="add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0 text-color" data-toggle="tooltip" data-placement="left" title="Add Listing">
+                                            <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0 text-color" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                                 <i className="la la-plus"></i>
-                                            </a>
+                                            </Link>
                                             <div className="menu-toggle menu-toggle-black">
                                                 <span className="menu__bar"></span>
                                                 <span className="menu__bar"></span>

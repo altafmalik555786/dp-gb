@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from "react-router-dom"
 import logoWhite from "../Assets/images/logo-white.png"
 import { constRoute } from '../utility/constRoute'
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
 
 function Header3() {
     return (
@@ -59,11 +61,11 @@ function Header3() {
                             <div className="col-lg-12">
                                 <div className="menu-full-width">
                                     <div className="logo">
-                                        <Link to={constRoute?.home} ><img src={logoWhite} alt="logo" /></Link>
+                                        <Link to={constRoute?.home} ><img src={Logo} className={style.logoSize} alt="logo" /></Link>
                                         <div className="d-flex align-items-center">
-                                            <a href="add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
+                                            <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                                 <i className="la la-plus"></i>
-                                            </a>
+                                            </Link>
                                             <div className="menu-toggle">
                                                 <span className="menu__bar"></span>
                                                 <span className="menu__bar"></span>
@@ -133,7 +135,7 @@ function Header3() {
                                                                     <li><a href="career.html">career</a></li>
                                                                     <li><a href="career-details.html">career details</a></li>
                                                                     <li><a href="top-place.html">top places </a></li>
-                                                                    <li><a href="add-listing">add listing </a></li>
+                                                                    <li><Link to="/add-listing">add listing </Link></li>
                                                                 </ul>
                                                             </li>
                                                             <li className="col-lg-4 mega-menu-item">
@@ -176,9 +178,9 @@ function Header3() {
                                     </div>
                                     {/* <!-- end main-menu-content --> */}
                                     <div className="nav-right-content">
-                                        <a href="add-listing" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
+                                        <Link to="/add-listing" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
                                             <i className="la la-layer-group mr-2"></i>Add Listing
-                                        </a>
+                                        </Link>
                                     </div>
                                     {/* <!-- end nav-right-content --> */}
                                 </div>

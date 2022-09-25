@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 import img4 from "../Assets/images/img4.jpg"
 import img5 from "../Assets/images/img5.jpg"
 import img6 from "../Assets/images/img6.jpg"
@@ -24,6 +23,9 @@ import avatarImg4 from "../Assets/images/avatar-img4.jpg"
 import avatarImg5 from "../Assets/images/avatar-img5.jpg"
 import logoBlack from "../Assets/images/logo-black.png"
 import logoWhite from "../Assets/images/logo-white.png"
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
 
 function Home6() {
   return (
@@ -38,11 +40,11 @@ function Home6() {
               <div className="col-lg-12">
                 <div className="menu-full-width">
                   <div className="logo">
-                    <a href="index.html"><img src={logoWhite} alt="logo" /></a>
+                    <Link to="/"><img src={logoWhite} alt="logo" /></Link>
                     <div className="d-flex align-items-center">
-                      <a href="add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
+                      <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                         <i className="la la-plus"></i>
-                      </a>
+                      </Link>
                       <div className="menu-toggle">
                         <span className="menu__bar"></span>
                         <span className="menu__bar"></span>
@@ -112,7 +114,7 @@ function Home6() {
                                   <li><a href="career.html">career</a></li>
                                   <li><a href="career-details.html">career details</a></li>
                                   <li><a href="top-place.html">top places </a></li>
-                                  <li><a href="add-listing">add listing </a></li>
+                                  <li><Link to="/add-listing">add listing </Link></li>
                                 </ul>
                               </li>
                               <li className="col-lg-4 mega-menu-item">
@@ -155,9 +157,9 @@ function Home6() {
                   </div>
                   {/* <!-- end main-menu-content --> */}
                   <div className="nav-right-content">
-                    <a href="add-listing" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
+                    <Link to="/add-listing" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
                       <i className="la la-plus mr-2"></i>Add Listing
-                    </a>
+                    </Link>
                   </div>
                   {/* <!-- end nav-right-content --> */}
                 </div>
@@ -176,7 +178,7 @@ function Home6() {
               <div className="col-lg-6 d-flex align-items-center header-top-info font-size-14">
                 <p className="mr-3 pr-3 border-right border-right-color">
                   <span className="mr-1 text-white font-weight-semi-bold">Email:</span>
-                  <a href="#" className="font-weight-medium">listhub@gmail.com</a>
+                  <a href="#" className="font-weight-medium">DPGB@gmail.com</a>
                 </p>
                 <p>
                   <span className="mr-1 text-white font-weight-semi-bold">Phone:</span>
@@ -218,7 +220,7 @@ function Home6() {
             <div className="col-lg-6">
               <div className="hero-heading">
                 <div className="section-heading">
-                  <h2 className="sec__title mb-3 line-height-60">Listhub helps you find out whats happening in your city, Let's explore.</h2>
+                  <h2 className="sec__title mb-3 line-height-60">DPGB helps you find out whats happening in your city, Let's explore.</h2>
                   <p className="sec__desc line-height-35">
                     Simple, Yet powerful local business directory where buyers and sellers engage
                     each others with trust.
@@ -1011,7 +1013,7 @@ function Home6() {
                     <span className="ribbon ribbon-lg">Working Process</span>
                   </div>
                   <h2 className="sec__title line-height-50 text-white">
-                    Get Started With <span className="text-color-16">Listhub</span> It's Very Easy to Start.
+                    Get Started With <span className="text-color-16">DPGB</span> It's Very Easy to Start.
                   </h2>
                   <p className="sec__desc text-white-50">
                     Omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet dolor sit amet.
@@ -1593,7 +1595,7 @@ function Home6() {
                     <span className="ribbon ribbon-lg">Join with us</span>
                   </div>
                   <h2 className="sec__title mb-4 font-size-45 line-height-60 text-white">
-                    Grow Your Marketing With <span className="text-color-16">Listhub</span> and <br />
+                    Grow Your Marketing With <span className="text-color-16">DPGB</span> and <br />
                     Be Happy With Your Business.
                   </h2>
                   <p className="sec__desc text-white line-height-35 mb-3">
@@ -1645,13 +1647,13 @@ function Home6() {
             <div className="col-lg-3 responsive-column">
               <div className="footer-item">
                 <div className="footer-logo">
-                  <a href="index.html" className="foot-logo"><img src={logoBlack} alt="logo" /></a>
+                  <Link to="/" className="foot-logo"><img src={Logo} className={style.logoSize} alt="logo" /></Link>
                 </div>
                 {/* <!-- end footer-logo --> */}
                 <ul className="list-items contact-links pt-3">
                   <li><span className="d-block text-color mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                   <li><span className="d-block text-color mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                  <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                  <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                 </ul>
               </div>
               {/* <!-- end footer-item --> */}
@@ -1678,11 +1680,11 @@ function Home6() {
                 <h4 className="footer__title">Discover</h4>
                 <div className="stroke-shape mb-3"></div>
                 <ul className="list-items">
-                  <li><a href="#">Listhub Project Cost Guides</a></li>
-                  <li><a href="#">The Local Listhub</a></li>
+                  <li><a href="#">DPGB Project Cost Guides</a></li>
+                  <li><a href="#">The Local DPGB</a></li>
                   <li><a href="#">Collections</a></li>
-                  <li><a href="#">Listhub Mobile</a></li>
-                  <li><a href="blog-grid.html">Listhub Blog</a></li>
+                  <li><a href="#">DPGB Mobile</a></li>
+                  <li><a href="blog-grid.html">DPGB Blog</a></li>
                   <li><a href="contact.html">Support</a></li>
                 </ul>
               </div>
@@ -1691,7 +1693,7 @@ function Home6() {
             {/* <!-- end col-lg-3 --> */}
             <div className="col-lg-3 responsive-column">
               <div className="footer-item">
-                <h4 className="footer__title">Listhub for Business</h4>
+                <h4 className="footer__title">DPGB for Business</h4>
                 <div className="stroke-shape mb-3"></div>
                 <ul className="list-items">
                   <li><a href="#">Claim your Business</a></li>
@@ -1734,7 +1736,7 @@ function Home6() {
             <div className="col-lg-12">
               <div className="copy-right d-flex align-items-center justify-content-between">
                 <p className="copy__desc">
-                  &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                  &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                   <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                 </p>
                 <div className="footer-chosen-container user-chosen-select-container d-flex align-items-center justify-content-end">
@@ -1832,7 +1834,7 @@ function Home6() {
                     <i className="la la-sign-in mr-1"></i> Login to Account
                   </button>
                   <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                    New to Listhub? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                    New to DPGB? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                   </p>
                 </div>
                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -1874,7 +1876,7 @@ function Home6() {
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header align-items-center mh-bg-2">
-              <h5 className="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+              <h5 className="modal-title" id="signUpModalTitle">Welcome! create your DPGB account</h5>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true" className="la la-times-circle"></span>
               </button>
@@ -1914,7 +1916,7 @@ function Home6() {
                     <i className="la la-user-plus mr-1"></i> Register Account
                   </button>
                   <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                    Already on Listhub? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                    Already on DPGB? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                   </p>
                 </div>
                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">

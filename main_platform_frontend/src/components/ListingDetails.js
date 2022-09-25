@@ -60,7 +60,7 @@ function ListingDetails() {
                             <div className="breadcrumb-content breadcrumb-content-2 d-flex flex-wrap align-items-end justify-content-between">
                                 <div className="section-heading">
                                     <ul className="list-items bread-list bread-list-2 bg-transparent rounded-0 p-0">
-                                        <li><a href="index.html">Home</a></li>
+                                        <li><Link to="/">Home</Link></li>
                                         <li><a href="#">Restaurant</a></li>
                                         <li>Super Duper Burgers</li>
                                     </ul>
@@ -269,7 +269,7 @@ function ListingDetails() {
                                         <ul className="list-items list--items list-items-style-2 py-4">
                                             <li><span className="text-color"><i className="la la-map mr-2 text-color-2 font-size-18"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                                             <li><span className="text-color"><i className="la la-phone mr-2 text-color-2 font-size-18"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                                            <li><span className="text-color"><i className="la la-envelope mr-2 text-color-2 font-size-18"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                                            <li><span className="text-color"><i className="la la-envelope mr-2 text-color-2 font-size-18"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                             <li><span className="text-color"><i className="la la-globe mr-2 text-color-2 font-size-18"></i>Website:</span><a href="#">www.techydevs.com</a></li>
                                         </ul>
                                         <ul className="social-profile social-profile-styled">
@@ -1166,7 +1166,7 @@ function ListingDetails() {
                                     <div className="hover-tooltip-box mb-4 d-inline-block">
                                         <span className="text-gray">Sponsored <i className="la la-exclamation-circle"></i></span>
                                         <div className="hover-tooltip">
-                                            <p>Business owners paid for these ads. For more information visit <a href="#">Listhub for Business</a>.</p>
+                                            <p>Business owners paid for these ads. For more information visit <a href="#">DPGB for Business</a>.</p>
                                         </div>
                                     </div>
                                     <div className="sponsor-list">
@@ -1316,7 +1316,7 @@ function ListingDetails() {
                                     </div>
                                     <ul className="list-items py-4">
                                         <li><i className="la la-phone mr-2 text-color-2 font-size-18"></i><a href="#" className="before-none">+ 61 23 8093 3400</a></li>
-                                        <li><i className="la la-envelope mr-2 text-color-2 font-size-18"></i><a href="#" className="before-none">listhub@gmail.com</a></li>
+                                        <li><i className="la la-envelope mr-2 text-color-2 font-size-18"></i><a href="#" className="before-none">DPGB@gmail.com</a></li>
                                     </ul>
                                     <div className="btn-box">
                                         <a href="user-profile.html" className="theme-btn gradient-btn w-100"><i className="la la-user mr-2"></i>View Profile</a>
@@ -1397,7 +1397,7 @@ function ListingDetails() {
                         <div className="col-lg-3 responsive-column">
                             <div className="footer-item footer-item-2">
                                 <div className="footer-logo">
-                                    <a href="index.html" className="foot-logo"><img src={Logo} alt="logo" /></a>
+                                    <Link to="/" className="foot-logo"><img src={Logo} alt="logo" /></Link>
                                 </div>
                                 {/* <!-- end footer-logo --> */}
                                 <p className="footer__desc">
@@ -1418,7 +1418,7 @@ function ListingDetails() {
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                                    <li><a href="add-listing">Add Listing</a></li>
+                                    <li><Link to="/add-listing">Add Listing</Link></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
                                 </ul>
@@ -1449,7 +1449,7 @@ function ListingDetails() {
                                 <ul className="list-items contact-links">
                                     <li><span className="d-block text-white mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                                     <li><span className="d-block text-white mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                                    <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                                    <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>
                             {/* <!-- end footer-item --> */}
@@ -1507,7 +1507,7 @@ function ListingDetails() {
                         <div className="col-lg-12">
                             <div className="copy-right d-flex align-items-center justify-content-between">
                                 <p className="copy__desc">
-                                    &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                                    &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                                     <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                                 </p>
                                 <ul className="social-profile social-profile-colored">
@@ -1573,7 +1573,7 @@ function ListingDetails() {
                                         <i className="la la-sign-in mr-1"></i> Login to Account
                                     </button>
                                     <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        New to Listhub? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                                        New to DPGB? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                                     </p>
                                 </div>
                                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -1615,7 +1615,7 @@ function ListingDetails() {
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header align-items-center mh-bg-2">
-                            <h5 className="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+                            <h5 className="modal-title" id="signUpModalTitle">Welcome! create your DPGB account</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" className="la la-times-circle"></span>
                             </button>
@@ -1655,7 +1655,7 @@ function ListingDetails() {
                                         <i className="la la-user-plus mr-1"></i> Register Account
                                     </button>
                                     <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        Already on Listhub? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                                        Already on DPGB? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                                     </p>
                                 </div>
                                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -1819,7 +1819,7 @@ function ListingDetails() {
                                             <option value="0">Select an issue</option>
                                             <option value="1">Inappropriate listing Content</option>
                                             <option value="2">Inappropriate Behavior</option>
-                                            <option value="3">Listhub Policy Violation</option>
+                                            <option value="3">DPGB Policy Violation</option>
                                             <option value="4">Spammy Content</option>
                                             <option value="5">Rude behavior with customer</option>
                                             <option value="Other">Other</option>

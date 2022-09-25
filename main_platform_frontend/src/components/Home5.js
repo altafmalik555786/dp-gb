@@ -15,6 +15,9 @@ import listingLogo2 from "../Assets/images/listing-logo2.jpg"
 import listingLogo3 from "../Assets/images/listing-logo3.jpg"
 import logoWhite from "../Assets/images/logo-white.png"
 import anywhere from "../Assets/images/anywhere.png"
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
 function Home5() {
   return (
     <div>
@@ -552,7 +555,7 @@ function Home5() {
           <div className="row">
             <div className="col-lg-12">
               <div className="section-heading text-center">
-                <h2 className="sec__title">How Listhub Works?</h2>
+                <h2 className="sec__title">How DPGB Works?</h2>
                 <p className="sec__desc">
                   Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, <br />
                   a feugiat eros. Nunc ut lacinia tortors.
@@ -991,7 +994,7 @@ function Home5() {
             <div className="col-lg-3 responsive-column">
                 <div className="footer-item footer-item-2">
                     <div className="footer-logo">
-                        <a href="index.html" className="foot-logo"><img src={logoWhite} alt="logo"/></a>
+                        <Link to="/" className="foot-logo"><img src={logoWhite} alt="logo"/></Link>
                     </div>
                     {/* <!-- end footer-logo --> */}
                     <p className="footer__desc">
@@ -1012,7 +1015,7 @@ function Home5() {
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                        <li><a href="add-listing">Add Listing</a></li>
+                        <li><Link to="/add-listing">Add Listing</Link></li>
                         <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                     </ul>
@@ -1043,7 +1046,7 @@ function Home5() {
                     <ul className="list-items contact-links">
                         <li><span className="d-block text-white mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                         <li><span className="d-block text-white mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                        <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                        <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                     </ul>
                 </div>
                 {/* <!-- end footer-item --> */}
@@ -1102,7 +1105,7 @@ function Home5() {
             <div className="col-lg-12">
                 <div className="copy-right d-flex align-items-center justify-content-between">
                     <p className="copy__desc">
-                        &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                        &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                         <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                     </p>
                     <ul className="list-items term-list term-list-2 text-right">
@@ -1167,7 +1170,7 @@ function Home5() {
                             <i className="la la-sign-in mr-1"></i> Login to Account
                         </button>
                         <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                            New to Listhub? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                            New to DPGB? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                         </p>
                     </div>
                     <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -1209,7 +1212,7 @@ function Home5() {
     <div className="modal-dialog modal-dialog-centered" role="document">
         <div className="modal-content">
             <div className="modal-header align-items-center mh-bg-2">
-                <h5 className="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+                <h5 className="modal-title" id="signUpModalTitle">Welcome! create your DPGB account</h5>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" className="la la-times-circle"></span>
                 </button>
@@ -1249,7 +1252,7 @@ function Home5() {
                             <i className="la la-user-plus mr-1"></i> Register Account
                         </button>
                         <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                            Already on Listhub? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                            Already on DPGB? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                         </p>
                     </div>
                     <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">

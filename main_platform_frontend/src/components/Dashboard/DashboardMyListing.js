@@ -265,10 +265,10 @@ function DashboardMyListing() {
                                             <i className="la la-bookmark mr-2 text-gray font-size-18"></i>
                                             Bookmarks
                                         </a>
-                                        <a className="dropdown-item text-color font-size-15" href="add-listing">
+                                        <Link className="dropdown-item text-color font-size-15" to="/add-listing">
                                             <i className="la la-plus-circle mr-2 text-gray font-size-18"></i>
                                             Add Listing
-                                        </a>
+                                        </Link>
                                         <a className="dropdown-item text-color font-size-15" href="index.html">
                                             <i className="la la-power-off mr-2 text-gray font-size-18"></i>
                                             Logout
@@ -284,7 +284,7 @@ function DashboardMyListing() {
                                     <h2 className="sec__title font-size-24 mb-0">My listings</h2>
                                 </div>
                                 <ul className="list-items bread-list bread-list-2">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><Link to="/">Home</Link></li>
                                     <li>Dashboard</li>
                                     <li>My listings</li>
                                 </ul>
@@ -490,11 +490,11 @@ function DashboardMyListing() {
                         <div className="container-fluid">
                             <div className="copy-right d-flex align-items-center justify-content-between">
                                 <p className="copy__desc">
-                                    &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                                    &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                                     <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                                 </p>
                                 <ul className="list-items term-list text-right">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><Link to="/">Home</Link></li>
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>

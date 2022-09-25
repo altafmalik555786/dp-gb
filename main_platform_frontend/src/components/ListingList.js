@@ -1,18 +1,7 @@
 import React, { useEffect } from 'react'
 import ListingHeader from './ListingHeader'
 import img4 from "../Assets/images/img4.jpg"
-import img5 from "../Assets/images/img5.jpg"
-import img6 from "../Assets/images/img6.jpg"
-import img7 from "../Assets/images/img7.jpg"
-import img8 from "../Assets/images/img8.jpg"
-import img9 from "../Assets/images/img9.jpg"
-import sketch from "../Assets/images/sketch.png"
 import listingLogo from "../Assets/images/listing-logo.jpg"
-import listingLogo2 from "../Assets/images/listing-logo2.jpg"
-import listingLogo3 from "../Assets/images/listing-logo3.jpg"
-import anywhere from "../Assets/images/anywhere.png"
-import fillSign from "../Assets/images/fill-sign.png"
-import logoBlack from "../Assets/images/logo-black.png"
 import genericSmallImg from "../Assets/images/generic-small-img.jpg"
 import genericSmallImg2 from "../Assets/images/generic-small-img-2.jpg"
 import genericSmallImg3 from "../Assets/images/generic-small-img-3.jpg"
@@ -20,9 +9,13 @@ import genericSmallImg4 from "../Assets/images/generic-small-img-4.jpg"
 import genericSmallImg5 from "../Assets/images/generic-small-img-5.jpg"
 import genericSmallImg6 from "../Assets/images/generic-small-img-6.jpg"
 import genericSmallImg7 from "../Assets/images/generic-small-img-7.jpg"
-import { Link } from "react-router-dom"
 import { useStore } from 'stores/root-store'
-function ListingList() {
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
+import { observer } from 'mobx-react'
+
+const ListingList = observer(() => {
 
     const { userStore: { loadListings, getListings, filteredCategory, loadCategory } } = useStore(null);
     // useEffect(() => {
@@ -32,24 +25,24 @@ function ListingList() {
     // useEffect(() => {
     //     console.log(filteredCategory);
     // }, [getListings])
+
+    console.log("filteredCategory", filteredCategory)
+
     return (
         <div>
             <ListingHeader />
-            {/* <!-- ================================
-    START BREADCRUMB AREA
-================================= --> */}
             <section className="breadcrumb-area bread-bg bread-overlay overflow-hidden">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between">
                                 <div className="section-heading">
-                                    <h2 className="sec__title text-white font-size-40 mb-0">Listing List</h2>
+                                    <h2 className="sec__title text-white font-size-40 mb-0">DPGB</h2>
                                 </div>
                                 <ul className="list-items bread-list">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><Link to="/">Home</Link></li>
                                     <li>Listings</li>
-                                    <li>Listing List</li>
+                                    <li>DPGB</li>
                                 </ul>
                             </div>
                             {/* <!-- end breadcrumb-content --> */}
@@ -66,14 +59,7 @@ function ListingList() {
                 </div>
                 {/* <!-- end bread-svg --> */}
             </section>
-            {/* <!-- end breadcrumb-area --> */}
-            {/* <!-- ================================
-    END BREADCRUMB AREA
-================================= -->
 
-<!-- ================================
-    START CARD AREA
-================================= --> */}
             <section className="card-area section-padding">
                 <div className="container">
                     <div className="row">
@@ -149,7 +135,7 @@ function ListingList() {
                                                         <a href="#"> www.techydevs.com</a>
                                                     </li>
                                                     <li><span className="la la-calendar-check-o icon"></span>
-                                                    {item?.created ? item?.created : 'N/A'}
+                                                        {item?.created ? item?.created : 'N/A'}
                                                     </li>
                                                 </ul>
                                             </div>
@@ -980,7 +966,7 @@ function ListingList() {
                         <div className="col-lg-3 responsive-column">
                             <div className="footer-item">
                                 <div className="footer-logo">
-                                    <a href="index.html" className="foot-logo"><img src={logoBlack} alt="logo" /></a>
+                                    <Link to="/" className="foot-logo"><img src={Logo} className={style.logoSize} alt="logo" /></Link>
                                 </div>
                                 {/* <!-- end footer-logo --> */}
                                 <p className="footer__desc">
@@ -1001,7 +987,7 @@ function ListingList() {
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                                    <li><a href="add-listing">Add Listing</a></li>
+                                    <li><Link to="/add-listing">Add Listing</Link></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
                                 </ul>
@@ -1032,7 +1018,7 @@ function ListingList() {
                                 <ul className="list-items contact-links">
                                     <li><span className="d-block text-color mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                                     <li><span className="d-block text-color mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                                    <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                                    <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>
                             {/* <!-- end footer-item --> */}
@@ -1062,7 +1048,7 @@ function ListingList() {
                         <div className="col-lg-12">
                             <div className="copy-right d-flex align-items-center justify-content-between">
                                 <p className="copy__desc">
-                                    &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                                    &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                                     <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                                 </p>
                                 <div className="footer-chosen-container user-chosen-select-container d-flex align-items-center justify-content-end">
@@ -1158,7 +1144,7 @@ function ListingList() {
                                         <i className="la la-sign-in mr-1"></i> Login to Account
                                     </button>
                                     <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        New to Listhub? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                                        New to DPGB? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                                     </p>
                                 </div>
                                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -1200,7 +1186,7 @@ function ListingList() {
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header align-items-center mh-bg-2">
-                            <h5 className="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+                            <h5 className="modal-title" id="signUpModalTitle">Welcome! create your DPGB account</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" className="la la-times-circle"></span>
                             </button>
@@ -1240,7 +1226,7 @@ function ListingList() {
                                         <i className="la la-user-plus mr-1"></i> Register Account
                                     </button>
                                     <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        Already on Listhub? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                                        Already on DPGB? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                                     </p>
                                 </div>
                                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -1706,6 +1692,6 @@ function ListingList() {
             </div>
         </div>
     )
-}
+})
 
 export default ListingList

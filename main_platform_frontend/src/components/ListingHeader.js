@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react'
-import Logo from '../Assets/images/logo-white.png'
 import { Link } from "react-router-dom"
 import { constRoute } from '../utility/constRoute'
 import { useStore } from 'stores/root-store'
-function ListingHeader() {
+import { observer } from 'mobx-react'
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+
+
+const ListingHeader = observer(() => {
     const { userStore: { loadListings, getListings, filteredCategory, loadCategory } } = useStore(null);
     // useEffect(()=>{
     //     loadListings();
@@ -30,7 +34,7 @@ function ListingHeader() {
                             </div>
                             {/* <!-- end col-lg-6 --> */}
                             <div className="col-lg-6 d-flex align-items-center justify-content-end header-top-info">
-                                <span className="mr-2 text-white font-weight-semi-bold font-size-14">Follow Listhub on:</span>
+                                <span className="mr-2 text-white font-weight-semi-bold font-size-14">Follow DPGB on:</span>
                                 <ul className="social-profile social-profile-colored">
                                     <li><a href="#" className="facebook-bg"><i className="lab la-facebook-f"></i></a></li>
                                     <li><a href="#" className="twitter-bg"><i className="lab la-twitter"></i></a></li>
@@ -49,11 +53,11 @@ function ListingHeader() {
                             <div className="col-lg-12">
                                 <div className="menu-full-width">
                                     <div className="logo">
-                                        <Link to={constRoute?.home} ><img src={Logo} alt="logo" /></Link>
+                                        <Link to={constRoute?.home} className="foot-logo"><img src={Logo} className={style.logoSize} alt="logo" /></Link>
                                         <div className="d-flex align-items-center">
-                                            <a href="add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
+                                            <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                                 <i className="la la-plus"></i>
-                                            </a>
+                                            </Link>
                                             <div className="menu-toggle">
                                                 <span className="menu__bar"></span>
                                                 <span className="menu__bar"></span>
@@ -69,13 +73,13 @@ function ListingHeader() {
                                                 <li>
                                                     <a href="#">Categories <span className="la la-angle-down"></span></a>
                                                     <ul className="dropdown-menu-item">
-                                                        <li><Link onClick={()=> {loadCategory('apartments')}} to="/listing-list">apartments</Link></li>
-                                                        <li><Link onClick={()=> {loadCategory('Restaurants')}} to="/listing-list">Restaurants</Link></li>
-                                                        <li><Link onClick={()=> {loadCategory('Travel')}} to="/listing-list">Travel</Link></li>
-                                                        <li><Link onClick={()=> {loadCategory('Events')}} to="/listing-list">Events</Link></li>
-                                                        <li><Link onClick={()=> {loadCategory('fitness')}} to="/listing-list">fitness</Link></li>
-                                                        <li><Link onClick={()=> {loadCategory('Hotels')}} to="/listing-list">Hotels</Link></li>
-
+                                                        <li><Link onClick={() => { loadCategory('apartments') }} to="/listing-list">apartments</Link></li>
+                                                        <li><Link onClick={() => { loadCategory('Restaurants') }} to="/listing-list">Restaurants</Link></li>
+                                                        <li><Link onClick={() => { loadCategory('Shops') }} to="/listing-list">Shops</Link></li>
+                                                        <li><Link onClick={() => { loadCategory('Travel') }} to="/listing-list">Travel</Link></li>
+                                                        <li><Link onClick={() => { loadCategory('Events') }} to="/listing-list">Events</Link></li>
+                                                        <li><Link onClick={() => { loadCategory('fitness') }} to="/listing-list">fitness</Link></li>
+                                                        <li><Link onClick={() => { loadCategory('Hotels') }} to="/listing-list">Hotels</Link></li>
                                                     </ul>
                                                 </li>
                                                 <li>
@@ -182,6 +186,6 @@ function ListingHeader() {
             </header>
         </div>
     )
-}
+})
 
 export default ListingHeader
