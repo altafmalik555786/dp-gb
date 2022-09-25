@@ -72,22 +72,40 @@ export const userStore = types
     })
 
     const loadCategory = flow(function* (c) {
-      console.log('aaaaaaaaaaaaaaaaaaaaaaaaaa');
       self.category = c;
       let filteredData = self.getListings?.filter(item => item?.business_type?.toLowerCase() == c?.toLowerCase());
       // @ts-ignore
       self.filteredCategory = filteredData;
-      console.log("getFilteredCategory", self.getFilteredCategory);
     })
-    const loadFiltered = flow(function* (data=[]){
+
+    const loadFiltered = flow(function* (data = []) {
       self.filteredCategory = data;
     })
+
+
+    const setListings = flow(function* (data) {
+      let response = null
+      try {
+        self.loading = true
+        const res = yield userApi.setListings(data)
+        response = res
+      } catch (error) {
+        const { status, data } = error.response
+        console.log("error", error)
+        throw error
+      } finally {
+        return response
+      }
+
+    })
+
 
 
     return {
       loadListings,
       loadCategory,
       loadFiltered,
+      setListings,
     }
   })
 

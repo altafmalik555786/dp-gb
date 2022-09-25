@@ -19,6 +19,9 @@ import avatarImg2 from "../Assets/images/avatar-img2.jpg"
 import avatarImg3 from "../Assets/images/avatar-img3.jpg"
 import logoWhite from "../Assets/images/logo-white.png"
 import Header from './Header'
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
 
 function Home3() {
   return (
@@ -1978,7 +1981,7 @@ function Home3() {
                   <div className="section-badge pb-3">
                     <span className="ribbon ribbon-2">Best Local Business Site</span>
                   </div>
-                  <h2 className="sec__title mb-4 font-size-45 line-height-60 text-white">Listhub's Purpose is to Help People Find <br />
+                  <h2 className="sec__title mb-4 font-size-45 line-height-60 text-white">DPGB's Purpose is to Help People Find <br />
                     Great Local Businesses</h2>
                   <p className="sec__desc text-white line-height-35 mb-3">
                     Grow your marketing and be happy with your business Morbi convallis <br />
@@ -2059,7 +2062,7 @@ function Home3() {
                   <li><i className="la la-close text-danger mr-2"></i>Featured In Search Results</li>
                 </ul>
                 <div className="price-btn-box text-center">
-                  <a href="add-listing" className="theme-btn bg-1 text-white">Get Started <i className="la la-arrow-right ml-2"></i></a>
+                  <Link to="/add-listing" className="theme-btn bg-1 text-white">Get Started <i className="la la-arrow-right ml-2"></i></Link>
                 </div>
               </div>
               {/* <!-- end price-item --> */}
@@ -2090,7 +2093,7 @@ function Home3() {
                   <li><i className="la la-close text-danger mr-2"></i>Featured In Search Results</li>
                 </ul>
                 <div className="price-btn-box text-center">
-                  <a href="add-listing" className="theme-btn bg-2 text-white">Get Started <i className="la la-arrow-right ml-2"></i></a>
+                  <Link to="/add-listing" className="theme-btn bg-2 text-white">Get Started <i className="la la-arrow-right ml-2"></i></Link>
                 </div>
               </div>
               {/* <!-- end price-item --> */}
@@ -2120,7 +2123,7 @@ function Home3() {
                   <li><i className="la la-close text-success mr-2"></i>Featured In Search Results</li>
                 </ul>
                 <div className="price-btn-box text-center">
-                  <a href="add-listing" className="theme-btn bg-3 text-white">Get Started <i className="la la-arrow-right ml-2"></i></a>
+                  <Link to="/add-listing" className="theme-btn bg-3 text-white">Get Started <i className="la la-arrow-right ml-2"></i></Link>
                 </div>
               </div>
               {/* <!-- end price-item --> */}
@@ -2338,7 +2341,7 @@ function Home3() {
             <div className="col-lg-3 responsive-column">
               <div className="footer-item footer-item-2">
                 <div className="footer-logo">
-                  <a href="index.html" className="foot-logo"><img src={logoWhite} alt="logo" /></a>
+                  <Link to="/" className="foot-logo"><img src={logoWhite} alt="logo" /></Link>
                 </div>
                 {/* <!-- end footer-logo --> */}
                 <p className="footer__desc">
@@ -2359,7 +2362,7 @@ function Home3() {
                   <li><a href="about.html">About Us</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                  <li><a href="add-listing">Add Listing</a></li>
+                  <li><Link to="/add-listing">Add Listing</Link></li>
                   <li><a href="contact.html">Contact Us</a></li>
                   <li><a href="pricing.html">Pricing</a></li>
                 </ul>
@@ -2390,7 +2393,7 @@ function Home3() {
                 <ul className="list-items contact-links">
                   <li><span className="d-block text-white mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                   <li><span className="d-block text-white mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                  <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                  <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                 </ul>
               </div>
               {/* <!-- end footer-item --> */}
@@ -2448,7 +2451,7 @@ function Home3() {
             <div className="col-lg-12">
               <div className="copy-right d-flex align-items-center justify-content-between">
                 <p className="copy__desc">
-                  &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                  &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                   <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                 </p>
                 <ul className="social-profile social-profile-colored">
@@ -2515,7 +2518,7 @@ function Home3() {
                     <i className="la la-sign-in mr-1"></i> Login to Account
                   </button>
                   <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                    New to Listhub? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                    New to DPGB? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                   </p>
                 </div>
                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -2557,7 +2560,7 @@ function Home3() {
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header align-items-center mh-bg-2">
-              <h5 className="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+              <h5 className="modal-title" id="signUpModalTitle">Welcome! create your DPGB account</h5>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true" className="la la-times-circle"></span>
               </button>
@@ -2597,7 +2600,7 @@ function Home3() {
                     <i className="la la-user-plus mr-1"></i> Register Account
                   </button>
                   <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                    Already on Listhub? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                    Already on DPGB? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                   </p>
                 </div>
                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">

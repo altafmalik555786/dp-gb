@@ -16,6 +16,9 @@ import listingLogo2 from "../Assets/images/listing-logo2.jpg"
 import listingLogo3 from "../Assets/images/listing-logo3.jpg"
 import cofeeVideo from "../Assets/video/coffee-shop.mp4"
 import logoWhite from "../Assets/images/logo-white.png"
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
 function Home4() {
     return (
         <div>
@@ -992,7 +995,7 @@ function Home4() {
                     <div className="row align-items-center">
                         <div className="col-lg-9">
                             <div className="section-heading">
-                                <h2 className="sec__title font-size-30 line-height-40 mb-2">Curious about the listhub? <br /> Join now</h2>
+                                <h2 className="sec__title font-size-30 line-height-40 mb-2">Curious about the DPGB? <br /> Join now</h2>
                                 <p className="sec__desc">Grow your marketing and be happy with your business</p>
                             </div>
                             {/* <!-- end section-heading --> */}
@@ -1049,7 +1052,7 @@ function Home4() {
                         <div className="col-lg-3 responsive-column">
                             <div className="footer-item footer-item-2">
                                 <div className="footer-logo">
-                                    <a href="index.html" className="foot-logo"><img src={logoWhite} alt="logo" /></a>
+                                    <Link to="/" className="foot-logo"><img src={logoWhite} alt="logo" /></Link>
                                 </div>
                                 {/* <!-- end footer-logo --> */}
                                 <p className="footer__desc">
@@ -1070,7 +1073,7 @@ function Home4() {
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                                    <li><a href="add-listing">Add Listing</a></li>
+                                    <li><Link to="/add-listing">Add Listing</Link></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
                                 </ul>
@@ -1101,7 +1104,7 @@ function Home4() {
                                 <ul className="list-items contact-links">
                                     <li><span className="d-block text-white mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                                     <li><span className="d-block text-white mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                                    <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                                    <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>
                             {/* <!-- end footer-item --> */}
@@ -1136,7 +1139,7 @@ function Home4() {
                         <div className="col-lg-12">
                             <div className="copy-right d-flex align-items-center justify-content-between">
                                 <p className="copy__desc">
-                                    &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                                    &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                                     <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                                 </p>
                                 <div className="footer-chosen-container footer-chosen-container-2 user-chosen-select-container d-flex align-items-center justify-content-end">
@@ -1233,7 +1236,7 @@ function Home4() {
                                         <i class="la la-sign-in mr-1"></i> Login to Account
                                     </button>
                                     <p class="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        New to Listhub? <a class="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                                        New to DPGB? <a class="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                                     </p>
                                 </div>
                                 <div class="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -1275,7 +1278,7 @@ function Home4() {
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header align-items-center mh-bg-2">
-                            <h5 class="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+                            <h5 class="modal-title" id="signUpModalTitle">Welcome! create your DPGB account</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" class="la la-times-circle"></span>
                             </button>
@@ -1315,7 +1318,7 @@ function Home4() {
                                         <i class="la la-user-plus mr-1"></i> Register Account
                                     </button>
                                     <p class="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        Already on Listhub? <a class="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                                        Already on DPGB? <a class="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                                     </p>
                                 </div>
                                 <div class="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">

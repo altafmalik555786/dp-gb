@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../Assets/images/logo-white.png'
 import { Link } from "react-router-dom"
+
 function ListingHeader2() {
     return (
         <div>
@@ -21,7 +22,7 @@ function ListingHeader2() {
                             </div>
                             {/* <!-- end col-lg-6 --> */}
                             <div className="col-lg-6 d-flex align-items-center justify-content-end header-top-info">
-                                <span className="mr-2 text-white font-weight-semi-bold font-size-14">Follow Listhub on:</span>
+                                <span className="mr-2 text-white font-weight-semi-bold font-size-14">Follow DPGB on:</span>
                                 <ul className="social-profile social-profile-colored">
                                     <li><a href="#" className="facebook-bg"><i className="lab la-facebook-f"></i></a></li>
                                     <li><a href="#" className="twitter-bg"><i className="lab la-twitter"></i></a></li>
@@ -40,11 +41,11 @@ function ListingHeader2() {
                             <div className="col-lg-12">
                                 <div className="menu-full-width">
                                     <div className="logo">
-                                        <a href="index.html"><img src={Logo} alt="logo" /></a>
+                                        <Link to="/"><img src={Logo} alt="logo" /></Link>
                                         <div className="d-flex align-items-center">
-                                            <a href="add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
+                                            <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                                 <i className="la la-plus"></i>
-                                            </a>
+                                            </Link>
                                             <div className="menu-toggle">
                                                 <span className="menu__bar"></span>
                                                 <span className="menu__bar"></span>
@@ -96,7 +97,7 @@ function ListingHeader2() {
                                                                     <li><a href="career.html">career</a></li>
                                                                     <li><a href="career-details.html">career details</a></li>
                                                                     <li><a href="top-place.html">top places </a></li>
-                                                                    <li><a href="add-listing">add listing </a></li>
+                                                                    <li><Link to="/add-listing">add listing </Link></li>
                                                                 </ul>
                                                             </li>
                                                             <li className="col-lg-4 mega-menu-item">
@@ -157,9 +158,9 @@ function ListingHeader2() {
                                     </div>
                                     {/* <!-- end quick-search-form --> */}
                                     <div className="nav-right-content ml-auto">
-                                        <a href="add-listing" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
+                                        <Link to="/add-listing" className="theme-btn gradient-btn shadow-none add-listing-btn-hide">
                                             <i className="la la-plus mr-2"></i>Add Listing
-                                        </a>
+                                        </Link>
                                     </div>
                                     {/* <!-- end nav-right-content --> */}
                                 </div>

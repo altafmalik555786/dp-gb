@@ -1,6 +1,10 @@
 import React from 'react'
 import logoBlack from "../Assets/images/logo-black.png"
 import { Link } from "react-router-dom"
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+
+
 function Invoice() {
     return (
         <div>
@@ -11,7 +15,7 @@ function Invoice() {
                             <div class="block-card">
                                 <div class="block-card-header d-flex flex-wrap align-items-center justify-content-between">
                                     <div class="invoice-logo">
-                                        <img src={logoBlack} alt="logo" />
+                                        <img src={Logo} className={style.logoSize} alt="logo" />
                                     </div>
                                     <h2 class="widget-title pb-0 font-size-30 line-height-30">Invoice</h2>
                                 </div>
@@ -30,7 +34,7 @@ function Invoice() {
                                                 <div class="invoice-info">
                                                     <h3 class="widget-title pb-2">Author:</h3>
                                                     <ul class="list-items">
-                                                        <li class="mb-1">Listhub Ltd.</li>
+                                                        <li class="mb-1">DPGB Ltd.</li>
                                                         <li class="mb-1">36 Edgewater Street, Melbourne, AU</li>
                                                         <li class="mb-1">Australia, CF44 6ZL, AU</li>
                                                     </ul>

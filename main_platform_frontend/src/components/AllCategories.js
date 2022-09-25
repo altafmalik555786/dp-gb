@@ -24,7 +24,7 @@ function AllCategories() {
                                         <h2 className="sec__title text-white font-size-40 mb-0">All Categories</h2>
                                     </div>
                                     <ul className="list-items bread-list ">
-                                        <li><a href="index.html">Home</a></li>
+                                        <li><Link to="/">Home</Link></li>
                                         <li>Categories</li>
                                         <li>All Categories</li>
                                     </ul>

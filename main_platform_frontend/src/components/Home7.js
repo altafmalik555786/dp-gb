@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 import img4 from "../Assets/images/img4.jpg"
 import img5 from "../Assets/images/img5.jpg"
 import img6 from "../Assets/images/img6.jpg"
@@ -16,8 +15,10 @@ import avatarImg from "../Assets/images/avatar-img.jpg"
 import avatarImg2 from "../Assets/images/avatar-img2.jpg"
 import avatarImg3 from "../Assets/images/avatar-img3.jpg"
 import avatarImg4 from "../Assets/images/avatar-img4.jpg"
-import logoBlack from "../Assets/images/logo-black.png"
-import Logo from '../Assets/images/logo-white.png'
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
+
 function Home7() {
     return (
         <div>
@@ -36,7 +37,7 @@ function Home7() {
                             <div className="col-lg-6 d-flex align-items-center justify-content-end header-top-info font-size-14">
                                 <p className="mr-3 pr-3 border-right border-right-color">
                                     <span className="mr-1 text-white font-weight-semi-bold">Email:</span>
-                                    <a href="#" className="font-weight-medium">listhub@gmail.com</a>
+                                    <a href="#" className="font-weight-medium">DPGB@gmail.com</a>
                                 </p>
                                 <p className="login-and-signup-wrap">
                                     <a href="#" data-toggle="modal" data-target="#loginModal">
@@ -61,11 +62,11 @@ function Home7() {
                             <div className="col-lg-12">
                                 <div className="menu-full-width">
                                     <div className="logo">
-                                        <a href="index.html"><img src={Logo} alt="logo" /></a>
+                                        <Link to="/"><img src={Logo} alt="logo" /></Link>
                                         <div className="d-flex align-items-center">
-                                            <a href="add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
+                                            <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                                 <i className="la la-plus"></i>
-                                            </a>
+                                            </Link>
                                             <div className="menu-toggle">
                                                 <span className="menu__bar"></span>
                                                 <span className="menu__bar"></span>
@@ -117,7 +118,7 @@ function Home7() {
                                                                     <li><a href="career.html">career</a></li>
                                                                     <li><a href="career-details.html">career details</a></li>
                                                                     <li><a href="top-place.html">top places </a></li>
-                                                                    <li><a href="add-listing">add listing </a></li>
+                                                                    <li><Link to="/add-listing">add listing </Link></li>
                                                                 </ul>
                                                             </li>
                                                             <li className="col-lg-4 mega-menu-item">
@@ -178,9 +179,9 @@ function Home7() {
                                     </div>
                                     {/* <!-- end quick-search-form --> */}
                                     <div className="nav-right-content ml-3">
-                                        <a href="add-listing" className="theme-btn gradient-btn shadow-none hover-scale-2 add-listing-btn-hide">
+                                        <Link to="/add-listing" className="theme-btn gradient-btn shadow-none hover-scale-2 add-listing-btn-hide">
                                             <i className="la la-plus mr-2"></i>Add Listing
-                                        </a>
+                                        </Link>
                                     </div>
                                     {/* <!-- end nav-right-content --> */}
                                 </div>
@@ -1059,7 +1060,7 @@ function Home7() {
                                         <span className="la la-play"></span>
                                     </a>
                                 </div>
-                                <h2 className="sec__title pt-4 gradient-text">See How Listhub Works.</h2>
+                                <h2 className="sec__title pt-4 gradient-text">See How DPGB Works.</h2>
                                 <p className="sec__desc">
                                     Omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem <br />
                                     officiis debitis aut rerum necessitatibus saepe.
@@ -1411,7 +1412,7 @@ function Home7() {
                                         <span className="ribbon ribbon-lg">Join with us</span>
                                     </div>
                                     <h2 className="sec__title mb-0 font-size-45 line-height-60 gradient-text">
-                                        Grow Your Marketing With Listhub and <br />
+                                        Grow Your Marketing With DPGB and <br />
                                         Be Happy With Your Business.
                                     </h2>
                                 </div>
@@ -1464,7 +1465,7 @@ function Home7() {
                         <div className="col-lg-3 responsive-column">
                             <div className="footer-item">
                                 <div className="footer-logo">
-                                    <a href="index.html" className="foot-logo"><img src={logoBlack} alt="logo" /></a>
+                                    <Link to="/" className="foot-logo"><img src={Logo} className={style.logoSize} alt="logo" /></Link>
                                 </div>
                                 {/* <!-- end footer-logo --> */}
                                 <p className="footer__desc">
@@ -1485,7 +1486,7 @@ function Home7() {
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a></li>
-                                    <li><a href="add-listing">Add Listing</a></li>
+                                    <li><Link to="/add-listing">Add Listing</Link></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
                                 </ul>
@@ -1516,7 +1517,7 @@ function Home7() {
                                 <ul className="list-items contact-links">
                                     <li><span className="d-block text-color mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
                                     <li><span className="d-block text-color mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
-                                    <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">listhub@gmail.com</a></li>
+                                    <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>
                             {/* <!-- end footer-item --> */}
@@ -1551,7 +1552,7 @@ function Home7() {
                         <div className="col-lg-12">
                             <div className="copy-right d-flex align-items-center justify-content-between">
                                 <p className="copy__desc">
-                                    &copy; Copyright Listhub <script> document.write(new Date().getFullYear()); </script>. Made with
+                                    &copy; Copyright DPGB <script> document.write(new Date().getFullYear()); </script>. Made with
                                     <span className="la la-heart-o"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
                                 </p>
                                 <div className="footer-chosen-container user-chosen-select-container d-flex align-items-center justify-content-end">
@@ -1647,7 +1648,7 @@ function Home7() {
                                         <i className="la la-sign-in mr-1"></i> Login to Account
                                     </button>
                                     <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        New to Listhub? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
+                                        New to DPGB? <a className="text-color-2 signup-btn" href="javascript:void(0)">Create account</a>
                                     </p>
                                 </div>
                                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">
@@ -1689,7 +1690,7 @@ function Home7() {
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header align-items-center mh-bg-2">
-                            <h5 className="modal-title" id="signUpModalTitle">Welcome! create your listhub account</h5>
+                            <h5 className="modal-title" id="signUpModalTitle">Welcome! create your DPGB account</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" className="la la-times-circle"></span>
                             </button>
@@ -1729,7 +1730,7 @@ function Home7() {
                                         <i className="la la-user-plus mr-1"></i> Register Account
                                     </button>
                                     <p className="sub-text-box text-right pt-1 font-weight-medium font-size-14">
-                                        Already on Listhub? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
+                                        Already on DPGB? <a className="text-color-2 login-btn" href="javascript:void(0)">Log in</a>
                                     </p>
                                 </div>
                                 <div className="icon-element font-size-16 font-weight-semi-bold mt-5 mb-4 mx-auto">

@@ -57,12 +57,14 @@ import yelp from "../Assets/images/yelp.png"
 import excel from "../Assets/images/excel.png"
 import logoBlack from "../Assets/images/logo-black.png"
 import Header from './Header'
-import { Link } from "react-router-dom"
 import HomeCrousal from './HomeCrousal'
 import HomeCrousal2 from './HomeCrousal2'
 import HomeCrousal3 from './HomeCrousal3'
 import { useStore } from 'stores/root-store'
 import { observer } from 'mobx-react'
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
+import { Link } from 'react-router-dom'
 
 
 const Home1 = observer(() => {
@@ -1739,7 +1741,7 @@ const Home1 = observer(() => {
                           </svg>
                         </div>
                         <h2 className="sec__title mb-3 font-size-30 line-height-40">
-                          Listhub is the best way to find & discover <br />
+                          DPGB is the best way to find & discover <br />
                           great local businesses
                         </h2>
                         <p className="sec__desc mb-4">
@@ -2234,7 +2236,7 @@ const Home1 = observer(() => {
                   </h3>
                 </div>
                 <h2 className="sec__title mb-5">
-                  Company Choose Listhub for Their Business <br />
+                  Company Choose DPGB for Their Business <br />
                   Why You not to try
                 </h2>
               </div>
@@ -2503,9 +2505,9 @@ const Home1 = observer(() => {
             <div className="col-lg-3 responsive-column">
               <div className="footer-item">
                 <div className="footer-logo">
-                  <a href="index.html" className="foot-logo"
-                  ><img src={logoBlack} alt="logo"
-                    /></a>
+                  <Link to="/" className="foot-logo"
+                  ><img src={Logo} className={style.logoSize} alt="logo"
+                    /></Link>
                 </div>
                 {/* <!-- end footer-logo --> */}
                 <ul className="list-items contact-links pt-3">
@@ -2524,7 +2526,7 @@ const Home1 = observer(() => {
                     <span className="d-block text-color mb-1"
                     ><i className="la la-envelope mr-1 text-color-2"></i
                     >Email:</span
-                    ><a href="#">listhub@gmail.com</a>
+                    ><a href="#">DPGB@gmail.com</a>
                   </li>
                 </ul>
               </div>
@@ -2552,11 +2554,11 @@ const Home1 = observer(() => {
                 <h4 className="footer__title">Discover</h4>
                 <div className="stroke-shape mb-3"></div>
                 <ul className="list-items">
-                  <li><a href="#">Listhub Project Cost Guides</a></li>
-                  <li><a href="#">The Local Listhub</a></li>
+                  <li><a href="#">DPGB Project Cost Guides</a></li>
+                  <li><a href="#">The Local DPGB</a></li>
                   <li><a href="#">Collections</a></li>
-                  <li><a href="#">Listhub Mobile</a></li>
-                  <li><a href="blog-grid.html">Listhub Blog</a></li>
+                  <li><a href="#">DPGB Mobile</a></li>
+                  <li><a href="blog-grid.html">DPGB Blog</a></li>
                   <li><a href="contact.html">Support</a></li>
                 </ul>
               </div>
@@ -2565,11 +2567,11 @@ const Home1 = observer(() => {
             {/* <!-- end col-lg-3 --> */}
             <div className="col-lg-3 responsive-column">
               <div className="footer-item">
-                <h4 className="footer__title">Listhub for Business</h4>
+                <h4 className="footer__title">DPGB for Business</h4>
                 <div className="stroke-shape mb-3"></div>
                 <ul className="list-items">
                   <li><a href="#">Claim your Business</a></li>
-                  <li><a href="#">Advertise on Listhub</a></li>
+                  <li><a href="#">Advertise on DPGB</a></li>
                   <li><a href="#">Add Restaurant</a></li>
                   <li><a href="#">Business Support</a></li>
                   <li><a href="#">Products for Businesses</a></li>
@@ -2676,7 +2678,7 @@ const Home1 = observer(() => {
                 className="copy-right d-flex align-items-center justify-content-between"
               >
                 <p className="copy__desc">
-                  &copy; Copyright Listhub
+                  &copy; Copyright DPGB
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
@@ -2785,7 +2787,7 @@ const Home1 = observer(() => {
                   <p
                     className="sub-text-box text-right pt-1 font-weight-medium font-size-14"
                   >
-                    New to Listhub?
+                    New to DPGB?
                     <a className="text-color-2 signup-btn" href="javascript:void(0)"
                     >Create account</a
                     >
@@ -2868,7 +2870,7 @@ const Home1 = observer(() => {
           <div className="modal-content">
             <div className="modal-header align-items-center mh-bg-2">
               <h5 className="modal-title" id="signUpModalTitle">
-                Welcome! create your listhub account
+                Welcome! create your DPGB account
               </h5>
               <button
                 type="button"
@@ -2940,7 +2942,7 @@ const Home1 = observer(() => {
                   <p
                     className="sub-text-box text-right pt-1 font-weight-medium font-size-14"
                   >
-                    Already on Listhub?
+                    Already on DPGB?
                     <a className="text-color-2 login-btn" href="javascript:void(0)"
                     >Log in</a
                     >

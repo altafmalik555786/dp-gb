@@ -11,15 +11,14 @@ import img33 from "../Assets/images/img33.jpg"
 import img20 from "../Assets/images/img20.jpg"
 import img21 from "../Assets/images/img21.jpg"
 import img38 from "../Assets/images/img38.jpg"
-import logoBlack from "../Assets/images/logo-black.png"
+import Logo from '../Assets/images/dpgb.png'
+import style from './logoStyle.module.scss'
 import { Link } from 'react-router-dom'
+
 function About() {
     return (
         <div>
             <ListingHeader />
-            {/* <!-- ================================
-    START BREADCRUMB AREA
-================================= --> */}
             <section
                 className="breadcrumb-area breadcrumb--area bread-bg-2 bread-overlay overflow-hidden"
             >
@@ -29,7 +28,7 @@ function About() {
                             <div className="breadcrumb-content">
                                 <div className="section-heading">
                                     <h2 className="sec__title text-white font-size-40 line-height-55">
-                                        Listhub Connects People with Great <br />
+                                        DPGB Connects People with Great <br />
                                         Local Businesses.
                                     </h2>
                                 </div>
@@ -200,7 +199,7 @@ function About() {
                                         >
                                     </div>
                                     <h2 className="sec__title">
-                                        Welcome to the Listhub Business Directory Service and a Public
+                                        Welcome to the DPGB Business Directory Service and a Public
                                         Company
                                     </h2>
                                     <p className="sec__desc pb-3">
@@ -980,7 +979,7 @@ function About() {
                             <div className="section-heading text-center">
                                 <h2 className="sec__title">
                                     Our Expert Team Members <br />
-                                    Who Lead the Listhub
+                                    Who Lead the DPGB
                                 </h2>
                                 <p className="sec__desc">
                                     Morbi convallis bibendum urna ut viverra. Maecenas quis
@@ -1303,7 +1302,7 @@ function About() {
                     <div
                         className="more-btn-box d-flex flex-wrap align-items-center justify-content-between pt-4"
                     >
-                        <h4 className="pb-2 font-weight-semi-bold">Career at Listhub</h4>
+                        <h4 className="pb-2 font-weight-semi-bold">Career at DPGB</h4>
                         <a href="career.html" className="btn-gray"
                         >View Open Positions<i className="la la-arrow-right ml-2"></i
                         ></a>
@@ -1324,7 +1323,7 @@ function About() {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="section-heading">
-                                <h2 className="sec__title mb-3">Grow Your Business with Listhub</h2>
+                                <h2 className="sec__title mb-3">Grow Your Business with DPGB</h2>
                                 <p className="sec__desc mb-2">
                                     Morbi convallis bibendum urna ut viverra. Maecenas quis
                                     consequat libero <br />
@@ -1409,9 +1408,8 @@ function About() {
                         <div className="col-lg-3 responsive-column">
                             <div className="footer-item">
                                 <div className="footer-logo">
-                                    <a href="index.html" className="foot-logo"
-                                    ><img src={logoBlack} alt="logo"
-                                        /></a>
+                                    <Link to="/" className="foot-logo"
+                                    ><img src={Logo} className={style.logoSize} alt="logo" /></Link>
                                 </div>
                                 {/* <!-- end footer-logo --> */}
                                 <p className="footer__desc">
@@ -1487,7 +1485,7 @@ function About() {
                                         <span className="d-block text-color mb-1"
                                         ><i className="la la-envelope mr-1 text-color-2"></i
                                         >Email:</span
-                                        ><a href="#">listhub@gmail.com</a>
+                                        ><a href="#">DPGB@gmail.com</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1542,7 +1540,7 @@ function About() {
                                 className="copy-right d-flex align-items-center justify-content-between"
                             >
                                 <p className="copy__desc">
-                                    &copy; Copyright Listhub
+                                    &copy; Copyright DPGB
                                     <script>
                                         document.write(new Date().getFullYear());
                                     </script>
@@ -1678,7 +1676,7 @@ function About() {
                                     <p
                                         className="sub-text-box text-right pt-1 font-weight-medium font-size-14"
                                     >
-                                        New to Listhub?
+                                        New to DPGB?
                                         <a className="text-color-2 signup-btn" href="javascript:void(0)"
                                         >Create account</a
                                         >
@@ -1759,7 +1757,7 @@ function About() {
                     <div className="modal-content">
                         <div className="modal-header align-items-center mh-bg-2">
                             <h5 className="modal-title" id="signUpModalTitle">
-                                Welcome! create your listhub account
+                                Welcome! create your DPGB account
                             </h5>
                             <button
                                 type="button"
@@ -1831,7 +1829,7 @@ function About() {
                                     <p
                                         className="sub-text-box text-right pt-1 font-weight-medium font-size-14"
                                     >
-                                        Already on Listhub?
+                                        Already on DPGB?
                                         <a className="text-color-2 login-btn" href="javascript:void(0)"
                                         >Log in</a
                                         >
