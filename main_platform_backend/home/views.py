@@ -15,8 +15,8 @@ class ListingViewSet(viewsets.ModelViewSet):
     http_method_names = ['post', 'get', 'patch', 'delete']
     queryset = Listing.objects.all()
 
-    def get_queryset(self):
-        return self.queryset
+    # def get_queryset(self):
+    #     return self.queryset
 
     # @transaction.atomic
     def list(self, request, *args, **kwargs):
