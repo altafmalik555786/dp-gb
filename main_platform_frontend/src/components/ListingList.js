@@ -18,15 +18,8 @@ import { observer } from 'mobx-react'
 const ListingList = observer(() => {
 
     const { userStore: { loadListings, getListings, filteredCategory, loadCategory } } = useStore(null);
-    // useEffect(() => {
-    //     loadListings();
-    //     console.log(filteredCategory);
-    // }, []);
-    // useEffect(() => {
-    //     console.log(filteredCategory);
-    // }, [getListings])
+   
 
-    console.log("filteredCategory", filteredCategory)
 
     return (
         <div>

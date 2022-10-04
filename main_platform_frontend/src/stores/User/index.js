@@ -53,7 +53,6 @@ export const userStore = types
       try {
         self.loading = true
         const res = yield userApi.getListings()
-        console.log("res", toJS(res))
         self.listingData = res
         self.filteredCategory = res;
         response = res

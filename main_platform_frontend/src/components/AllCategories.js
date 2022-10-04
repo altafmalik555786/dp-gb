@@ -9,6 +9,7 @@ import catImg5 from "../Assets/images/cat-img-5.jpg"
 import catImg6 from "../Assets/images/cat-img-6.jpg"
 import catImg7 from "../Assets/images/cat-img-7.jpg"
 import catImg8 from "../Assets/images/cat-img-8.jpg"
+import { Link } from 'react-router-dom'
 
 function AllCategories() {
     return (

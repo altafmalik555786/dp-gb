@@ -33,12 +33,16 @@ import Invoice from '../components/Invoice'
 import Pricing from '../components/Pricing'
 import AllCategories from '../components/AllCategories'
 import ContactUs from '../components/ContactUs'
+import Login2 from 'components/Authentication/Login2'
+import Register2 from 'components/Authentication/Register2'
 
 function RoutingLayout() {
   return (
     <div>
       <Routes>
         <Route path='/' element={<Home1 />} />
+        <Route path='/login' element={<Login2 />} />
+        <Route path='/signup' element={<Register2 />} />
         <Route path='/Home-two' element={<Home2 />} />
         <Route path='/Home-three' element={<Home3 />} />
         <Route path='/Home-four' element={<Home4 />} />
