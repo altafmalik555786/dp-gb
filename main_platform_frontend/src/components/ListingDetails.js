@@ -62,7 +62,7 @@ function ListingDetails() {
                                     <ul className="list-items bread-list bread-list-2 bg-transparent rounded-0 p-0">
                                         <li><Link to="/">Home</Link></li>
                                         <li><a href="#">Restaurant</a></li>
-                                        <li>Super Duper Burgers</li>
+                                        <li>Super Duper Burgers </li>
                                     </ul>
                                     <div className="d-flex align-items-center pt-1">
                                         <h2 className="sec__title mb-0">Super Duper Burgers</h2>

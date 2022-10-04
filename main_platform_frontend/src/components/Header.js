@@ -35,13 +35,13 @@ function Header() {
                                 </select>
                             </div>
                             <p className="login-and-signup-wrap">
-                                <a href="#" data-toggle="modal" data-target="#loginModal">
-                                    <span className="mr-1 la la-sign-in"></span>Login
-                                </a>
+                                <Link to={"/login"} data-toggle="modal" data-target="#loginModal">
+                                    <span className="mr-1 la la-sign-in"></span> Login
+                                </Link>
                                 <span className="or-text px-2">or</span>
-                                <a href="#" data-toggle="modal" data-target="#signUpModal">
-                                    <span className="mr-1 la la-user-plus"></span>Sign Up
-                                </a>
+                                <Link to={"/signup"} data-toggle="modal" data-target="#signUpModal">
+                                    <span className="mr-1 la la-user-plus"></span> Sign Up
+                                </Link>
                             </p>
                         </div>
                         <div className="col-lg-6 d-flex align-items-center justify-content-end header-top-info">
@@ -62,7 +62,7 @@ function Header() {
                         <div className="col-lg-12">
                             <div className="menu-full-width">
                                 <div className="logo">
-                                    <Link to={constRoute?.home}><img src={Logo} className={style.logoSize}  alt="logo" /></Link>
+                                    <Link to={constRoute?.home}><img src={Logo} className={style.logoSize} alt="logo" /></Link>
                                     <div className="d-flex align-items-center">
                                         <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                             <i className="la la-plus"></i>
@@ -97,12 +97,12 @@ function Header() {
                                             <li>
                                                 <a href="#">Categories <span className="la la-angle-down"></span></a>
                                                 <ul className="dropdown-menu-item">
-                                                    <li><Link onClick={()=> {loadCategory('apartments')}} to="/listing-list">apartments</Link></li>
-                                                    <li><Link onClick={()=> {loadCategory('Restaurants')}} to="/listing-list">Restaurants</Link></li>
-                                                    <li><Link onClick={()=> {loadCategory('Travel')}} to="/listing-list">Travel</Link></li>
-                                                    <li><Link onClick={()=> {loadCategory('Events')}} to="/listing-list">Events</Link></li>
-                                                    <li><Link onClick={()=> {loadCategory('fitness')}} to="/listing-list">fitness</Link></li>
-                                                    <li><Link onClick={()=> {loadCategory('Hotels')}} to="/listing-list">Hotels</Link></li>
+                                                    <li><Link onClick={() => { loadCategory('apartments') }} to="/listing-list">apartments</Link></li>
+                                                    <li><Link onClick={() => { loadCategory('Restaurants') }} to="/listing-list">Restaurants</Link></li>
+                                                    <li><Link onClick={() => { loadCategory('Travel') }} to="/listing-list">Travel</Link></li>
+                                                    <li><Link onClick={() => { loadCategory('Events') }} to="/listing-list">Events</Link></li>
+                                                    <li><Link onClick={() => { loadCategory('fitness') }} to="/listing-list">fitness</Link></li>
+                                                    <li><Link onClick={() => { loadCategory('Hotels') }} to="/listing-list">Hotels</Link></li>
 
                                                 </ul>
                                             </li>

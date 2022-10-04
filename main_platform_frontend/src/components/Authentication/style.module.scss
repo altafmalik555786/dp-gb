@@ -1,0 +1,373 @@
+body[dir="rtl"] {
+  .password {
+    .FormStyle {
+      label {
+        left: unset;
+        right: -23px;
+      }
+    }
+
+    .eyeIcon {
+      right: unset !important;
+      left: 10px !important;
+    }
+  }
+
+  .FormStyle {
+    label {
+      left: unset;
+      right: -29px;
+    }
+
+    &.phone {
+      label {
+        right: -13px;
+      }
+    }
+  }
+
+  .companyName {
+    .FormStyle {
+      label {
+        right: 0;
+        font-family: 'Cario-bold' !important;
+      }
+    }
+  }
+
+  .acountType {
+    font-family: 'Cario-extra-bold';
+
+    .buyer {
+      margin-left: 0;
+      margin-right: 0;
+
+      :global(.MuiRadio-root) {
+        padding-right: 0;
+      }
+    }
+
+    .suplier {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 75px;
+
+    p {
+      direction: ltr;
+      text-align: right;
+    }
+
+    h1 {
+      direction: ltr;
+      text-align: right;
+      font-weight: 300 !important;
+    }
+  }
+
+  .accountStyle {
+    font-family: 'Cairo-regular' !important;
+
+    .spliedHeading {
+      color: #00ccbe;
+      font-family: 'Cairo-extra-Bold' !important;
+    }
+  }
+
+  .splyedHeading {
+    font-family: 'Cairo-extra-Bold' !important;
+    font-size: 34px;
+  }
+
+  .titleStyle {
+    margin: 0px;
+    font-size: 34px;
+    font-family: 'Cairo-regular' !important;
+  }
+
+  .topTitleRegister {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .phone {
+    :global(.react-tel-input) {
+      .input {
+        padding-right: 60px;
+        padding-left: 0px;
+        text-align: right;
+        direction: ltr;
+      }
+
+      .buttonClass {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .termsModal {
+    :global(.modal-content) {
+      :global(.modal-header) {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.LoginForm {
+
+
+  .acountType {
+    label {
+      font-family: 'Cairo-extra-Bold' !important;
+    }
+  }
+
+
+  .FormStyle {
+    padding-top: 10px;
+
+    span {
+      &.FormStyle {
+        font-family: 'Cairo-Bold' !important;
+      }
+    }
+
+    label {
+      font-family: 'Cairo-Bold' !important;
+    }
+
+    :global(.MuiInputLabel-root) {
+      color: black;
+      font-size: 18px;
+      margin-bottom: 6px;
+      font-family: "Cario-bold" !important;
+    }
+
+    :global(.MuiInputLabel-root.Mui-focused) {
+      color: rgb(66, 194, 185);
+      font-size: 18px;
+    }
+
+    :global(.MuiInput-input) {
+      padding-top: 10px;
+      padding-bottom: 6px;
+      margin-top: 8px;
+    }
+
+    :global(.MuiInput-root:after) {
+      border-color: rgb(66, 194, 185) !important;
+    }
+
+    :global(.MuiInput-root.Mui-error:after) {
+      border-bottom-color: #d32f2f !important;
+    }
+  }
+
+  .selectError {
+    color: #d32f2f;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.66;
+  }
+}
+
+.CarouselContainer {
+  .container {
+    padding-left: 75px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .logoStyle {
+      padding-top: 85px;
+      padding-bottom: 100px;
+    }
+
+    .headingStyle {
+      padding-bottom: 130px;
+
+      h1 {
+        font-size: 56px;
+        color: white;
+        font-family: 'Cairo-extra-Bold' !important;
+      }
+
+      h2 {
+        font-size: 56px;
+        color: white;
+        font-family: 'Cairo-regular' !important;
+      }
+    }
+
+    .registerHeadingStyle {
+      padding-bottom: 150px;
+      padding-top: 75px;
+      border: 200px solid black;
+
+      h1 {
+        font-size: 56px;
+        color: white;
+        font-family: 'Cairo-extra-Bold' !important;
+      }
+
+      h2 {
+        font-size: 56px;
+        color: white;
+        font-family: 'Cairo-regular' !important;
+      }
+    }
+
+    .paraStyle {
+      p {
+        font-size: 21px;
+        font-family: 'Cairo-regular' !important;
+        color: white;
+      }
+    }
+  }
+}
+
+.termConditionsContainer {
+  margin-top: 30px;
+
+  h2 {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #495057;
+
+    span {
+      font-family: 'Cairo-extra-Bold';
+    }
+
+    .termConditions {
+      color: #42c2b9;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
+
+.forgetPassword {
+  padding-top: 10px;
+
+  h2 {
+    font-family: 'Cairo-regular';
+    float: right;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 13px;
+    text-decoration-line: underline;
+    color: #495057;
+  }
+}
+
+.language {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.accountStyle {
+  font-family: 'Cairo-regular';
+
+  .spliedHeading {
+    color: #00ccbe;
+    font-family: 'Cairo-extra-Bold';
+
+    &:hover {
+      color: #00ccbe;
+    }
+  }
+}
+
+.splyedHeading {
+  color: #00ccbe;
+  font-family: 'Cairo-extra-Bold' !important;
+
+  &:hover {
+    color: #00ccbe;
+  }
+}
+
+.titleStyle {
+  margin: 0px;
+  font-size: 34px;
+  font-family: 'Cairo-regular' !important;
+}
+
+.topTitleRegister {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone {
+  :global(.react-tel-input) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+    background-color: #f8f8fb !important;
+
+    &:focus-within {
+      border-bottom: 2px solid #00ccbe;
+    }
+
+    &:hover {
+      background-color: #e8f0fe !important;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.87) !important;
+    }
+
+    &::after {
+      border-bottom: 2px solid #00ccbe !important;
+      background-color: #e8f0f9 !important;
+    }
+
+    .input {
+      width: 100%;
+      border: 0px solid;
+      background: #f8f8fb !important;
+    }
+
+    .buttonClass {
+      background: #f8f8fb !important;
+      border: 0px solid transparent;
+
+      &:hover {
+        background: #f8f8fb !important;
+      }
+
+      :global(.selected-flag) {
+
+        &:hover,
+        &:focus {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.termsModal {
+  :global(.modal-content) {
+    border-radius: 16px !important;
+    padding: 15px 0px;
+    margin: 0 auto;
+
+    :global(.modal-header) {
+      flex-direction: row-reverse;
+
+      button {
+        margin: 0;
+      }
+    }
+
+    .termsModalBody {
+      height: 500px;
+      overflow: auto;
+      text-align: right;
+      padding-right: 10px;
+    }
+  }
+}
