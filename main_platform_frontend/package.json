@@ -46,7 +46,15 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react/prop-types": "off",
+      "react/no-unescaped-entities": "off",
+      "no-unused-vars": "off",
+      "no-useless-catch": "off",
+      "no-unsafe-finally": "off",
+      "require-yield": "off"
+    }
   },
   "browserslist": {
     "production": [

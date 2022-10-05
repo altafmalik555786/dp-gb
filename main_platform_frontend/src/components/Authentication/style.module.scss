@@ -207,7 +207,6 @@ body[dir="rtl"] {
     .registerHeadingStyle {
       padding-bottom: 150px;
       padding-top: 75px;
-      border: 200px solid black;
 
       h1 {
         font-size: 56px;
@@ -302,7 +301,7 @@ body[dir="rtl"] {
 
 .topTitleRegister {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .phone {

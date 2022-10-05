@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { Col, Container, Row, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { Col, Container, Row, Button, Modal, ModalHeader, ModalBody, ModalFooter, Label } from 'reactstrap'
 import axios from "axios"
 import { FormInputText } from "components/Common/FormInputText"
 import { useForm } from "react-hook-form"
@@ -21,6 +21,7 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material"
+import CarouselPage from "./CarouselPage"
 
 
 const defaultValues = {
@@ -122,16 +123,16 @@ const Register2 = (props) => {
       const isCompanyName = !formValues.companyName
       const isPhone = !formValues.phone
       const errorList = {
-        email: isEmail ? [props.t("email-field-is-required")] : [],
-        password: isPassword ? [props.t("password-field-is-required")] : [],
-        phone: isPhone ? [props.t("phone-field-is-required")] : [],
+        email: isEmail ? ["email field is required"] : [],
+        password: isPassword ? ["password field is required"] : [],
+        phone: isPhone ? ["phone field is required"] : [],
         companyName: isCompanyName
-          ? [props.t("company-name-field-is-required")]
+          ? ["company name field is required"]
           : [],
       }
       setErrors({ ...errors, ...errorList })
       if (account === "") {
-        setSelectError(props.t("please-select-account-type"))
+        setSelectError("please select account type")
       }
     }
   }
@@ -139,19 +140,19 @@ const Register2 = (props) => {
   const AccountSelector = () => {
     return (
       <FormControl className={style.acountType}>
-        <FormLabel>{props.t("select-account-type")}</FormLabel>
+        <FormLabel>{"select account type"}</FormLabel>
         <RadioGroup row value={account} onClick={onAccountChange}>
           <FormControlLabel
             className={style.buyer}
             value="user"
             control={<Radio />}
-            label={props.t("user")}
+            label={"User"}
           />
           <FormControlLabel
             className={style.suplier}
             value="businessOwner"
             control={<Radio />}
-            label={props.t("businessOwner")}
+            label={"Business Owner"}
           />
         </RadioGroup>
       </FormControl>
@@ -187,15 +188,16 @@ const Register2 = (props) => {
     <React.Fragment>
       <div>
         <Container fluid className="p-0">
-          <Row className="g-0">
+          <Row className="g-0 m-0" style={{ height: '100vh' }}>
+            <CarouselPage className={style.registerHeadingStyle} />
             <Col className="px-3 py-0 px-sm-5 py-sm-0" xl={6}>
-              <div className="auth-full-page-content p-3 p-sm-5">
+              <div className="auth-full-page-content p-3 p-sm-5 d-flex align-items-center h-100">
                 <div className="w-100">
                   <div className="d-flex flex-column">
                     <div>
                       <div className={style.topTitleRegister}>
-                        <div>
-                          <p className={style.titleStyle}>
+                        <div className="mb-3 text-center">
+                          <p className={` ${style.titleStyle} text-center mb-3`}>
                             {props.t("create-your")}
                           </p>
                           <p className={style.titleStyle}>
@@ -235,7 +237,7 @@ const Register2 = (props) => {
                             />
                           </div>
                           <div className={`mb-3 ${style.FormStyle}`}>
-                            <span className={style.FormStyle}>{props.t("phone")}</span>
+                            <Label style={{ textAlign: "left", width: "100%" }} className={style.FormStyle}>{props.t("phone")}</Label>
                           </div>
                           <div className={`mb-3 ${style.phone} register-input`}>
                             <PhoneInput

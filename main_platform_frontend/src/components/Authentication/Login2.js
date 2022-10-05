@@ -11,6 +11,7 @@ import LoadingButton from '@mui/lab/LoadingButton'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import style from './style.module.scss'
+import CarouselPage from "./CarouselPage"
 const axios = require('axios')
 
 
@@ -114,17 +115,15 @@ const Login2 = observer(props => {
     <React.Fragment>
       <div>
         <Container fluid className="p-0">
-          <Row className="g-0">
-            {/* <CarouselPage /> */}
+          <Row className="g-0 m-0" style={{height: '100vh'}}>
+            <CarouselPage />
             <Col xl={6}>
-              <div className="auth-full-page-content p-3 p-sm-5 pt-0 flex-column">
-                <div className={style.language}>
-                </div>
+              <div className="auth-full-page-content p-3 p-sm-5 pt-0 flex-column d-flex align-items-center justify-content-center h-100">
                 <div className="w-100 p-3 p-sm-5">
                   <div className="d-flex flex-column h-100">
                     <div className="my-auto">
                       <div style={{ marginBottom: '50px' }}>
-                        <p className={style.titleStyle}>{props.t("welcome-back")}</p>
+                        <p className={` ${style.titleStyle} mb-3`}>{props.t("Welcome Back")}</p>
                         <p className={style.titleStyle}>
                           {props.t("to")} <span className={style.splyedHeading}>{props.t("DPGB")}.</span>
                         </p>
