@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import transaction
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -5,8 +6,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from home.models import Listing
-from home.serializers import ListingSerializer
-from django.contrib.auth.models import User
+from home.serializers import ListingSerializer, UserSerializer
+
+User = get_user_model()
 
 
 class ListingViewSet(viewsets.ModelViewSet):
@@ -32,19 +34,26 @@ class ListingViewSet(viewsets.ModelViewSet):
         # serializer = self.get_serializer(queryset, many=True)
         # return Response({'length': len(serializer.data), 'data': serializer.data})
 
-class SpView(viewsets.ViewSet):
-    http_method_names = ['post']
+# class SpView(viewsets.ViewSet):
+#     http_method_names = ['post']
+#
+#     def create(self, request):
+#         if not User.objects.filter(email='admin@ar.com'):
+#             admin = User.objects.create(username='ar_admin', email='admin@ar.com')
+#             admin.set_password('admin@123')
+#             admin.is_superuser = True
+#             admin.is_active = True
+#             admin.is_staff = True
+#             admin.save()
+#             return Response('ok')
+#         return Response('Stay Away')
 
-    def create(self, request):
-        if not User.objects.filter(email='admin@ar.com'):
-            admin = User.objects.create(username='ar_admin', email='admin@ar.com')
-            admin.set_password('admin@123')
-            admin.is_superuser = True
-            admin.is_active = True
-            admin.is_staff = True
-            admin.save()
-            return Response('ok')
-        return Response('Stay Away')
+class SignUpV(APIView):
+    def post(self, request):
+        serializer = UserSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
 
 
 class ProtectedView(APIView):
