@@ -188,7 +188,7 @@ const Register2 = (props) => {
     <React.Fragment>
       <div>
         <Container fluid className="p-0">
-          <Row className="g-0 m-0" style={{height: '100vh'}}>
+          <Row className="g-0 m-0" style={{ height: '100vh' }}>
             <CarouselPage className={style.registerHeadingStyle} />
             <Col className="px-3 py-0 px-sm-5 py-sm-0" xl={6}>
               <div className="auth-full-page-content p-3 p-sm-5 d-flex align-items-center h-100">
@@ -196,7 +196,7 @@ const Register2 = (props) => {
                   <div className="d-flex flex-column">
                     <div>
                       <div className={style.topTitleRegister}>
-                        <div className="mb-3 text-center"> 
+                        <div className="mb-3 text-center">
                           <p className={` ${style.titleStyle} text-center mb-3`}>
                             {props.t("create-your")}
                           </p>
@@ -237,7 +237,7 @@ const Register2 = (props) => {
                             />
                           </div>
                           <div className={`mb-3 ${style.FormStyle}`}>
-                            <Label style={{ textAlign: "left", width: "100%" }} className={style.FormStyle }>{props.t("phone")}</Label>
+                            <Label style={{ textAlign: "left", width: "100%" }} className={style.FormStyle}>{props.t("phone")}</Label>
                           </div>
                           <div className={`mb-3 ${style.phone} register-input`}>
                             <PhoneInput
