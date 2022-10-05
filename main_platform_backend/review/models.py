@@ -25,8 +25,8 @@ class BaseReview(BaseTimeStampModel):
 
 
 class UserReview(BaseReview):
-    listing = models.ForeignKey(Listing, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owner')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
 
 
 class ListingReview(BaseReview):

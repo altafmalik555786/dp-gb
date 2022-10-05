@@ -1,10 +1,12 @@
 from django.contrib.auth import get_user_model
 from django.db import transaction
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.exceptions import ValidationError
 
+from crud_task_fk.common.validations import is_valid_uuid
 from home.models import Listing
 from home.serializers import ListingSerializer, UserSerializer
 
@@ -54,6 +56,38 @@ class SignUpV(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+
+
+class UserDetails(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, user_id):
+        user_id = is_valid_uuid(user_id)
+        if user_id is None:
+            raise ValidationError(detail={
+                'details': 'Invalid UUID'
+            }, code=status.HTTP_400_BAD_REQUEST)
+
+        if not request.user.type == User.OWNER:
+            raise ValidationError(detail={
+                'details': 'Only owner can get user details',
+                'error': 'invalid user type',
+            }, code=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            user = None
+
+        if user is None:
+            raise ValidationError(detail={
+                'details': 'User does not exist'
+            }, code=status.HTTP_400_BAD_REQUEST)
+
+        serializer = UserSerializer(user)
+        # serializer.data
+        user_details = serializer.data
+        return Response(data=user_details, status=status.HTTP_200_OK)
 
 
 class ProtectedView(APIView):
