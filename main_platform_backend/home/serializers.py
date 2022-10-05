@@ -3,7 +3,7 @@ from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework import status
-from review.serializers import ListingReviewSerializer
+from review.serializers import ListingReviewSerializer, UserReviewSerializer
 
 from home.models import Listing
 from review.models import ListingReview
@@ -27,12 +27,14 @@ class ListingSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
 
+    reviews = UserReviewSerializer(many=True, read_only=True)
+
     def validate(self, attrs):
         password = attrs.get('password')
         if not password:
             raise ValidationError(detail={
                 'detail': 'No password provided',
-                'message': 'Invalid pasword',
+                'message': 'Invalid password',
             }, code=status.HTTP_400_BAD_REQUEST)
         validated_data = dict(attrs.copy())
         validated_data.update({
