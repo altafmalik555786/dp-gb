@@ -31,7 +31,7 @@ const CarouselPage = (props) => {
           </div>
           <div className={props.className ? props.className : style.headingStyle}>
             <h1>Search now</h1>
-            <h2>Find when</h2>
+            <h2>Choose when</h2>
             <h2>Pay desired</h2>
           </div>
           <div className={style.paraStyle}>

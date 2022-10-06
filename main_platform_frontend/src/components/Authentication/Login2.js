@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { baseUrl } from "api/const"
 import { useForm } from "react-hook-form"
 import { FormInputText } from "components/Common/FormInputText"
 import { observer } from "mobx-react"
@@ -12,8 +13,7 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import style from './style.module.scss'
 import CarouselPage from "./CarouselPage"
-const axios = require('axios')
-
+import axios from "axios"
 
 const defaultValues = {
   email: "",
@@ -45,29 +45,29 @@ const Login2 = observer(props => {
     if (formValues.email && formValues.email != '' && formValues.password && formValues.password != '') {
 
       try {
-        const API_URL = `localhost/oauth/login`
-        const params = new URLSearchParams()
-        params.append('client_id', 'web_client')
-        params.append('client_secret', 'WebPassword123')
-        params.append('grant_type', 'password')
-        params.append('username', formValues.email.toLowerCase())
-        params.append('password', formValues.password)
+        const API_URL = `${baseUrl}login/`
+  
 
-        const config = { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
-        axios.post(API_URL, params, config).then(async (resp) => {
-          if (resp.data.success) {
-            const data = resp.data.accessToken
-            localStorage.setItem("accessToken", data?.accessToken)
-            localStorage.setItem("refreshToken", data?.refreshToken)
+        const payload = {
+          email: formValues?.email.toLowerCase(),
+          username: formValues?.email.toLowerCase(),
+          password: formValues?.password,
+
+        }
+
+        await axios.post(API_URL, payload).then(async (resp) => {
+          if (resp) {
+            const data = resp.data
+            localStorage.setItem("token", data?.access)
+            localStorage.setItem("refreshToken", data?.refresh)
             localStorage.setItem("accessTokenExpiresAt", data?.accessTokenExpiresAt)
             localStorage.setItem("refreshTokenExpiresAt", data?.refreshTokenExpiresAt)
-            navigate("/dashboard")
-            // await loadUserInfo(true)
+            navigate("/")
           } else {
             setInviteLoading(true)
-            const error = resp?.data?.error
-            if (error.status == 400) {
-              setLoginError(error.message)
+            const error = resp?.data
+            if (error) {
+              setLoginError(error?.detail)
               setInviteLoading(false)
             }
           }
@@ -75,13 +75,16 @@ const Login2 = observer(props => {
 
 
       } catch (error) {
+
         const { status } = error.response
         const { data } = error.response
         if (status == 400 || status == 401) {
-          const serverError = data
+          const serverError = data?.detail
           setErrors({ ...errors, ...{ serverError: serverError } })
         }
         return Promise.reject(error)
+      } finally {
+        setInviteLoading(false)
       }
     } else {
       const isEmail = !formValues?.email
@@ -115,7 +118,7 @@ const Login2 = observer(props => {
     <React.Fragment>
       <div>
         <Container fluid className="p-0">
-          <Row className="g-0 m-0" style={{height: '100vh'}}>
+          <Row className="g-0 m-0" style={{ height: '100vh' }}>
             <CarouselPage />
             <Col xl={6}>
               <div className="auth-full-page-content p-3 p-sm-5 pt-0 flex-column d-flex align-items-center justify-content-center h-100">
