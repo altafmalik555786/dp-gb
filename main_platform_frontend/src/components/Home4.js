@@ -15,7 +15,7 @@ import listingLogo from "../Assets/images/listing-logo.jpg"
 import listingLogo2 from "../Assets/images/listing-logo2.jpg"
 import listingLogo3 from "../Assets/images/listing-logo3.jpg"
 import cofeeVideo from "../Assets/video/coffee-shop.mp4"
-import logoWhite from "../Assets/images/logo-white.png"
+import logoWhite from "../Assets/images/dpgb.png"
 import Logo from '../Assets/images/dpgb.png'
 import style from './logoStyle.module.scss'
 import { Link } from 'react-router-dom'

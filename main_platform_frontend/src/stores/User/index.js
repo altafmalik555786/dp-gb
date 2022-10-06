@@ -124,6 +124,23 @@ export const userStore = types
 
     })
 
+    const setListingReview = flow(function* (id, data) {
+      let response = null
+      try {
+        self.loading = true
+        const res = yield userApi.setListingReview(id, data)
+        console.log("res Review", res)
+        response = res
+      } catch (error) {
+        const { status, data } = error.response
+        console.log("error", error)
+        throw error
+      } finally {
+        return response
+      }
+
+    })
+
 
     return {
       loadListings,
@@ -131,6 +148,7 @@ export const userStore = types
       loadFiltered,
       setListings,
       loadSingleListings,
+      setListingReview,
     }
   })
 

@@ -13,7 +13,7 @@ import avatarImg2 from "../Assets/images/avatar-img2.jpg"
 import listingLogo from "../Assets/images/listing-logo.jpg"
 import listingLogo2 from "../Assets/images/listing-logo2.jpg"
 import listingLogo3 from "../Assets/images/listing-logo3.jpg"
-import logoWhite from "../Assets/images/logo-white.png"
+import logoWhite from "../Assets/images/dpgb.png"
 import anywhere from "../Assets/images/anywhere.png"
 import Logo from '../Assets/images/dpgb.png'
 import style from './logoStyle.module.scss'

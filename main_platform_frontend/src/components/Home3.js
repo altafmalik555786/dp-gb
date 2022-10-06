@@ -17,7 +17,7 @@ import listingLogo3 from "../Assets/images/listing-logo3.jpg"
 import avatarImg from "../Assets/images/avatar-img.jpg"
 import avatarImg2 from "../Assets/images/avatar-img2.jpg"
 import avatarImg3 from "../Assets/images/avatar-img3.jpg"
-import logoWhite from "../Assets/images/logo-white.png"
+import logoWhite from "../Assets/images/dpgb.png"
 import Header from './Header'
 import Logo from '../Assets/images/dpgb.png'
 import style from './logoStyle.module.scss'

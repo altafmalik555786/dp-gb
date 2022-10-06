@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../../Assets/images/logo-white.png'
+import Logo from '../../Assets/images/dpgb.png'
 import avatarImg from "../../Assets/images/avatar-img.jpg"
 import avatarImg2 from "../../Assets/images/avatar-img2.jpg"
 import avatarImg3 from "../../Assets/images/avatar-img3.jpg"
@@ -26,7 +26,7 @@ function DashboardBookmark() {
                     </li>
                     <li>
                         <a className="sidebar-brand" href="index.html">
-                            <img src={Logo} alt="logo" />
+                            <img src={Logo} alt="logo" width="78px"  />
                         </a>
                     </li>
                     <li className="sidebar-heading pt-3">Main</li>

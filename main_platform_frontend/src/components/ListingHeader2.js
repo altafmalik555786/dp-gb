@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../Assets/images/logo-white.png'
+import Logo from '../Assets/images/dpgb.png'
 import { Link } from "react-router-dom"
 
 function ListingHeader2() {
@@ -41,7 +41,7 @@ function ListingHeader2() {
                             <div className="col-lg-12">
                                 <div className="menu-full-width">
                                     <div className="logo">
-                                        <Link to="/"><img src={Logo} alt="logo" /></Link>
+                                        <Link to="/"><img src={Logo} alt="logo" width="78px"  /></Link>
                                         <div className="d-flex align-items-center">
                                             <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                                 <i className="la la-plus"></i>

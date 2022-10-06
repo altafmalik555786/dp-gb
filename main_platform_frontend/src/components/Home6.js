@@ -22,7 +22,7 @@ import avatarImg3 from "../Assets/images/avatar-img3.jpg"
 import avatarImg4 from "../Assets/images/avatar-img4.jpg"
 import avatarImg5 from "../Assets/images/avatar-img5.jpg"
 import logoBlack from "../Assets/images/logo-black.png"
-import logoWhite from "../Assets/images/logo-white.png"
+import logoWhite from "../Assets/images/dpgb.png"
 import Logo from '../Assets/images/dpgb.png'
 import style from './logoStyle.module.scss'
 import { Link } from 'react-router-dom'

@@ -38,7 +38,6 @@ import Register2 from 'components/Authentication/Register2'
 
 function RoutingLayout() {
 
-  
 
   return (
     <div>

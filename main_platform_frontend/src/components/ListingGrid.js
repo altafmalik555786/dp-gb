@@ -21,6 +21,7 @@ import { Link } from 'react-router-dom'
 
 function ListingGrid() {
     const { userStore: { loadListings, getListings, filteredCategory } } = useStore(null)
+    
 
     return (
         <div>
@@ -105,7 +106,7 @@ function ListingGrid() {
                             <div className="col-lg-4 responsive-column">
                                 <div className="card-item">
                                     <div className="card-image">
-                                        <Link to="/listing-details" className="d-block">
+                                        <Link  to={`/listing-details/${item?.id}`} className="d-block">
                                             <img
                                                 src={item?.image ? item?.image : img8}
                                                 data-src={item?.image ? item?.image : img8}
