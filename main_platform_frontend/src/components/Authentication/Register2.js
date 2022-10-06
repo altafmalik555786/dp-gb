@@ -26,7 +26,7 @@ import CarouselPage from "./CarouselPage"
 
 const defaultValues = {
   companyName: "",
-  phone: "966",
+  phone: "92",
   email: "",
   password: "",
 }
@@ -74,50 +74,78 @@ const Register2 = (props) => {
         formValues.companyName != "",
         account != "")
     ) {
-      let payload = {
-        companyName: formValues?.companyName,
-        phone: formValues?.phone,
+
+
+      let payloadCommonUser = {
+        // companyName: formValues?.companyName,
+        firstname: formValues?.companyName,
+        lastname: "",
+
+        // phone: formValues?.phone,
+        username: formValues?.email,
         email: formValues?.email.toLowerCase(),
         password: formValues?.password,
+        type: "COMMON"
       }
 
-      if (account == "user") {
-        setLoading(true)
-        try {
-          await axios.post(`${baseUrl}subcontractor`, payload).then((res) => {
-            if (res.data.success) {
-              navigate("/login")
-            }
-          })
-        } catch (error) {
-          const { status } = error.response
-          const { data } = error.response
-          if (status == 403 || status == 400) {
-            const serverError = data.errors
-            setErrors({ ...errors, ...serverError })
-          }
-        }
-        setLoading(false)
-        setPhoneNumber('+966')
-      } else {
-        setLoading(true)
-        try {
-          await axios.post(`${baseUrl}businessOwner`, payload).then((res) => {
-            if (res.data.success) {
-              props.history.push("/login")
-            }
-          })
-        } catch (error) {
-          const { status } = error.response
-          const { data } = error.response
-          if (status == 403 || status == 400) {
-            const serverError = data.errors
-            setErrors({ ...errors, ...serverError })
-          }
-        }
-        setLoading(false)
+      let payloadBusinessOwner = {
+        // companyName: formValues?.companyName,
+        firstname: formValues?.companyName,
+        lastname: "",
+        // phone: formValues?.phone,
+        username: formValues?.email,
+        email: formValues?.email.toLowerCase(),
+        password: formValues?.password,
+        type: "OWNER"
       }
-    } else {
+
+      const payload = account == "user" && payloadCommonUser || payloadBusinessOwner
+
+
+      // if (account == "user") {
+      setLoading(true)
+      try {
+        await axios.post(`${baseUrl}signup/`, payload).then((res) => {
+          if (res.data) {
+            navigate("/login")
+          }
+        })
+      } catch (error) {
+        const { status } = error.response
+        const { data } = error.response
+        if (status == 403 || status == 400) {
+          const serverError = {
+            email: data?.email,
+            companyName: data?.username,
+            phone: [],
+            password: [],
+          }
+          setErrors({ ...errors, ...serverError })
+        }
+      }
+      setLoading(false)
+      setPhoneNumber('+92')
+    }
+    // else {
+    //   setLoading(true)
+    //   try {
+    //     await axios.post(`${baseUrl}businessOwner`, payload).then((res) => {
+    //       if (res.data.success) {
+    //         props.history.push("/login")
+    //       }
+    //     })
+    //   } catch (error) {
+    //     const { status } = error.response
+    //     const { data } = error.response
+    //     if (status == 403 || status == 400) {
+    //       const serverError = data.errors
+    //       setErrors({ ...errors, ...serverError })
+    //     }
+    //   }
+    //   setLoading(false)
+    // }
+    // }
+    else {
       const isEmail = !formValues.email
       const isPassword = !formValues.password
       const isCompanyName = !formValues.companyName
@@ -241,9 +269,9 @@ const Register2 = (props) => {
                           </div>
                           <div className={`mb-3 ${style.phone} register-input`}>
                             <PhoneInput
-                              onlyCountries={['sa']}
+                              onlyCountries={['pk']}
                               inputClass={style.input}
-                              country={'sa'}
+                              country={'pk'}
                               placeholder={''}
                               value={phoneNumber}
                               inputStyle={{ direction: 'ltr' }}

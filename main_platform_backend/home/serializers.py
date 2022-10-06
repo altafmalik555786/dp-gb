@@ -5,7 +5,7 @@ from rest_framework.exceptions import ValidationError
 from rest_framework import status
 from review.serializers import ListingReviewSerializer, UserReviewSerializer
 
-from home.models import Listing
+from home.models import Listing, DetailUpdateSituation
 from review.models import ListingReview
 
 User = get_user_model()
@@ -22,6 +22,12 @@ class ListingSerializer(serializers.ModelSerializer):
     #     return reviews
     class Meta:
         model = Listing
+        fields = '__all__'
+
+
+class DetailUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DetailUpdateSituation
         fields = '__all__'
 
 

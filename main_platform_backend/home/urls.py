@@ -4,12 +4,13 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from home.views import ListingViewSet, ProtectedView, SignUpV, UserDetails
+from home.views import ListingViewSet, ProtectedView, SignUpV, UserDetails, DetailUpdateViewset
 from review import urls as review_urls
 
 
 router = DefaultRouter()
 router.register('listing', ListingViewSet, basename='listing')
+router.register('details', DetailUpdateViewset, basename='detail_update_situation')
 # router.register('sp', SpView, basename='sp')
 
 urlpatterns = [

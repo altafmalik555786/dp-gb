@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'rest_framework_simplejwt',
     'review',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -158,4 +159,8 @@ CORS_ALLOW_ALL_ORIGINS = True
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1, minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
 }
