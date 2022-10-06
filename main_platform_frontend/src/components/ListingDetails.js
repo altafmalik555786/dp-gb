@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import img4 from "../Assets/images/img4.jpg"
 import img5 from "../Assets/images/img5.jpg"
 import img6 from "../Assets/images/img6.jpg"
@@ -19,7 +19,7 @@ import genericSmallImg4 from "../Assets/images/generic-small-img-4.jpg"
 import genericSmallImg5 from "../Assets/images/generic-small-img-5.jpg"
 import genericSmallImg6 from "../Assets/images/generic-small-img-6.jpg"
 import genericSmallImg7 from "../Assets/images/generic-small-img-7.jpg"
-import Logo from '../Assets/images/logo-white.png'
+import Logo from '../Assets/images/dpgb.png'
 import avatarImg from "../Assets/images/avatar-img.jpg"
 import avatarImg2 from "../Assets/images/avatar-img2.jpg"
 import avatarImg3 from "../Assets/images/avatar-img3.jpg"
@@ -32,12 +32,42 @@ import SingleListingImg5 from "../Assets/images/single-listing-img5.jpg"
 import SingleListingImg6 from "../Assets/images/single-listing-img6.jpg"
 import SingleListingImg7 from "../Assets/images/single-listing-img7.jpg"
 import SingleListingImg8 from "../Assets/images/single-listing-img8.jpg"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import ListingdetailsCrosal from './ListingdetailsCrosal'
 import HomeCrousal from './HomeCrousal'
 import Header4 from './Header4'
-function ListingDetails() {
+import { observer } from 'mobx-react'
+import { useStore } from 'stores/root-store'
 
+const ListingDetails = observer(() => {
+    const { id } = useParams()
+    const { userStore: { loadSingleListings, getSingleListing, loadListings, setListingReview } } = useStore(null);
+    const [titleReview, setTitleReview] = useState("")
+    const [ratingReview, setRatingReview] = useState("")
+    const [discriptionReview, setDiscriptionReview] = useState("")
+
+    useEffect(() => {
+        loadSingleListings(id)
+    }, [])
+
+    console.log("getSingleListing", getSingleListing)
+
+    const onSubmitReview = async () => {
+        const payload = {
+            rating: ratingReview,
+            title: titleReview,
+            description: discriptionReview,
+            listing: id,
+        }
+
+        await setListingReview(id, payload).then(res => {
+            if (res) {
+                loadListings()
+            }
+        })
+
+
+    }
 
     return (
         <div>
@@ -61,11 +91,11 @@ function ListingDetails() {
                                 <div className="section-heading">
                                     <ul className="list-items bread-list bread-list-2 bg-transparent rounded-0 p-0">
                                         <li><Link to="/">Home</Link></li>
-                                        <li><a href="#">Restaurant</a></li>
-                                        <li>Super Duper Burgers </li>
+                                        <li><a href="#">{getSingleListing?.business_type}</a></li>
+                                        <li>{getSingleListing?.title || "----"}</li>
                                     </ul>
                                     <div className="d-flex align-items-center pt-1">
-                                        <h2 className="sec__title mb-0">Super Duper Burgers</h2>
+                                        <h2 className="sec__title mb-0">{getSingleListing?.title || "----"}</h2>
                                         <div className="hover-tooltip-box ml-2 pt-2">
                                             <span className="text-color"><i className="la la-check-circle mr-1 text-color-4"></i>Claimed</span>
                                             <div className="hover-tooltip">
@@ -73,15 +103,14 @@ function ListingDetails() {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="sec__desc py-2 font-size-17"><i className="la la-map-marker mr-1 text-color-2"></i>390 Greenwich StNew York, NY 10013</p>
+                                    <p className="sec__desc py-2 font-size-17"><i className="la la-map-marker mr-1 text-color-2"></i>{getSingleListing?.address}</p>
                                     <p className="pb-2 font-weight-medium">
                                         <span className="price-range mr-1 text-color font-size-16" data-toggle="tooltip" data-placement="top" title="Moderate">
                                             <strong className="font-weight-medium">$</strong>
                                             <strong className="font-weight-medium ml-n1">$</strong>
                                         </span>
                                         <span className="category-link">
-                                            <a href="#">Burgers</a>,
-                                            <a href="#">American (Traditional)</a>
+                                            <a href="#">{getSingleListing?.pricing || "----"}</a>
                                         </span>
                                     </p>
                                     <div className="d-flex flex-wrap align-items-center">
@@ -245,7 +274,7 @@ function ListingDetails() {
                                     {/* <!-- end block-card-header --> */}
                                     <div className="block-card-body">
                                         <div className="video-box">
-                                            <img className="lazy" src={SingleListingImg7} data-src={SingleListingImg7} alt="video image" />
+                                            <img className="lazy" src={getSingleListing?.image} data-src={getSingleListing?.image} alt="image" />
                                             <div className="video-content">
                                                 <a className="icon-element icon-element-lg icon-element-white hover-scale mx-auto" href="https://www.youtube.com/watch?v=GlrxcuEDyF8" data-fancybox="" title="Play Video">
                                                     <i className="la la-play"></i>
@@ -267,10 +296,10 @@ function ListingDetails() {
                                             <div id="map"></div>
                                         </div>
                                         <ul className="list-items list--items list-items-style-2 py-4">
-                                            <li><span className="text-color"><i className="la la-map mr-2 text-color-2 font-size-18"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
-                                            <li><span className="text-color"><i className="la la-phone mr-2 text-color-2 font-size-18"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
+                                            <li><span className="text-color"><i className="la la-map mr-2 text-color-2 font-size-18"></i>Address:</span> {getSingleListing?.address || "----"} </li>
+                                            <li><span className="text-color"><i className="la la-phone mr-2 text-color-2 font-size-18"></i>Phone:</span><a href="#">923013109562</a></li>
                                             <li><span className="text-color"><i className="la la-envelope mr-2 text-color-2 font-size-18"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
-                                            <li><span className="text-color"><i className="la la-globe mr-2 text-color-2 font-size-18"></i>Website:</span><a href="#">www.techydevs.com</a></li>
+                                            <li><span className="text-color"><i className="la la-globe mr-2 text-color-2 font-size-18"></i>Website:</span><a href="#">{getSingleListing?.web || "----"}</a></li>
                                         </ul>
                                         <ul className="social-profile social-profile-styled">
                                             <li><a href="#" className="facebook-bg" data-toggle="tooltip" data-placement="top" title="Facebook"><i className="lab la-facebook-f"></i></a></li>
@@ -591,12 +620,12 @@ function ListingDetails() {
                                 <div className="block-card" id="review">
                                     <div className="block-card-header">
                                         <h2 className="widget-title pb-1">Add a Review</h2>
-                                        <p>Your email address will not be published. Required fields are marked *</p>
+                                        <p>Your email address will not be published</p>
                                     </div>
                                     {/* <!-- end block-card-header --> */}
                                     <div className="block-card-body">
                                         <div className="add-rating-bars review-bars d-flex flex-row flex-wrap flex-grow-1 align-items-center justify-content-between">
-                                            <div className="review-bars-item mx-0 mt-0">
+                                            {/* <div className="review-bars-item mx-0 mt-0">
                                                 <span className="review-bars-name">Service</span>
                                                 <div className="review-bars-inner pt-1">
                                                     <form className="leave-rating">
@@ -612,27 +641,27 @@ function ListingDetails() {
                                                         <label for="rating-5" className="fa fa-star"></label>
                                                     </form>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             {/* <!-- end review-bars-item --> */}
                                             <div className="review-bars-item mx-0 mt-0">
                                                 <span className="review-bars-name">Value for Money</span>
                                                 <div className="review-bars-inner pt-1">
                                                     <form className="leave-rating">
-                                                        <input type="radio" name="rating" id="rating-6" value="1" />
+                                                        <input onChange={e => setRatingReview(e.target.value)} type="radio" name="rating" id="rating-6" value="1" />
                                                         <label for="rating-6" className="fa fa-star"></label>
-                                                        <input type="radio" name="rating" id="rating-7" value="2" />
+                                                        <input onChange={e => setRatingReview(e.target.value)} type="radio" name="rating" id="rating-7" value="2" />
                                                         <label for="rating-7" className="fa fa-star"></label>
-                                                        <input type="radio" name="rating" id="rating-8" value="3" />
+                                                        <input onChange={e => setRatingReview(e.target.value)} type="radio" name="rating" id="rating-8" value="3" />
                                                         <label for="rating-8" className="fa fa-star"></label>
-                                                        <input type="radio" name="rating" id="rating-9" value="4" />
+                                                        <input onChange={e => setRatingReview(e.target.value)} type="radio" name="rating" id="rating-9" value="4" />
                                                         <label for="rating-9" className="fa fa-star"></label>
-                                                        <input type="radio" name="rating" id="rating-10" value="5" />
+                                                        <input onChange={e => setRatingReview(e.target.value)} type="radio" name="rating" id="rating-10" value="5" />
                                                         <label for="rating-10" className="fa fa-star"></label>
                                                     </form>
                                                 </div>
                                             </div>
                                             {/* <!-- end review-bars-item --> */}
-                                            <div className="review-bars-item mx-0 mt-0">
+                                            {/* <div className="review-bars-item mx-0 mt-0">
                                                 <span className="review-bars-name">Quality</span>
                                                 <div className="review-bars-inner pt-1">
                                                     <form className="leave-rating">
@@ -648,9 +677,9 @@ function ListingDetails() {
                                                         <label for="rating-15" className="fa fa-star"></label>
                                                     </form>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             {/* <!-- end review-bars-item --> */}
-                                            <div className="review-bars-item mx-0 mt-0">
+                                            {/* <div className="review-bars-item mx-0 mt-0">
                                                 <span className="review-bars-name">Location</span>
                                                 <div className="review-bars-inner pt-1">
                                                     <form className="leave-rating">
@@ -666,22 +695,22 @@ function ListingDetails() {
                                                         <label for="rating-20" className="fa fa-star"></label>
                                                     </form>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             {/* <!-- end review-bars-item --> */}
                                         </div>
                                         {/* <!-- end review-bars --> */}
                                         <form method="post" className="form-box row pt-3">
-                                            <div className="col-lg-6">
+                                            <div className="col-lg-12">
                                                 <div className="input-box">
                                                     <label className="label-text">Name</label>
                                                     <div className="form-group">
                                                         <span className="la la-user form-icon"></span>
-                                                        <input className="form-control" type="text" name="name" placeholder="Your Name" />
+                                                        <input className="form-control" onChange={e => setTitleReview(e.target.value)} type="text" name="name" placeholder="Your Name" />
                                                     </div>
                                                 </div>
                                             </div>
                                             {/* <!-- end col-lg-6 --> */}
-                                            <div className="col-lg-6">
+                                            {/* <div className="col-lg-6">
                                                 <div className="input-box">
                                                     <label className="label-text">Email</label>
                                                     <div className="form-group">
@@ -689,14 +718,14 @@ function ListingDetails() {
                                                         <input className="form-control" type="email" name="email" placeholder="Email Address" />
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             {/* <!-- end col-lg-6 --> */}
                                             <div className="col-lg-12">
                                                 <div className="input-box">
                                                     <label className="label-text">Review</label>
                                                     <div className="form-group">
                                                         <span className="la la-pencil form-icon"></span>
-                                                        <textarea className="message-control form-control" name="message" placeholder="Tell about your experience or leave a tip for others"></textarea>
+                                                        <textarea className="message-control form-control" onChange={(e) => setDiscriptionReview(e.target.value)} name="message" placeholder="Tell about your experience or leave a tip for others"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -710,7 +739,7 @@ function ListingDetails() {
                                             {/* <!-- end col-lg-12 --> */}
                                             <div className="col-lg-12">
                                                 <div className="btn-box pt-1">
-                                                    <button className="theme-btn gradient-btn border-0">Submit Review<i className="la la-arrow-right ml-2"></i></button>
+                                                    <button type='button' onClick={onSubmitReview} className="theme-btn gradient-btn border-0">{"Submit Review"} <i className="la la-arrow-right ml-2"></i></button>
                                                 </div>
                                             </div>
                                             {/* <!-- end col-lg-12 --> */}
@@ -770,8 +799,8 @@ function ListingDetails() {
                                     <h3 className="widget-title">General Information</h3>
                                     <div className="stroke-shape mb-4"></div>
                                     <ul className="list-items list-items-style-2">
-                                        <li><i className="la la-external-link mr-2 text-color-2 font-size-18"></i><a href="#">www.techydevs.com</a></li>
-                                        <li><i className="la la-phone mr-2 text-color-2 font-size-18"></i><a href="#">+(0) 880 222 4465</a></li>
+                                        <li><i className="la la-external-link mr-2 text-color-2 font-size-18"></i><a href="#">www.altafgroupofcompanies.com</a></li>
+                                        <li><i className="la la-phone mr-2 text-color-2 font-size-18"></i><a target="_blank" href="https://api.whatsapp.com/send/?phone=923013109562&text&type=phone_number&app_absent=0" >+923013109562</a></li>
                                         <li><i className="la la-map-signs mr-2 text-color-2 font-size-18"></i><a href="#">Get Directions</a></li>
                                         <li><i className="la la-cutlery mr-2 text-color-2 font-size-18"></i><a href="#">Full menu <i className="la la-external-link ml-1"></i></a></li>
                                         <li><i className="la la-comment mr-2 text-color-2 font-size-18"></i><a href="#" data-toggle="modal" data-target="#messageModal">Message the Business</a></li>
@@ -1315,7 +1344,7 @@ function ListingDetails() {
                                         </div>
                                     </div>
                                     <ul className="list-items py-4">
-                                        <li><i className="la la-phone mr-2 text-color-2 font-size-18"></i><a href="#" className="before-none">+ 61 23 8093 3400</a></li>
+                                        <li><i className="la la-phone mr-2 text-color-2 font-size-18"></i><a href="#" className="before-none">923013109562</a></li>
                                         <li><i className="la la-envelope mr-2 text-color-2 font-size-18"></i><a href="#" className="before-none">DPGB@gmail.com</a></li>
                                     </ul>
                                     <div className="btn-box">
@@ -1397,7 +1426,7 @@ function ListingDetails() {
                         <div className="col-lg-3 responsive-column">
                             <div className="footer-item footer-item-2">
                                 <div className="footer-logo">
-                                    <Link to="/" className="foot-logo"><img src={Logo} alt="logo" /></Link>
+                                    <Link to="/" className="foot-logo"><img src={Logo} alt="logo" width="78px" /></Link>
                                 </div>
                                 {/* <!-- end footer-logo --> */}
                                 <p className="footer__desc">
@@ -1448,7 +1477,7 @@ function ListingDetails() {
                                 <div className="stroke-shape mb-3"></div>
                                 <ul className="list-items contact-links">
                                     <li><span className="d-block text-white mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
-                                    <li><span className="d-block text-white mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
+                                    <li><span className="d-block text-white mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">923013109562</a></li>
                                     <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>
@@ -1902,6 +1931,6 @@ function ListingDetails() {
 
         </div>
     )
-}
+})
 
 export default ListingDetails

@@ -19,6 +19,7 @@ const listingBusinessModal = types.model({
 export const userStore = types
   .model({
     listingData: types.maybeNull(types.array(listingBusinessModal)),
+    singleListingData: types.maybeNull(listingBusinessModal),
     filteredCategory: types.maybeNull(types.array(listingBusinessModal)),
     category: types.maybeNull(types.string),
     loading: types.optional(types.boolean, false),
@@ -44,7 +45,11 @@ export const userStore = types
     // @ts-ignore
     get getCategory() {
       return self.category;
-    }
+    },
+    get getSingleListing() {
+      return toJS(self.singleListingData);
+    },
+    
   }))
   .actions((self) => {
 
@@ -62,6 +67,26 @@ export const userStore = types
         // @ts-ignore
         self.filteredCategory = [];
         // @ts-ignore
+        const { status, data } = error.response
+        console.log("error", error)
+        throw error
+      } finally {
+        self.loading = false
+        return response
+      }
+    })
+
+
+    const loadSingleListings = flow(function* (id) {
+      let response = null
+      self.loading = true
+      try {
+        self.loading = true
+        const res = yield userApi.getSingleListings(id)
+        self.singleListingData = res
+        response = res
+
+      } catch (error) {
         const { status, data } = error.response
         console.log("error", error)
         throw error
@@ -99,6 +124,22 @@ export const userStore = types
 
     })
 
+    const setListingReview = flow(function* (id, data) {
+      let response = null
+      try {
+        self.loading = true
+        const res = yield userApi.setListingReview(id, data)
+        console.log("res Review", res)
+        response = res
+      } catch (error) {
+        const { status, data } = error.response
+        console.log("error", error)
+        throw error
+      } finally {
+        return response
+      }
+
+    })
 
 
     return {
@@ -106,6 +147,8 @@ export const userStore = types
       loadCategory,
       loadFiltered,
       setListings,
+      loadSingleListings,
+      setListingReview,
     }
   })
 

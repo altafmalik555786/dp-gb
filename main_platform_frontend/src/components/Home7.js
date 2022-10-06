@@ -62,7 +62,7 @@ function Home7() {
                             <div className="col-lg-12">
                                 <div className="menu-full-width">
                                     <div className="logo">
-                                        <Link to="/"><img src={Logo} alt="logo" /></Link>
+                                        <Link to="/"><img src={Logo} alt="logo" width="78px"  /></Link>
                                         <div className="d-flex align-items-center">
                                             <Link to="/add-listing" className="btn-gray add-listing-btn-show font-size-24 mr-2 flex-shrink-0" data-toggle="tooltip" data-placement="left" title="Add Listing">
                                                 <i className="la la-plus"></i>
@@ -619,7 +619,7 @@ function Home7() {
                                         </ul>
                                         <ul className="info-list padding-top-20px">
                                             <li><span className="la la-link icon"></span>
-                                                <a href="#"> www.techydevs.com</a>
+                                                <a href="#"> www.altafgroupofcompanies.com</a>
                                             </li>
                                             <li><span className="la la-calendar-check-o icon"></span>
                                                 Opened 1 month ago
@@ -663,7 +663,7 @@ function Home7() {
                                         </ul>
                                         <ul className="info-list padding-top-20px">
                                             <li><span className="la la-link icon"></span>
-                                                <a href="#"> www.techydevs.com</a>
+                                                <a href="#"> www.altafgroupofcompanies.com</a>
                                             </li>
                                             <li><span className="la la-calendar-check-o icon"></span>
                                                 Opened 1 month ago
@@ -706,7 +706,7 @@ function Home7() {
                                         </ul>
                                         <ul className="info-list padding-top-20px">
                                             <li><span className="la la-link icon"></span>
-                                                <a href="#"> www.techydevs.com</a>
+                                                <a href="#"> www.altafgroupofcompanies.com</a>
                                             </li>
                                             <li><span className="la la-calendar-check-o icon"></span>
                                                 Opened 1 month ago
@@ -752,7 +752,7 @@ function Home7() {
                                         </ul>
                                         <ul className="info-list padding-top-20px">
                                             <li><span className="la la-link icon"></span>
-                                                <a href="#"> www.techydevs.com</a>
+                                                <a href="#"> www.altafgroupofcompanies.com</a>
                                             </li>
                                             <li><span className="la la-calendar-check-o icon"></span>
                                                 Opened 1 month ago
@@ -1516,7 +1516,7 @@ function Home7() {
                                 <div className="stroke-shape mb-3"></div>
                                 <ul className="list-items contact-links">
                                     <li><span className="d-block text-color mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
-                                    <li><span className="d-block text-color mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
+                                    <li><span className="d-block text-color mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">923013109562</a></li>
                                     <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>

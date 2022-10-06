@@ -5,13 +5,9 @@ from review.views import ListingReviewViewset, UserReviewViewset
 
 router = DefaultRouter()
 
-
-
 router.register('listing', ListingReviewViewset)
 router.register('user', UserReviewViewset)
-
 
 urlpatterns = [
     path('', include(router.urls)),
 ]
-

@@ -19,7 +19,34 @@ class UserApi extends BaseApi {
 
   setListings = async (data) => {
     try {
-      const response = await axios.post(`${baseUrl}home/listing/`, data)
+      const response = await axios.post(`${baseUrl}home/listing/`, data, {
+        headers: { Authorization: getAuthorizationHeader() },
+        cancelToken: this.cancelToken,
+      })
+      return response.data
+    } catch (error) {
+      throw error
+    }
+  }
+
+  setListingReview = async (id, data) => {
+    try {
+      const response = await axios.post(`${baseUrl}reviews/listing/${id}/`, data, {
+        headers: { Authorization: getAuthorizationHeader() },
+        cancelToken: this.cancelToken,
+      })
+      return response.data
+    } catch (error) {
+      throw error
+    }
+  }
+
+  getSingleListings = async (id) => {
+    try {
+      const response = await axios.get(`${baseUrl}home/listing/${id}`, {
+        headers: { Authorization: getAuthorizationHeader() },
+        cancelToken: this.cancelToken,
+      })
       return response.data
     } catch (error) {
       throw error

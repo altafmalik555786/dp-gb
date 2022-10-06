@@ -3,7 +3,7 @@ from rest_framework import viewsets, mixins
 from rest_framework.exceptions import ValidationError
 from rest_framework import status, response
 from rest_framework.viewsets import GenericViewSet
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 
 from crud_task_fk.common.validations import is_valid_uuid
@@ -16,8 +16,9 @@ class ListingReviewViewset(mixins.CreateModelMixin,
                            GenericViewSet):
 
     serializer_class = ListingReviewSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     queryset = ListingReview.objects.all()
+    http_method_names = ["post", "get", "delete"]
 
     def validate_payload(self, data):
         listing = is_valid_uuid(data.get('listing', None))
@@ -53,6 +54,7 @@ class UserReviewViewset(mixins.CreateModelMixin,
     serializer_class = UserReviewSerializer
     permission_classes = [IsAuthenticated]
     queryset = ListingReview.objects.all()
+    http_method_names = ["post", "get", "delete"]
 
     def create(self, request, *args, **kwargs):
         data = request.data.copy()

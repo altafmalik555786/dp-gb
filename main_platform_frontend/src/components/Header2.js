@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import logoWhite from "../Assets/images/logo-white.png"
+import logoWhite from "../Assets/images/dpgb.png"
 import { constRoute } from '../utility/constRoute'
 import Logo from '../Assets/images/dpgb.png'
 import style from './logoStyle.module.scss'

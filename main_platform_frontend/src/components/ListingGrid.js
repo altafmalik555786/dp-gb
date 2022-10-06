@@ -21,6 +21,7 @@ import { Link } from 'react-router-dom'
 
 function ListingGrid() {
     const { userStore: { loadListings, getListings, filteredCategory } } = useStore(null)
+    
 
     return (
         <div>
@@ -105,7 +106,7 @@ function ListingGrid() {
                             <div className="col-lg-4 responsive-column">
                                 <div className="card-item">
                                     <div className="card-image">
-                                        <Link to="/listing-details" className="d-block">
+                                        <Link  to={`/listing-details/${item?.id}`} className="d-block">
                                             <img
                                                 src={item?.image ? item?.image : img8}
                                                 data-src={item?.image ? item?.image : img8}
@@ -304,7 +305,7 @@ function ListingGrid() {
                                 <div className="stroke-shape mb-3"></div>
                                 <ul className="list-items contact-links">
                                     <li><span className="d-block text-color mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
-                                    <li><span className="d-block text-color mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
+                                    <li><span className="d-block text-color mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">923013109562</a></li>
                                     <li><span className="d-block text-color mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>
