@@ -335,7 +335,7 @@ function DashboardBookmark() {
                                                     </ul>
                                                     <ul className="info-list padding-top-20px">
                                                         <li><span className="la la-link icon"></span>
-                                                            <a href="#"> www.techydevs.com</a>
+                                                            <a href="#"> www.altafgroupofcompanies.com</a>
                                                         </li>
                                                         <li><span className="la la-calendar-check-o icon"></span>
                                                             Opened 1 month ago
@@ -381,7 +381,7 @@ function DashboardBookmark() {
                                                     </ul>
                                                     <ul className="info-list padding-top-20px">
                                                         <li><span className="la la-link icon"></span>
-                                                            <a href="#"> www.techydevs.com</a>
+                                                            <a href="#"> www.altafgroupofcompanies.com</a>
                                                         </li>
                                                         <li><span className="la la-calendar-check-o icon"></span>
                                                             Opened 1 month ago
@@ -427,7 +427,7 @@ function DashboardBookmark() {
                                                     </ul>
                                                     <ul className="info-list padding-top-20px">
                                                         <li><span className="la la-link icon"></span>
-                                                            <a href="#"> www.techydevs.com</a>
+                                                            <a href="#"> www.altafgroupofcompanies.com</a>
                                                         </li>
                                                         <li><span className="la la-calendar-check-o icon"></span>
                                                             Opened 1 month ago

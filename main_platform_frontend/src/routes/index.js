@@ -37,6 +37,9 @@ import Login2 from 'components/Authentication/Login2'
 import Register2 from 'components/Authentication/Register2'
 
 function RoutingLayout() {
+
+  
+
   return (
     <div>
       <Routes>
@@ -56,6 +59,7 @@ function RoutingLayout() {
         <Route path='/listing-halfmap-list' element={<ListingHalfmapList />} />
         <Route path='/listing-Left-sidebar' element={<ListingLeftSidebar />} />
         <Route path='/listing-Right-sidebar' element={<ListingRightSidebar />} />
+        <Route path='/listing-details/:id' element={<ListingDetails />} />
         <Route path='/listing-details' element={<ListingDetails />} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/dashboard-booking' element={<DashboardBooking />} />

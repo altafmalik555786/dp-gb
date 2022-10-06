@@ -259,7 +259,7 @@ function ContactUs() {
                                     <img src={img31} data-src={img31} alt="group-img" className="w-100 radius-round lazy" />
                                     <ul className="list-items list--items list-items-style-2 py-4">
                                         <li><span className="text-color"><i className="la la-map mr-2 text-color-2 font-size-18"></i>Address:</span> 123 Little Baker St, NY</li>
-                                        <li><span className="text-color"><i className="la la-phone mr-2 text-color-2 font-size-18"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
+                                        <li><span className="text-color"><i className="la la-phone mr-2 text-color-2 font-size-18"></i>Phone:</span><a href="#">923013109562</a></li>
                                         <li><span className="text-color"><i className="la la-envelope mr-2 text-color-2 font-size-18"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                     </ul>
                                     <div className="section-block-2"></div>

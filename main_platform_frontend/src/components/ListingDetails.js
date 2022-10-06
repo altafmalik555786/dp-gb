@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import img4 from "../Assets/images/img4.jpg"
 import img5 from "../Assets/images/img5.jpg"
 import img6 from "../Assets/images/img6.jpg"
@@ -32,11 +32,23 @@ import SingleListingImg5 from "../Assets/images/single-listing-img5.jpg"
 import SingleListingImg6 from "../Assets/images/single-listing-img6.jpg"
 import SingleListingImg7 from "../Assets/images/single-listing-img7.jpg"
 import SingleListingImg8 from "../Assets/images/single-listing-img8.jpg"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import ListingdetailsCrosal from './ListingdetailsCrosal'
 import HomeCrousal from './HomeCrousal'
 import Header4 from './Header4'
-function ListingDetails() {
+import { observer } from 'mobx-react'
+import { useStore } from 'stores/root-store'
+
+const ListingDetails = observer(() => {
+    const { id } = useParams()
+    const { userStore: { loadSingleListings, getSingleListing } } = useStore(null);
+
+    useEffect(() => {
+      loadSingleListings(id)
+    }, [])
+
+    console.log("getSingleListing", getSingleListing)
+    
 
 
     return (
@@ -61,11 +73,11 @@ function ListingDetails() {
                                 <div className="section-heading">
                                     <ul className="list-items bread-list bread-list-2 bg-transparent rounded-0 p-0">
                                         <li><Link to="/">Home</Link></li>
-                                        <li><a href="#">Restaurant</a></li>
-                                        <li>Super Duper Burgers </li>
+                                        <li><a href="#">{ getSingleListing?.business_type }</a></li>
+                                        <li>{ getSingleListing?.title || "----" }</li>
                                     </ul>
                                     <div className="d-flex align-items-center pt-1">
-                                        <h2 className="sec__title mb-0">Super Duper Burgers</h2>
+                                        <h2 className="sec__title mb-0">{ getSingleListing?.title || "----" }</h2>
                                         <div className="hover-tooltip-box ml-2 pt-2">
                                             <span className="text-color"><i className="la la-check-circle mr-1 text-color-4"></i>Claimed</span>
                                             <div className="hover-tooltip">
@@ -73,15 +85,14 @@ function ListingDetails() {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="sec__desc py-2 font-size-17"><i className="la la-map-marker mr-1 text-color-2"></i>390 Greenwich StNew York, NY 10013</p>
+                                    <p className="sec__desc py-2 font-size-17"><i className="la la-map-marker mr-1 text-color-2"></i>{ getSingleListing?.address }</p>
                                     <p className="pb-2 font-weight-medium">
                                         <span className="price-range mr-1 text-color font-size-16" data-toggle="tooltip" data-placement="top" title="Moderate">
                                             <strong className="font-weight-medium">$</strong>
                                             <strong className="font-weight-medium ml-n1">$</strong>
                                         </span>
                                         <span className="category-link">
-                                            <a href="#">Burgers</a>,
-                                            <a href="#">American (Traditional)</a>
+                                            <a href="#">{ getSingleListing?.pricing || "----" }</a>
                                         </span>
                                     </p>
                                     <div className="d-flex flex-wrap align-items-center">
@@ -245,7 +256,7 @@ function ListingDetails() {
                                     {/* <!-- end block-card-header --> */}
                                     <div className="block-card-body">
                                         <div className="video-box">
-                                            <img className="lazy" src={SingleListingImg7} data-src={SingleListingImg7} alt="video image" />
+                                            <img className="lazy" src={getSingleListing?.image} data-src={getSingleListing?.image} alt="image" />
                                             <div className="video-content">
                                                 <a className="icon-element icon-element-lg icon-element-white hover-scale mx-auto" href="https://www.youtube.com/watch?v=GlrxcuEDyF8" data-fancybox="" title="Play Video">
                                                     <i className="la la-play"></i>
@@ -267,10 +278,10 @@ function ListingDetails() {
                                             <div id="map"></div>
                                         </div>
                                         <ul className="list-items list--items list-items-style-2 py-4">
-                                            <li><span className="text-color"><i className="la la-map mr-2 text-color-2 font-size-18"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
-                                            <li><span className="text-color"><i className="la la-phone mr-2 text-color-2 font-size-18"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
+                                            <li><span className="text-color"><i className="la la-map mr-2 text-color-2 font-size-18"></i>Address:</span> { getSingleListing?.address || "----" } </li>
+                                            <li><span className="text-color"><i className="la la-phone mr-2 text-color-2 font-size-18"></i>Phone:</span><a href="#">923013109562</a></li>
                                             <li><span className="text-color"><i className="la la-envelope mr-2 text-color-2 font-size-18"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
-                                            <li><span className="text-color"><i className="la la-globe mr-2 text-color-2 font-size-18"></i>Website:</span><a href="#">www.techydevs.com</a></li>
+                                            <li><span className="text-color"><i className="la la-globe mr-2 text-color-2 font-size-18"></i>Website:</span><a href="#">{ getSingleListing?.web || "----" }</a></li>
                                         </ul>
                                         <ul className="social-profile social-profile-styled">
                                             <li><a href="#" className="facebook-bg" data-toggle="tooltip" data-placement="top" title="Facebook"><i className="lab la-facebook-f"></i></a></li>
@@ -770,8 +781,8 @@ function ListingDetails() {
                                     <h3 className="widget-title">General Information</h3>
                                     <div className="stroke-shape mb-4"></div>
                                     <ul className="list-items list-items-style-2">
-                                        <li><i className="la la-external-link mr-2 text-color-2 font-size-18"></i><a href="#">www.techydevs.com</a></li>
-                                        <li><i className="la la-phone mr-2 text-color-2 font-size-18"></i><a href="#">+(0) 880 222 4465</a></li>
+                                        <li><i className="la la-external-link mr-2 text-color-2 font-size-18"></i><a href="#">www.altafgroupofcompanies.com</a></li>
+                                        <li><i className="la la-phone mr-2 text-color-2 font-size-18"></i><a target="_blank" href="https://api.whatsapp.com/send/?phone=923013109562&text&type=phone_number&app_absent=0" >+923013109562</a></li>
                                         <li><i className="la la-map-signs mr-2 text-color-2 font-size-18"></i><a href="#">Get Directions</a></li>
                                         <li><i className="la la-cutlery mr-2 text-color-2 font-size-18"></i><a href="#">Full menu <i className="la la-external-link ml-1"></i></a></li>
                                         <li><i className="la la-comment mr-2 text-color-2 font-size-18"></i><a href="#" data-toggle="modal" data-target="#messageModal">Message the Business</a></li>
@@ -1315,7 +1326,7 @@ function ListingDetails() {
                                         </div>
                                     </div>
                                     <ul className="list-items py-4">
-                                        <li><i className="la la-phone mr-2 text-color-2 font-size-18"></i><a href="#" className="before-none">+ 61 23 8093 3400</a></li>
+                                        <li><i className="la la-phone mr-2 text-color-2 font-size-18"></i><a href="#" className="before-none">923013109562</a></li>
                                         <li><i className="la la-envelope mr-2 text-color-2 font-size-18"></i><a href="#" className="before-none">DPGB@gmail.com</a></li>
                                     </ul>
                                     <div className="btn-box">
@@ -1448,7 +1459,7 @@ function ListingDetails() {
                                 <div className="stroke-shape mb-3"></div>
                                 <ul className="list-items contact-links">
                                     <li><span className="d-block text-white mb-1"><i className="la la-map mr-1 text-color-2"></i>Address:</span> 12345 Little Baker St, Melbourne</li>
-                                    <li><span className="d-block text-white mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">+ 61 23 8093 3400</a></li>
+                                    <li><span className="d-block text-white mb-1"><i className="la la-phone mr-1 text-color-2"></i>Phone:</span><a href="#">923013109562</a></li>
                                     <li><span className="d-block text-white mb-1"><i className="la la-envelope mr-1 text-color-2"></i>Email:</span><a href="#">DPGB@gmail.com</a></li>
                                 </ul>
                             </div>
@@ -1902,6 +1913,6 @@ function ListingDetails() {
 
         </div>
     )
-}
+})
 
 export default ListingDetails

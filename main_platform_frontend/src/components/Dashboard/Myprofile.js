@@ -348,7 +348,7 @@ function Myprofile() {
                                                         <label className="label-text">Website</label>
                                                         <div className="form-group">
                                                             <span className="la la-globe form-icon"></span>
-                                                            <input className="form-control" type="text" name="text" value="www.techydevs.com" />
+                                                            <input className="form-control" type="text" name="text" value="www.altafgroupofcompanies.com" />
                                                         </div>
                                                     </div>
                                                 </div>

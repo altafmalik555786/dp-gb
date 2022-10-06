@@ -1479,7 +1479,7 @@ function About() {
                                     <li>
                                         <span className="d-block text-color mb-1"
                                         ><i className="la la-phone mr-1 text-color-2"></i>Phone:</span
-                                        ><a href="#">+ 61 23 8093 3400</a>
+                                        ><a href="#">923013109562</a>
                                     </li>
                                     <li>
                                         <span className="d-block text-color mb-1"
