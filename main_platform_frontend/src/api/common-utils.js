@@ -1,4 +1,4 @@
-const AUTH_TOKEN = 'accessToken'
+const AUTH_TOKEN = 'token'
 export function getTokenFromCookies() {
   return localStorage.getItem(AUTH_TOKEN) || ''
 }

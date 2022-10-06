@@ -1,8 +1,8 @@
 import { toJS } from 'mobx'
 import { flow, types } from 'mobx-state-tree'
 import { userApi } from '../../api';
-const User = types.model({
-  id: types.maybeNull(types.number),
+const listingBusinessModal = types.model({
+  id: types.maybeNull(types.string),
   title: types.maybeNull(types.string),
   business_type: types.maybeNull(types.string),
   icon: types.maybeNull(types.string),
@@ -13,12 +13,13 @@ const User = types.model({
   pricing: types.maybeNull(types.string),
   web: types.maybeNull(types.string),
   created: types.maybeNull(types.string),
+  updated_detail: types.maybeNull(types.string),
 })
 
 export const userStore = types
   .model({
-    listingData: types.maybeNull(types.array(User)),
-    filteredCategory: types.maybeNull(types.array(User)),
+    listingData: types.maybeNull(types.array(listingBusinessModal)),
+    filteredCategory: types.maybeNull(types.array(listingBusinessModal)),
     category: types.maybeNull(types.string),
     loading: types.optional(types.boolean, false),
   })
