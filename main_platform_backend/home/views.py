@@ -7,8 +7,8 @@ from rest_framework.views import APIView
 from rest_framework.exceptions import ValidationError
 
 from crud_task_fk.common.validations import is_valid_uuid
-from home.models import Listing
-from home.serializers import ListingSerializer, UserSerializer
+from home.models import Listing, DetailUpdateSituation
+from home.serializers import ListingSerializer, UserSerializer, DetailUpdateSerializer
 
 User = get_user_model()
 
@@ -49,6 +49,25 @@ class ListingViewSet(viewsets.ModelViewSet):
 #             admin.save()
 #             return Response('ok')
 #         return Response('Stay Away')
+
+
+class DetailUpdateViewset(viewsets.ModelViewSet):
+    serializer_class = DetailUpdateSerializer
+    permission_classes = [AllowAny]
+    # http_method_names = ['post', 'get', 'patch', 'delete']
+    queryset = DetailUpdateSituation.objects.all()
+
+    def create(self, request, *args, **kwargs):
+        serializer = DetailUpdateSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            listing_obj = Listing.objects.get(id=request.data.get('listing', None))
+            listing_obj.updated_detail = request.data.get('current_updates', None)
+            listing_obj.save()
+            return Response({"msg":"created successfully"}, status=status.HTTP_200_OK)
+        return Response({"error":serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+
+
 
 class SignUpV(APIView):
     def post(self, request):
