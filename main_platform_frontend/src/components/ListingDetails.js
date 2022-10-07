@@ -37,6 +37,7 @@ import ListingdetailsCrosal from './ListingdetailsCrosal'
 import HomeCrousal from './HomeCrousal'
 import Header4 from './Header4'
 import { observer } from 'mobx-react'
+import { Rate } from 'antd'
 import { useStore } from 'stores/root-store'
 
 const ListingDetails = observer(() => {
@@ -534,27 +535,57 @@ const ListingDetails = observer(() => {
                                                     <img src={avatarImg3} alt="author-img" />
                                                 </div>
                                                 <div className="comment-body">
-                                                    <div className="meta-data d-flex align-items-center justify-content-between">
-                                                        <div>
-                                                            <h4 className="comment__title">Mark Hardson</h4>
-                                                            <span className="comment__meta">Los Angeles, CA</span>
-                                                        </div>
-                                                        <div className="star-rating-wrap text-center">
-                                                            <div className="star-rating text-color-5 font-size-18">
-                                                                <span><i className="la la-star"></i></span>
-                                                                <span className="ml-n1"><i className="la la-star"></i></span>
-                                                                <span className="ml-n1"><i className="la la-star"></i></span>
-                                                                <span className="ml-n1"><i className="la la-star"></i></span>
-                                                                <span className="ml-n1"><i className="la la-star-o"></i></span>
-                                                            </div>
-                                                            <p className="font-size-13 font-weight-medium">02/8/2020</p>
-                                                        </div>
-                                                    </div>
-                                                    <p className="comment-desc">
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                        Ut enim ad minim veniam, quis nostrud exercitation.
-                                                    </p>
+                                                    {/* {
+                                                        getSingleListing?.reviews?.map((item, index) => {
+                                                            return (
+                                                                <div key={index} className="meta-data d-flex align-items-center justify-content-between">
+                                                                    <div>
+                                                                        <h4 className="comment__title"> { item?.title || "----" } </h4>
+                                                                        <span className="comment__meta">Los Angeles, CA</span>
+                                                                    </div>
+                                                                    <div className="star-rating-wrap text-center">
+                                                                        <div className="star-rating text-color-5 font-size-18">
+                                                                            <span><i className="la la-star"></i></span>
+                                                                            <span className="ml-n1"><i className="la la-star"></i></span>
+                                                                            <span className="ml-n1"><i className="la la-star"></i></span>
+                                                                            <span className="ml-n1"><i className="la la-star"></i></span>
+                                                                            <span className="ml-n1"><i className="la la-star-o"></i></span>
+                                                                        </div>
+                                                                        <p className="font-size-13 font-weight-medium">02/8/2020</p>
+                                                                    </div>
+                                                                </div>
+                                                            )
+                                                        })
+                                                    } */}
+
+                                                    {
+                                                        getSingleListing?.reviews?.map((item, index) => {
+                                                            return (
+                                                                <>
+                                                                    <div key={index} className="meta-data d-flex align-items-center justify-content-between">
+                                                                        <div>
+                                                                            <h4 className="comment__title"> {item?.title || "----"} </h4>
+                                                                            <span className="comment__meta">Los Angeles, CA</span>
+                                                                        </div>
+                                                                        <div className="star-rating-wrap text-center">
+                                                                            <div className="star-rating text-color-5 font-size-18">
+                                                                                <span><i className="la la-star"></i></span>
+                                                                                <span className="ml-n1"><i className="la la-star"></i></span>
+                                                                                <span className="ml-n1"><i className="la la-star"></i></span>
+                                                                                <span className="ml-n1"><i className="la la-star"></i></span>
+                                                                                <span className="ml-n1"><i className="la la-star-o"></i></span>
+                                                                            </div>
+                                                                            <p className="font-size-13 font-weight-medium">02/8/2020</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p className="comment-desc">
+                                                                        {item?.description || "----"}
+                                                                    </p>
+                                                                </>
+                                                            )
+                                                        })
+                                                    }
+
                                                     <div className="review-photos d-flex flex-wrap align-items-center ml-n1 mb-3">
                                                         <a href="images/single-listing-img1.jpg" className="d-inline-block" data-fancybox="gallery">
                                                             <img className="lazy" src={SingleListingImg3} data-src={SingleListingImg3} alt="review image" />
@@ -657,6 +688,7 @@ const ListingDetails = observer(() => {
                                                         <label for="rating-9" className="fa fa-star"></label>
                                                         <input onChange={e => setRatingReview(e.target.value)} type="radio" name="rating" id="rating-10" value="5" />
                                                         <label for="rating-10" className="fa fa-star"></label>
+
                                                     </form>
                                                 </div>
                                             </div>

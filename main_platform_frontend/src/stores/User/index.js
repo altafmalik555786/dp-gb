@@ -1,6 +1,18 @@
 import { toJS } from 'mobx'
 import { flow, types } from 'mobx-state-tree'
 import { userApi } from '../../api';
+
+const reviewsObj = types.model({
+  id: types.maybeNull(types.string),
+  listing: types.maybeNull(types.string),
+  rating: types.maybeNull(types.number),
+  description: types.maybeNull(types.string),
+  title: types.maybeNull(types.string),
+  created: types.maybeNull(types.string),
+  updated_detail: types.maybeNull(types.string),
+})
+
+
 const listingBusinessModal = types.model({
   id: types.maybeNull(types.string),
   title: types.maybeNull(types.string),
@@ -13,6 +25,7 @@ const listingBusinessModal = types.model({
   pricing: types.maybeNull(types.string),
   web: types.maybeNull(types.string),
   created: types.maybeNull(types.string),
+  reviews: types.maybeNull(types?.array(reviewsObj)),
   updated_detail: types.maybeNull(types.string),
 })
 
@@ -83,6 +96,7 @@ export const userStore = types
       try {
         self.loading = true
         const res = yield userApi.getSingleListings(id)
+        console.log("res", res)
         self.singleListingData = res
         response = res
 
